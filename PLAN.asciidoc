@@ -101,7 +101,7 @@ Work steps
 ----------
 
 The timeframe for this is Jan-March 2014. The target is Radeon hardware, both discrete and 
-APUs, from r600 to 
+APUs, from r600 to NI - in other words, hardware supported by r600g.
 
 . Make it possible to gather training data.
 
