@@ -1,8 +1,8 @@
 Thesis plan
 ===========
 
-"Using neural networks to measure bo hotness"
-"Hot bo tracking"
+"Using neural networks to measure bo hotness" \
+"Hot bo tracking" \
 Find a media-sexy title later.
 
 Issue
