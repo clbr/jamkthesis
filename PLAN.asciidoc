@@ -31,8 +31,9 @@ full, space is freed by moving the least-recently-used buffer to system RAM.
 This simple LRU strategy can easily result in buffer ping-pong, which harms performance.
 
 Examples:
-https://bugs.freedesktop.org/show_bug.cgi?id=66632
-http://www.phoronix.com/scan.php?page=article&item=ubuntu_1210_amdstock&num=3
+
+- https://bugs.freedesktop.org/show_bug.cgi?id=66632
+- http://www.phoronix.com/scan.php?page=article&item=ubuntu_1210_amdstock&num=3
 
 The Reaction Quake issue, from the Phoronix link, has already been solved by giving more 
 VRAM hints in userspace. This fix only helps as long as the workload fits in VRAM.
