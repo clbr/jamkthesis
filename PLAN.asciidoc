@@ -1,0 +1,159 @@
+Thesis plan
+===========
+
+"Using neural networks to measure bo hotness"
+"Hot bo tracking"
+// Find a media-sexy title later.
+
+Issue
+-----
+
+Graphics cards carry some fast memory, VRAM. There's usually less of the fast memory than 
+the slower system memory.
+
+For workloads that fully fit in VRAM, there is no issue. However, the issues start when the 
+workload size exceeds the VRAM size.
+
+In such situations, the driver must decide where and when to place each buffer. This 
+behavior can have a huge difference to whether the workload remains usable, or if 
+performance plummets completely.
+
+I will focus on this issue - finding a more optimal strategy for migrating buffers to and 
+from VRAM.
+
+
+Current state
+-------------
+
+Currently, the kernel places buffers according to the userspace's wishes. If VRAM becomes 
+full, space is freed by moving the least-recently-used buffer to system RAM.
+
+This simple LRU strategy can easily result in buffer ping-pong, which harms performance.
+
+Examples:
+https://bugs.freedesktop.org/show_bug.cgi?id=66632
+http://www.phoronix.com/scan.php?page=article&item=ubuntu_1210_amdstock&num=3
+
+The Reaction Quake issue, from the Phoronix link, has already been solved by giving more 
+VRAM hints in userspace. This fix only helps as long as the workload fits in VRAM.
+
+
+Overview
+--------
+
+This work carries much parallels to the existing VFS hot data tracking. However, the main 
+difference to that work is that I will not attempt to invent a formula for hotness; instead, 
+I will hand that task to a neural network, a non-linear AI.
+
+The optimal weighting depends on the context. For this reason, a single formula will never 
+be able to get satisfactory results: what works best for 256mb VRAM is not what works best 
+for 2gb; likewise what works best for a compositing manager is not what works best for GTA 
+V.
+
+This also affects current APUs to an extent: while all memory is system RAM, the carved-out 
+portion is faster to access due to cache effects.
+
+The proposed new system would be as follows:
+
+. Userspace keeps accurate statistics on each bo's reads and writes
+. In suitable intervals, userspace calculates the bo's hotness
+. In suitable intervals, the kernel is told the new hotness number
+. The kernel will ignore the userspace domain hints if userspace is new enough
+. The kernel will make decisions based on the hotness number alone
+
+The kernel shall place everything in VRAM. Should the workload exceed VRAM, buffers will be 
+kept in VRAM in decreasing order of hotness. Whether buffers marked for GL_DYNAMIC and similar
+should be exempt remains to be investigated. That hint means that the application expects to 
+do a lot of CPU-side work on the buffer, which is slow if the buffer is in VRAM.
+
+This improves on the current strategy in two ways.
+
+First, workloads that would completely fit in VRAM, but weren't placed there due to lacking 
+hints, will now gain performance by being in VRAM. Second, ping-pong is minimized by keeping 
+a stable set of buffers in VRAM.
+
+The magic here is in the hotness calculation.
+
+
+Statistics
+----------
+
+The statistics to be passed will include, at least:
+- number of reads
+- number of writes
+- time of last read
+- time of last write
+- buffer size
+- ?
+
+In addition, some non-bo numbers will also be passed:
+- VRAM size
+- whether the application is full-screen
+- ?
+
+
+Work steps
+----------
+
+The timeframe for this is Jan-March 2014. The target is Radeon hardware, both discrete and 
+APUs, from r600 to 
+
+. Make it possible to gather training data.
+
+	This would be a small Mesa patch to track each bo's creation, read, and write.
+	This data of a recorded workload will then be usable as the AI's training data: for 
+	all collected workloads, try to find the best score.
+
+	This patch should be made as easy as possible to use, and distributed as widely as 
+	possible. Access to good training data is paramount for getting good decisions out 
+	of the AI.
+
+	News and community sites such as Phoronix and Ubuntu user forums will be asked to 
+	help. Getting the patch into an easy to use form, such as Oibaf's Ubuntu PPA, will 
+	allow users to easily record training data.
+
+. Develop a cost model
+
+	The cost of reads and writes in VRAM and system RAM, plus the cost of a buffer move.
+
+. Develop an integer activation function
+
+	The activation function is what simulates each neuron. Traditionally, tanh() has 
+	been used, but as it's a floating point calculation, it is expected to be too slow.
+
+	An integer-based activation function will be developed to minimize CPU use.
+	It needs to be non-linear to be able to make non-linear connections: the VRAM size 
+	is one example of this, the strategy for a small VRAM may be the opposite to that of 
+	a large VRAM.
+
+. Develop the training application
+
+	The training application will run the collected data repeatedly, simulating each 
+	desired VRAM size, tuning the AI.
+
+	As the AI training goal, any single case is allowed to regress at most 5%, assuming 
+	all other cases either improve or stay the same, with total improvement at least 5%.
+
+. Develop the infrastructure
+
+	This is the most mechanical part of the work, and may be completed in parallel to 
+	the other work.
+
+	The following changes are needed:
+	- a new ioctl to pass on a buffer's hotness
+	- TTM extended to allow hotness comparisons in addition to LRU
+	- radeon drm extended to detect whether userspace is new enough to use hotness
+	- Mesa extended to keep the desired statistics
+	- Mesa extended to calculate and pass on the hotness value
+
+
+Goals
+-----
+
+The goal is to improve the current VRAM strategy in all cases. Everything from latest games 
+to compositing managers should be considered, but as one can only access a limited set, we 
+will be relying on the public to provide wide-ranging training data.
+
+Once the system is developed, tuning the AI can be done at any time. Should new training 
+data appear later on, the AI can be tuned to respond - in practise, this means updating one 
+header in kernel.
