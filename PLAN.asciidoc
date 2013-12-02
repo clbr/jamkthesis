@@ -85,8 +85,8 @@ The statistics to be passed will include, at least:
 
 - number of reads
 - number of writes
-- time of last read
-- time of last write
+- time since last read
+- time since last write
 - buffer size
 - ?
 
