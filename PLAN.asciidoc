@@ -3,7 +3,7 @@ Thesis plan
 
 "Using neural networks to measure bo hotness"
 "Hot bo tracking"
-// Find a media-sexy title later.
+Find a media-sexy title later.
 
 Issue
 -----
@@ -79,6 +79,7 @@ Statistics
 ----------
 
 The statistics to be passed will include, at least:
+
 - number of reads
 - number of writes
 - time of last read
@@ -87,6 +88,7 @@ The statistics to be passed will include, at least:
 - ?
 
 In addition, some non-bo numbers will also be passed:
+
 - VRAM size
 - whether the application is full-screen
 - ?
@@ -140,6 +142,7 @@ APUs, from r600 to
 	the other work.
 
 	The following changes are needed:
+
 	- a new ioctl to pass on a buffer's hotness
 	- TTM extended to allow hotness comparisons in addition to LRU
 	- radeon drm extended to detect whether userspace is new enough to use hotness
