@@ -93,7 +93,6 @@ The statistics to be passed will include, at least:
 In addition, some non-bo numbers will also be passed:
 
 - VRAM size
-- whether the application is full-screen
 - ?
 
 
@@ -105,7 +104,8 @@ APUs, from r600 to NI - in other words, hardware supported by r600g.
 
 . Make it possible to gather training data.
 
-	This would be a small Mesa patch to track each bo's creation, read, and write.
+	This would be a small Mesa patch to track each bo's creation, read and write, and 
+	destruction.
 	This data of a recorded workload will then be usable as the AI's training data: for 
 	all collected workloads, try to find the best score.
 
@@ -120,6 +120,7 @@ APUs, from r600 to NI - in other words, hardware supported by r600g.
 . Develop a cost model
 
 	The cost of reads and writes in VRAM and system RAM, plus the cost of a buffer move.
+	The cost of a read or write should not be constant, but based on the buffer's size.
 
 . Develop an integer activation function
 
@@ -146,12 +147,13 @@ APUs, from r600 to NI - in other words, hardware supported by r600g.
 
 	The following changes are needed:
 
-	- a new ioctl to pass on a buffer's hotness
+	- extend the cs ioctl to pass on a buffer's hotness
 	- TTM extended to allow hotness comparisons in addition to LRU
 	- radeon drm extended to detect whether userspace is new enough to use hotness
 	- Mesa extended to keep the desired statistics
 	- Mesa extended to calculate and pass on the hotness value
-
+	- high-priority clients should get preferential treatment
+	- possibly a defragmentation ioctl?
 
 Goals
 -----
@@ -163,3 +165,40 @@ will be relying on the public to provide wide-ranging training data.
 Once the system is developed, tuning the AI can be done at any time. Should new training 
 data appear later on, the AI can be tuned to respond - in practise, this means updating one 
 header in kernel.
+
+
+Concerns
+--------
+
+Possible issues seen so far:
+
+- Transient, but heavy buffer does not get to VRAM
+
+	As an example, the app might create a new FBO each frame, render shadows to it,
+	and destroy it.
+
+	To mitigate this case, the first hotness calculation should happen at the first cs 
+	submission. The cost of doing a full-resolution write to RAM should give the buffer 
+	enough hotness to have it placed in VRAM.
+
+- Texture access patterns cannot be measured
+
+	There doesn't really exist a way to measure the access pattern. A huge texture, but 
+	one that is only read from a small area, is better off in RAM than VRAM, as the 
+	repeated pixels will be in the GPU's cache.
+
+	While the prevalence of such use is not huge, this problem should get some solution.
+
+- Runtime timing back-propagation?
+
+	What we're doing here is optimizing the memory behavior. However, while strongly 
+	correlated, it's not exactly the same as great FPS.
+
+	The possibility of timing each cs submission, and feeding this information back was 
+	proposed. If done, it should also consider not one submission, but the total over 
+	one whole frame.
+
+	The downside to this approach, in addition to its complexity, is that using the 
+	timing as a feedback mechanism might give wrong results entirely. A submission might 
+	be slower for reasons entirely unrelated to this code, and so having the code adjust 
+	its behavior due to the change might cause hard-to-detect regressions in speed.
