@@ -148,12 +148,16 @@ APUs, from r600 to NI - in other words, hardware supported by r600g.
 	The following changes are needed:
 
 	- extend the cs ioctl to pass on a buffer's hotness
-	- TTM extended to allow hotness comparisons in addition to LRU
+	- TTM extended to allow hotness comparisons in addition to LRU?
 	- radeon drm extended to detect whether userspace is new enough to use hotness
 	- Mesa extended to keep the desired statistics
 	- Mesa extended to calculate and pass on the hotness value
 	- high-priority clients should get preferential treatment
 	- possibly a defragmentation ioctl?
+
+	TTM is an open question, as Jerome advises to avoid it and have the logic in Radeon 
+	DRM instead. I asked whether nouveau would benefit, Maarten Lankhorst wasn't sure.
+
 
 Goals
 -----
@@ -202,3 +206,12 @@ Possible issues seen so far:
 	timing as a feedback mechanism might give wrong results entirely. A submission might 
 	be slower for reasons entirely unrelated to this code, and so having the code adjust 
 	its behavior due to the change might cause hard-to-detect regressions in speed.
+
+- Fragmentation
+
+	VRAM fragmentation is an issue. Can this be taken into account in the training?
+
+	My first impression is that the placement to minimize fragmentation should be 
+	separate from the decision of what gets to be in VRAM.
+
+	Perhaps the placing logic is what should be up to TTM?
