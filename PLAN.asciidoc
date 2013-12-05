@@ -88,6 +88,8 @@ The statistics to be passed will include, at least:
 - time since last read
 - time since last write
 - buffer size
+- number of CPU rw
+- time since last CPU op
 - ?
 
 In addition, some non-bo numbers will also be passed:
