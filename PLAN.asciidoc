@@ -217,3 +217,6 @@ Possible issues seen so far:
 	separate from the decision of what gets to be in VRAM.
 
 	Perhaps the placing logic is what should be up to TTM?
+
+	One simple solution might be to create big buffers from one end and small from the
+	other end. This could work fairly well while still being simple.
