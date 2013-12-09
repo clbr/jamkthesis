@@ -90,6 +90,7 @@ The statistics to be passed will include, at least:
 - buffer size
 - number of CPU rw
 - time since last CPU op
+- type of buffer (MSAA, depth are high prio)
 - ?
 
 In addition, some non-bo numbers will also be passed:
