@@ -171,7 +171,7 @@ will be relying on the public to provide wide-ranging training data.
 
 Once the system is developed, tuning the AI can be done at any time. Should new training 
 data appear later on, the AI can be tuned to respond - in practise, this means updating one 
-header in kernel.
+header in Mesa.
 
 
 Concerns
