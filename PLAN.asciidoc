@@ -221,3 +221,7 @@ Possible issues seen so far:
 
 	One simple solution might be to create big buffers from one end and small from the
 	other end. This could work fairly well while still being simple.
+
+- Buffer sharing
+
+	What to do with the dma-buf or otherwise shared bos?
