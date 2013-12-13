@@ -1,0 +1,29 @@
+Optimizing Radeon VRAM behavior
+===============================
+
+Introduction
+------------
+
+AI theory
+---------
+
+Fragmentation
+-------------
+
+Training the network
+--------------------
+
+Cost model
+~~~~~~~~~~
+
+Activation function
+~~~~~~~~~~~~~~~~~~~
+
+Results
+-------
+
+Discussion
+----------
+
+Bibliography
+------------
