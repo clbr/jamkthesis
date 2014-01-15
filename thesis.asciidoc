@@ -174,7 +174,7 @@ or with guidance, and tend to achieve quite decent results. Neural networks have
 applied to problems such as Backgammon (Tesauro 1994), business data mining (Bigus 1996), 
 and text compression (Mahoney 1996) with successful results.
 
-Neural networks come in many varieties. The multilayer perceptron (MLP) is the most common 
+Neural networks come in many varieties. The multi-layer perceptron (MLP) is the most common 
 one, used for classification, modeling, and time-series prediction. The radial basis 
 function network (RBF) shares the same uses. The adaptive resonance 
 theory and Kohonen maps are used for clustering. Recurrent networks are used for extremely 
