@@ -102,7 +102,8 @@ The current strategy used in r600g is a simple LRU (least recently used) list. W
 it can lead to quite a bad user experience in non-trivial cases that exceed the VRAM size. A 
 buffer that is needed next could have been swapped out to system RAM, dropping performance. 
 In the worst case, this creates a ping-pong effect where buffers are constantly moved back 
-and forth, dropping performance to single digits FPS.
+and forth, dropping performance to single digits FPS. (Larabel M. 2012a; Very low FPS when 
+video memory is full (GART & ram <-> vram swapping). 2013)
 
 AI theory
 ---------
@@ -129,6 +130,10 @@ Discussion
 Bibliography
 ------------
 
+Larabel, M. 2012a. Ubuntu 12.10: Open-Source Radeon vs. AMD Catalyst Performance. Phoronix. 
+Retrieved on Jan 15 2013.
+http://www.phoronix.com/scan.php?page=article&item=ubuntu_1210_amdstock&num=3
+
 Larabel, M. 2013a. AMD's Radeon Gallium3D Starts Posing A Threat To Catalyst. Phoronix. 
 Retrieved on Jan 15 2013.
 http://www.phoronix.com/scan.php?page=article&item=amd_catalyst_gallium80
@@ -138,3 +143,7 @@ http://support.amd.com/en-us/kb-articles/Pages/AMDCatalystSoftwareSuiteVersion13
 
 Minimum playable FPS. 2012. Whirlpool forums. Retrieved on Jan 15 2013. 
 http://forums.whirlpool.net.au/archive/1890684
+
+Very low FPS when video memory is full (GART & ram <-> vram swapping). 2013. Freedesktop.org 
+bugzilla. Retrieved on Jan 15 2013.
+https://bugs.freedesktop.org/show_bug.cgi?id=66632
