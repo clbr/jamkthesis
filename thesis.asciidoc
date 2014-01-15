@@ -6,6 +6,9 @@ Glossary
 --------
 
 [glossary]
+AI::
+	Artificial Intelligence.
+
 buffer::
 	A block of memory used for some purpose. For example, a texture.
 
@@ -67,7 +70,7 @@ Vice versa, a smooth FPS of 20 will not stutter, but the throughput is not high 
 an enjoyable experience, as the user will notice individual images instead of the illusion 
 of movement.
 
-Problem definition
+Problem background
 ------------------
 
 The open source graphics drivers on Linux are generally thought of as lower performance, but 
@@ -103,7 +106,55 @@ it can lead to quite a bad user experience in non-trivial cases that exceed the 
 buffer that is needed next could have been swapped out to system RAM, dropping performance. 
 In the worst case, this creates a ping-pong effect where buffers are constantly moved back 
 and forth, dropping performance to single digits FPS. (Larabel 2012a; Very low FPS when 
-video memory is full (GART & ram <-> vram swapping). 2013)
+video memory is full (GART & ram <-> vram swapping) 2013)
+
+Given that the absolute knowledge is not available, the system will have to make do with 
+what is there. For example, the system can keep accurate statistics on the times the 
+application declares it will read from a buffer. Though the system cannot know how much the 
+application will read, it does know the application will read from the buffer. Using this 
+information, it can make a worst-case estimation that the application will read the buffer 
+in full.
+
+Such worst-case estimation will directly improve the minimum FPS; in other words, the 
+smoothness. This has an indirect benefit to performance, but optimal performance will not be 
+reached by these means.
+
+The target of this work is to improve on the current strategy, particularly in the cases 
+that are currently pathological. The improved system may not gain significantly in 
+throughput, but it should gain measurably in smoothness.
+
+Problem definition
+------------------
+
+Knowing what information the system has available, and with the goals in mind, the problem 
+could be defined more clearly.
+
+The component that decides which buffer to place where is separate from the component that 
+has access to accurate statistics. Moving information between these components, the kernel 
+and the userspace, is expensive; therefore the information moved must be minimized.
+
+According to the privilege separation, userspace should not be able to directly decide a 
+placement in memory space, as this could cause security holes. Moving the entire statistics 
+data over would be too expensive. How about ranking the buffers, giving each buffer an 
+importance score?
+
+This limits the information needed to pass to the kernel to one integer per buffer. In 
+addition, the kernel is free to disregard this hint, keeping in line with the separation. 
+Having the relative importance of each buffer known, the kernel should be able to make much 
+better buffer placing decisions than the current LRU strategy.
+
+While giving each buffer a score could certainly be done by the usual programming 
+techniques, linear/weight calculations and a set of if-conditions, it is believed that the 
+relationship of the statistics to the buffer's importance is both non-linear and hard to 
+model manually.
+
+Given this assumption, it is likely that such a manual method would not do well in many 
+cases, and it would be constantly tweaked to accomodate newly discovered pathological cases. 
+There is no existing model, and no single right answer to the question "how important is
+this buffer?".
+
+The mainstream solution to solving non-linear, unknown models like that (also known as 
+modeling or regression problems) is to use AI solutions such as neural networks.
 
 AI theory
 ---------
