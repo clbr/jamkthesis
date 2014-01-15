@@ -1,6 +1,14 @@
 Optimizing Radeon VRAM behavior
 ===============================
 
+[glossary]
+Glossary
+--------
+
+[glossary]
+foo::
+	It's a foo
+
 Introduction
 ------------
 
@@ -25,5 +33,9 @@ Results
 Discussion
 ----------
 
+[bibliography]
 Bibliography
 ------------
+
+[bibliography]
+- foo
