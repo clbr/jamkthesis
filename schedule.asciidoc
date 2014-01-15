@@ -13,7 +13,7 @@ Weeks 1-3
 - Gather training data myself as well
 
 .Doc
-- Write the intro and AI theory chapters
+- Write the intro and AI theory chapters (done)
 
 Week 4
 ------
