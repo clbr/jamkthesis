@@ -34,6 +34,9 @@ r600g::
 RAM::
 	Random Access Memory, a type of computer memory.
 
+squirrel::
+	A small, furry creature.
+
 texture::
 	A buffer consisting of image data.
 
@@ -191,6 +194,37 @@ There are many ways to train a MLP neural network. The algorithms are usually di
 four: supervised, unsupervised, competitive, and reinforcement learning (Siddique & Adeli 
 2013).
 
+Supervised learning is used when you have clearly labeled test data. For example, if the 
+task was to detect if a picture contains a squirrel, you would feed in sets of pictures of 
+both squirrels and non-squirrels, each labeled by a human on whether it contains a squirrel. 
+Then the network's guesses are compared to the labels, and corrected until the network can 
+correctly determine whether a picture contains a small, furry creature or not.
+
+In unsupervised learning, the network is not told anything about the data. It's used mainly 
+in clustering problems, where the clusters are not defined beforehand. For example, the 
+network may be fed customer data, and asked to segment customers into four classes. Studying 
+the decisions it made can be very useful in finding new or undervalued customer segments.
+
+Competitive learning is used in classification problems mainly. Only the neuron that "wins" 
+the round, in other words whose guess was closest to correct, gets to be tweaked. This 
+results in each neuron specializing to a specific type of input.
+
+Reinforcement learning is used in stateful problems, where each action may not be graded 
+alone, but only the full path of actions may be graded. For example, the Backgammon network 
+of Tesauro (1994) used this method.
+
+Alternative methods for tweaking the network instead of training it include genetic and 
+evolutionary methods.
+
+In the VRAM strategy case the seemingly only option would be reinforcement learning. 
+Supervised learning cannot be used, as a human cannot give any buffer an importance score; 
+unsupervised and competitive learning do not apply in modeling problems. However, 
+reinforcement learning is not a good fit for modeling problems (Wiering, Hasselt, Pietersma, 
+& Schomaker 2011). Wiering et al found that while reinforcement learning can be applied to 
+such problems, and the result performs on par with a network trained by supervised learning, 
+the training was slow, and there is no guarantee that the network will not get stuck in 
+local minima.
+
 Fragmentation
 -------------
 
@@ -241,3 +275,8 @@ Neural Computation 6, 2 (March 1994)
 Very low FPS when video memory is full (GART & ram <-> vram swapping). 2013. FreeDesktop.org 
 Bugzilla. Retrieved on Jan 15 2013.
 https://bugs.freedesktop.org/show_bug.cgi?id=66632
+
+Wiering, M., Hasselt, H., Pietersma A.-D., Schomaker, L. 2011. Reinforcement Learning 
+Algorithms for solving Classification Problems. Adaptive Dynamic Programming And 
+Reinforcement Learning, 2011 IEEE Symposium
+
