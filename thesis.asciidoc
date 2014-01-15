@@ -7,7 +7,7 @@ Glossary
 
 [glossary]
 buffer::
-	A block of memory used for some purpose.
+	A block of memory used for some purpose. For example, a texture.
 
 Catalyst::
 	AMD's proprietary graphics driver.
@@ -21,12 +21,18 @@ Frame time::
 Linux::
 	An open-source operating system
 
+mipmapping::
+	A technique of accessing pre-scaled versions of a texture.
+
 r600g::
 	The open-source Gallium3D graphics driver responsible for Radeon HD 2000 - HD6000 
 	models.
 
 RAM::
 	Random Access Memory, a type of computer memory.
+
+texture::
+	A buffer consisting of image data.
 
 VRAM::
 	Video RAM, fast on-board memory included on graphics cards.
@@ -76,7 +82,21 @@ is within 60% - 110% of the Catalyst driver, generally around 80%.
 One of the remaining areas yet to be optimized is the VRAM placing strategy. In this 
 thesis, research will be done on improving this area of the r600g driver.
 
+There are some practical constraints that the solution will need to abide by. First, there 
+is no central location with a holistic view of everything that happens on the graphics card. 
+Secondly, the run-time performance of the strategy itself must be adequate. It may have to 
+make thousands of decisions per second; having performance go down because the computer is 
+thinking on how to improve performance would be counterproductive.
 
+A perfect solution would know everything that goes on in the system. It could predict 
+exactly what the application will do next, and in what way does it access each buffer. 
+Sadly, either of those is a luxury not available in the real world.
+
+While recording the way the application accesses each buffer is possible in theory, this 
+would incur more overhead than could be gained. Thus, the strategy is limited to considering 
+worst-case possibilities, and has to make decisions as if the application would use each 
+buffer fully. In practice, many buffers are not fully read or written, but only parts of 
+them are used, for example due to mipmapping.
 
 AI theory
 ---------
