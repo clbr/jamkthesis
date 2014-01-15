@@ -76,7 +76,7 @@ is a result of the bar for quality in public work; each new version of a proprie
 generally includes many application-specific changes (Catalyst 13.1 release notes, 2013).
 
 Recent advances in optimization have brought the r600g driver close to competing with the 
-proprietary Catalyst driver (Larabel, M. 2013a). Depending on the benchmark and hardware, it 
+proprietary Catalyst driver (Larabel 2013a). Depending on the benchmark and hardware, it 
 is within 60% - 110% of the Catalyst driver, generally around 80%.
 
 One of the remaining areas yet to be optimized is the VRAM placing strategy. In this 
@@ -102,7 +102,7 @@ The current strategy used in r600g is a simple LRU (least recently used) list. W
 it can lead to quite a bad user experience in non-trivial cases that exceed the VRAM size. A 
 buffer that is needed next could have been swapped out to system RAM, dropping performance. 
 In the worst case, this creates a ping-pong effect where buffers are constantly moved back 
-and forth, dropping performance to single digits FPS. (Larabel M. 2012a; Very low FPS when 
+and forth, dropping performance to single digits FPS. (Larabel 2012a; Very low FPS when 
 video memory is full (GART & ram <-> vram swapping). 2013)
 
 AI theory
