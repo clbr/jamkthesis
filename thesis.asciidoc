@@ -6,11 +6,38 @@ Glossary
 --------
 
 [glossary]
-foo::
-	It's a foo
+buffer::
+	A block of memory used for some purpose.
+
+FPS::
+	Frames per second, a common performance metric.
+
+Frame time::
+	The inverse of FPS, ie. (milli)seconds per frame.
+
+RAM::
+	Random Access Memory, a type of computer memory.
+
+VRAM::
+	Video RAM, fast on-board memory included on graphics cards.
 
 Introduction
 ------------
+
+Graphics cards carry some fast, dedicated memory (VRAM). This memory is used to speed up 
+tasks such as rendering or parallel computations, by avoiding the latency in having the 
+graphics card access the system memory.
+
+VRAM is a limited resource, and as such, all workloads may not fit in a given graphics 
+card. In a situation like that, the strategy that decides what parts of the working set to 
+keep in VRAM, and which parts can be kept in regular system RAM, is of utmost importance.
+
+If the application needs to access a specific resource in system RAM, it will have a 
+corresponding hit in its performance. The VRAM placement strategy should try to rank the 
+application's buffers in such a way to maximize the application's performance.
+
+Application performance is commonly measured in two ways: throughput (FPS, frames per 
+second) and responsiveness (how stable the FPS is).
 
 AI theory
 ---------
