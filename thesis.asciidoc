@@ -37,7 +37,19 @@ corresponding hit in its performance. The VRAM placement strategy should try to 
 application's buffers in such a way to maximize the application's performance.
 
 Application performance is commonly measured in two ways: throughput (FPS, frames per 
-second) and responsiveness (how stable the FPS is).
+second) and responsiveness (how stable the FPS is). For a good user experience, they both 
+must be above some user-dependent threshold.
+
+There are no generally accepted guidelines, as the minimum for an acceptable experience is 
+quite subjective. However, many people place the line at 60 FPS with a minimum FPS of 55.
+(Minimum playable FPS, 2012)
+
+Both throughput and smoothness must be above the user's minimum requirements, one alone will 
+not suffice. For example, a game running at a healthy throughput of 60 FPS, but dipping to 
+10 FPS once per second will be extremely irritating, perceived as stalling or stuttering. 
+Vice versa, a smooth FPS of 20 will not stutter, but the throughput is not high enough for 
+an enjoyable experience, as the user will notice individual images instead of the illusion 
+of movement.
 
 AI theory
 ---------
@@ -64,5 +76,5 @@ Discussion
 Bibliography
 ------------
 
-[bibliography]
-- foo
+Minimum playable FPS. 2012. Whirlpool forums. Retrieved on Jan 15 2013. 
+http://forums.whirlpool.net.au/archive/1890684
