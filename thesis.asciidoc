@@ -56,7 +56,7 @@ corresponding hit in its performance. The VRAM placement strategy should try to 
 application's buffers in such a way to maximize the application's performance.
 
 Application performance is commonly measured in two ways: throughput (FPS, frames per 
-second) and responsiveness (how stable the FPS is). For a good user experience, they both 
+second) and smoothness (how stable the FPS is). For a good user experience, they both 
 must be above some user-dependent threshold.
 
 There are no generally accepted guidelines, as the minimum for an acceptable experience is 
