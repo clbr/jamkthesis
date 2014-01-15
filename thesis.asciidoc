@@ -86,6 +86,9 @@ Recent advances in optimization have brought the r600g driver close to competing
 proprietary Catalyst driver (Larabel 2013a). Depending on the benchmark and hardware, it 
 is within 60% - 110% of the Catalyst driver, generally around 80%.
 
+.Warsow benchmark at 2560x1600
+image::pics/warsow.png[]
+
 One of the remaining areas yet to be optimized is the VRAM placing strategy. In this 
 thesis, research will be done on improving this area of the r600g driver.
 
