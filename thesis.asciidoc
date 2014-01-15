@@ -149,7 +149,7 @@ relationship of the statistics to the buffer's importance is both non-linear and
 model manually.
 
 Given this assumption, it is likely that such a manual method would not do well in many 
-cases, and it would be constantly tweaked to accomodate newly discovered pathological cases. 
+cases, and it would be constantly tweaked to accommodate newly discovered pathological cases. 
 There is no existing model, and no single right answer to the question "how important is
 this buffer?".
 
@@ -195,6 +195,6 @@ http://support.amd.com/en-us/kb-articles/Pages/AMDCatalystSoftwareSuiteVersion13
 Minimum playable FPS. 2012. Whirlpool forums. Retrieved on Jan 15 2013. 
 http://forums.whirlpool.net.au/archive/1890684
 
-Very low FPS when video memory is full (GART & ram <-> vram swapping). 2013. Freedesktop.org 
-bugzilla. Retrieved on Jan 15 2013.
+Very low FPS when video memory is full (GART & ram <-> vram swapping). 2013. FreeDesktop.org 
+Bugzilla. Retrieved on Jan 15 2013.
 https://bugs.freedesktop.org/show_bug.cgi?id=66632
