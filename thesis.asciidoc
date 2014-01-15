@@ -160,6 +160,17 @@ modeling or regression problems) is to use AI solutions such as neural networks.
 AI theory
 ---------
 
+There are many approaches to artificial intelligence. What is common to all of them is the 
+ability to make decisions the computer was not told explicitly how to do. They differ in 
+their areas of usability, theoretic foundations, whether they are based on real biological 
+phenomena, and other ways.
+
+One such approach is the neural network. Invented in the 60's, it mimicks the 
+biological brain cells. Such networks are able to generalize, to learn either independently 
+or with guidance, and tend to achieve quite decent results. Neural networks have been 
+applied to problems such as Backgammon (Tesauro 1994), business data mining (Bigus 1996), 
+and text compression (Mahoney 1996) with successful results.
+
 Fragmentation
 -------------
 
@@ -182,6 +193,11 @@ Discussion
 Bibliography
 ------------
 
+Bigus, J. 1996. Data Mining with Neural Networks. 1st ed. Indiana: McGraw-Hill.
+
+Catalyst 13.1 release notes. 2013. AMD Knowledge Base. Retrieved on Jan 15 2013.
+http://support.amd.com/en-us/kb-articles/Pages/AMDCatalystSoftwareSuiteVersion131.aspx
+
 Larabel, M. 2012a. Ubuntu 12.10: Open-Source Radeon vs. AMD Catalyst Performance. Phoronix. 
 Retrieved on Jan 15 2013.
 http://www.phoronix.com/scan.php?page=article&item=ubuntu_1210_amdstock&num=3
@@ -190,11 +206,14 @@ Larabel, M. 2013a. AMD's Radeon Gallium3D Starts Posing A Threat To Catalyst. Ph
 Retrieved on Jan 15 2013.
 http://www.phoronix.com/scan.php?page=article&item=amd_catalyst_gallium80
 
-Catalyst 13.1 release notes. 2013. AMD Knowledge Base. Retrieved on Jan 15 2013.
-http://support.amd.com/en-us/kb-articles/Pages/AMDCatalystSoftwareSuiteVersion131.aspx
+Mahoney, M. 1996. Fast text compression with neural networks. Proceedings of the Thirteenth 
+International Florida Artificial Intelligence Research Society Conference.
 
 Minimum playable FPS. 2012. Whirlpool forums. Retrieved on Jan 15 2013. 
 http://forums.whirlpool.net.au/archive/1890684
+
+Tesauro, G. 1994. TD-Gammon, a Self-Teaching Backgammon Program, Achieves Master-Level Play. 
+Neural Computation 6, 2 (March 1994)
 
 Very low FPS when video memory is full (GART & ram <-> vram swapping). 2013. FreeDesktop.org 
 Bugzilla. Retrieved on Jan 15 2013.
