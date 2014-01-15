@@ -187,7 +187,7 @@ theory network and Kohonen maps are used for clustering. Recurrent networks are 
 extremely complex modeling problems. (Bigus 1996, p. 77)
 
 .Multi-layer perceptron
-image::pics/mlp.png[]
+image::pics/mlp.png[scaledwidth="75%"]
 
 As the problem here is a modeling one, this narrows the choice to MLP, RBF or recurrent. 
 
