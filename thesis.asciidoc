@@ -151,8 +151,8 @@ model manually.
 
 Given this assumption, it is likely that such a manual method would not do well in many 
 cases, and it would be constantly tweaked to accommodate newly discovered pathological cases. 
-There is no existing model, and no single right answer to the question "how important is
-this buffer?".
+There is no existing model for a buffer's importance, and no single right answer to the 
+question "how important is this buffer?".
 
 The mainstream solution to solving non-linear, unknown models like that (also known as 
 modeling or regression problems) is to use AI solutions such as neural networks.
