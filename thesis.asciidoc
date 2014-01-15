@@ -171,6 +171,22 @@ or with guidance, and tend to achieve quite decent results. Neural networks have
 applied to problems such as Backgammon (Tesauro 1994), business data mining (Bigus 1996), 
 and text compression (Mahoney 1996) with successful results.
 
+Neural network come in many varieties. The multilayer perceptron (MLP) is the most common 
+one, used for classification, modeling, and time-series prediction. The radial basis 
+function network (RBF) shares the same uses. The adaptive resonance 
+theory and Kohonen maps are used for clustering. Recurrent networks are used for extremely 
+complex modeling problems. (Bigus 1996, p. 77)
+
+As the problem here is a modeling one, this narrows the choice to MLP, RBF or recurrent. 
+
+Recurrent networks are generally hard to train, and their runtime performance is not 
+deterministic: they may take ten or hundred times longer to make a decision compared to 
+another. This rules that model out.
+
+The choice between MLP and RBF is somewhat arbitrary. RBF is said to ignore outliers better, 
+while MLP is said to perform better. MLP is also covered more in literature. MLP was chosen 
+here for the literature availability.
+
 Fragmentation
 -------------
 
