@@ -7,7 +7,7 @@ Weeks 1-3
 ---------
 
 .Work
-- Research the state of the art in neural networks
+- Research the state of the art in neural networks (done)
 - Add statistics gathering and data gathering functions to Mesa (done)
 - Once the gathering is widely available, publicly request traces (done)
 - Gather training data myself as well
