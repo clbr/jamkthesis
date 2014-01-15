@@ -9,11 +9,21 @@ Glossary
 buffer::
 	A block of memory used for some purpose.
 
+Catalyst::
+	AMD's proprietary graphics driver.
+
 FPS::
 	Frames per second, a common performance metric.
 
 Frame time::
 	The inverse of FPS, ie. (milli)seconds per frame.
+
+Linux::
+	An open-source operating system
+
+r600g::
+	The open-source Gallium3D graphics driver responsible for Radeon HD 2000 - HD6000 
+	models.
 
 RAM::
 	Random Access Memory, a type of computer memory.
@@ -51,6 +61,22 @@ Vice versa, a smooth FPS of 20 will not stutter, but the throughput is not high 
 an enjoyable experience, as the user will notice individual images instead of the illusion 
 of movement.
 
+Problem definition
+------------------
+
+The open source graphics drivers on Linux are generally thought of as lower performance, but 
+higher stability, than the proprietary drivers provided by the graphics card companies. This 
+is a result of the bar for quality in public work; each new version of a proprietary driver 
+generally includes many application-specific changes (Catalyst 13.1 release notes, 2013).
+
+Recent advances in optimization have brought the r600g driver close to competing with the 
+proprietary Catalyst driver (AMD's Radeon Gallium3D Starts Posing A Threat To Catalyst, 
+2013). Depending on the benchmark and hardware, it is within 60% - 110% of the Catalyst 
+driver, generally around 80%.
+
+One of the remaining areas yet to be optimized is the VRAM placing strategy. In this 
+thesis, research will be done on improving this area of the r600g driver.
+
 AI theory
 ---------
 
@@ -75,6 +101,13 @@ Discussion
 [bibliography]
 Bibliography
 ------------
+
+AMD's Radeon Gallium3D Starts Posing A Threat To Catalyst. 2013. Phoronix. Retrieved on Jan 
+15 2013.
+http://www.phoronix.com/scan.php?page=article&item=amd_catalyst_gallium80
+
+Catalyst 13.1 release notes. 2013. AMD Knowledge Base. Retrieved on Jan 15 2013.
+http://support.amd.com/en-us/kb-articles/Pages/AMDCatalystSoftwareSuiteVersion131.aspx
 
 Minimum playable FPS. 2012. Whirlpool forums. Retrieved on Jan 15 2013. 
 http://forums.whirlpool.net.au/archive/1890684
