@@ -28,7 +28,7 @@ mipmapping::
 	A technique of accessing pre-scaled versions of a texture.
 
 r600g::
-	The open-source Gallium3D graphics driver responsible for Radeon HD 2000 - HD6000 
+	The open-source Gallium3D graphics driver responsible for Radeon HD 2000 - HD 6000 
 	models.
 
 RAM::
