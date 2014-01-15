@@ -98,6 +98,12 @@ worst-case possibilities, and has to make decisions as if the application would 
 buffer fully. In practice, many buffers are not fully read or written, but only parts of 
 them are used, for example due to mipmapping.
 
+The current strategy used in r600g is a simple LRU (least recently used) list. While simple, 
+it can lead to quite bad user experience in non-trivial cases that exceed the VRAM size. A 
+buffer that is needed next could have been swapped out to system RAM, dropping performance. 
+In the worst case, this creates a ping-pong effect where buffers are constantly moved back 
+and forth, dropping performance to single digits FPS.
+
 AI theory
 ---------
 
