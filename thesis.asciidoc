@@ -225,6 +225,9 @@ such problems, and the result performs on par with a network trained by supervis
 the training was slow, and there is no guarantee that the network will not get stuck in 
 local minima.
 
+It was decided to first attempt a Monte-Carlo method, and should that not produce 
+satisfactory results, evolutionary training.
+
 Fragmentation
 -------------
 
