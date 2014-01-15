@@ -187,6 +187,10 @@ The choice between MLP and RBF is somewhat arbitrary. RBF is said to ignore outl
 while MLP is said to perform better. MLP is also covered more in literature. MLP was chosen 
 here for the literature availability.
 
+There are many ways to train a MLP neural network. The algorithms are usually divided into 
+four: supervised, unsupervised, competitive, and reinforcement learning (Siddique & Adeli 
+2013).
+
 Fragmentation
 -------------
 
@@ -227,6 +231,9 @@ International Florida Artificial Intelligence Research Society Conference.
 
 Minimum playable FPS. 2012. Whirlpool forums. Retrieved on Jan 15 2013. 
 http://forums.whirlpool.net.au/archive/1890684
+
+Siddique, N., Adeli, H. 2013. Synergies of fuzzy logic, neural networks and evolutionary 
+computing. 1st ed. UK: John Wiley & Sons.
 
 Tesauro, G. 1994. TD-Gammon, a Self-Teaching Backgammon Program, Achieves Master-Level Play. 
 Neural Computation 6, 2 (March 1994)
