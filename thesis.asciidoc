@@ -186,6 +186,9 @@ function network (RBF) shares the same uses. The adaptive resonance
 theory network and Kohonen maps are used for clustering. Recurrent networks are used for 
 extremely complex modeling problems. (Bigus 1996, p. 77)
 
+.Multi-layer perceptron
+image::pics/mlp.png[]
+
 As the problem here is a modeling one, this narrows the choice to MLP, RBF or recurrent. 
 
 Recurrent networks are generally hard to train, and their runtime performance is not 
