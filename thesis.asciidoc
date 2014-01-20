@@ -259,7 +259,8 @@ so that the cache doesn't give out the old, wrong addresses.
 
 However, with current graphics cards this is not an option. The page tables reside in VRAM, 
 so accessing them on the main processor incurs heavy delays due to having to wait for the 
-GPU to finish its current work, plus the PCI-E bus latency. The delay caused by a VRAM 
+graphics card to finish its current work, plus the PCI-E bus latency. The delay caused by a 
+VRAM 
 memory compaction operation may be measured in tens of milliseconds in the worst case, which 
 would be unacceptable stutter to the user.
 
