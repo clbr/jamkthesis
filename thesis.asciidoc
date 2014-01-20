@@ -183,7 +183,7 @@ and text compression (Mahoney 1996) with success.
 Neural networks come in many varieties. The multi-layer perceptron (MLP) is the most common 
 one, used for classification, modeling, and time-series prediction. The radial basis 
 function network (RBF) shares the same uses. The adaptive resonance 
-theory network and Kohonen maps are used for clustering. Recurrent networks are used for 
+theory network and Kohonen map are used for clustering. Recurrent networks are used for 
 extremely complex modeling problems. (Bigus 1996, p. 77)
 
 .Multi-layer perceptron
