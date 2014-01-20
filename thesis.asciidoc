@@ -77,7 +77,7 @@ of movement.
 image::pics/frametime.png[]
 
 Problem background
-------------------
+~~~~~~~~~~~~~~~~~~
 
 The open source graphics drivers on Linux are generally thought of as lower performance, but 
 higher stability, than the proprietary drivers provided by the graphics card companies. This 
@@ -134,7 +134,7 @@ that are currently pathological. The improved system may not gain significantly 
 throughput, but it should gain measurably in smoothness.
 
 Problem definition
-------------------
+~~~~~~~~~~~~~~~~~~
 
 Knowing what information the system has available, and with the goals in mind, the problem 
 could be defined more clearly.
