@@ -273,7 +273,7 @@ only draw shadows every other frame, or less often; this causes those frames to 
 than the frames without such extra work. Yet, the user will notice if every Nth frame is 
 too slow. It remains to be seen whether this level of accuracy is good; other choices beside 
 the frame number include thresholds determined by common user studies (10 ms, 30 ms, 60 ms, 
-100 ms...)
+100 ms...) or non-linear scaling.
 
 To enable those inputs to be replayed, the memory traces listed each operation on a buffer 
 along with timing information.
@@ -290,7 +290,7 @@ better than that of XZ applied on the text form, by a variable amount (1.5 to 12
 The compression ratio compared to uncompressed text varied from 150x to 1300x. It 
 allows fast reading for the training and fragmentation simulation applications.
 
-Some helper applications were also developed to make it nicer to work with. The picture 
+Some helper applications were also developed to make it nicer to work with. Figure 4 
 above is from one such helper: a reader for the format with color highlighting.
 
 Fragmentation
