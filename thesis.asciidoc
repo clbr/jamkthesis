@@ -238,6 +238,18 @@ local minima.
 It was decided to first attempt a Monte-Carlo method, and should that not produce 
 satisfactory results, evolutionary training.
 
+Data gathering
+--------------
+
+All further steps required data. In the first weeks, the needed data points were planned 
+out, and the data gathering was implemented as patches to Mesa. Since it was clear from the 
+start that wide coverage would be needed, the public was asked for assistance (Kasanen 2014; 
+Dawe 2014).
+
+In addition to data gathered by the researcher, the public sent a wide variety of traces, 
+enhancing the coverage much further than would have been possible otherwise. The researcher 
+would like to thank all contributors.
+
 Fragmentation
 -------------
 
@@ -296,6 +308,14 @@ http://support.amd.com/en-us/kb-articles/Pages/AMDCatalystSoftwareSuiteVersion13
 
 Corbet, J. 2010. Memory compaction. Retrieved on Jan 20 2013.
 http://lwn.net/Articles/368869/
+
+Dawe, L. 2014. Help Make Open Source AMD Graphics Drivers Better. Gaming on Linux. Retrieved 
+on 20 Jan 2013.
+http://www.gamingonlinux.com/articles/help-make-open-source-amd-graphics-drivers-better.2938
+
+Kasanen, L. 2014. Radeon VRAM Optimizations Coming, But Help Is Needed. Phoronix. Retrieved 
+on Jan 20 2013.
+http://www.phoronix.com/scan.php?page=news_item&px=MTU2Nzk
 
 Larabel, M. 2012a. Ubuntu 12.10: Open-Source Radeon vs. AMD Catalyst Performance. Phoronix. 
 Retrieved on Jan 15 2013.
