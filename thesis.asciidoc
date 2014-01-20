@@ -343,6 +343,9 @@ the VRAM space, based on the assumptions that smaller buffers are recycled more 
 large ones, and that recycling of each type would then only create fragmentation of the same 
 type.
 
+.Allocation strategies.
+image::pics/allocations.png[scaledwidth="75%"]
+
 Nine common VRAM sizes were tested: 64 mb, 128 mb, 256 mb, 384 mb, 512 mb, 1024 mb, 1536 mb,
 2048 mb, and 4096 mb. In cases where the trace couldn't run on a configuration, that trace 
 was skipped. For example, Planetary Annihilation allocated a buffer of 78 mb in size; it is 
