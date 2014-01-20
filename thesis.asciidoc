@@ -247,6 +247,9 @@ size of a new allocation, and so buffers bigger than this also cannot be moved t
 footnote:[The very latest generation, HD 7000, can use non-continuous memory areas with 
 small overhead, so this issue is not as pressing there.]
 
+An example of the effects is reported by Larabel (2013b). Big buffer allocations were 
+failing due to fragmentation, causing the application to misrender and/or crash.
+
 .Fragmentation
 image::pics/fragmentation.png[scaledwidth="75%"]
 
@@ -301,6 +304,10 @@ http://www.phoronix.com/scan.php?page=article&item=ubuntu_1210_amdstock&num=3
 Larabel, M. 2013a. AMD's Radeon Gallium3D Starts Posing A Threat To Catalyst. Phoronix. 
 Retrieved on Jan 15 2013.
 http://www.phoronix.com/scan.php?page=article&item=amd_catalyst_gallium80
+
+Larabel, M. 2013b. CS Memory Accounting For Radeon Gallium3D. Phoronix. Retrieved on Jan 20 
+2013.
+http://www.phoronix.com/scan.php?page=news_item&px=MTI4OTM
 
 Liu, J., Gader, P. D. 2000. Outlier Rejection with MLPs and Variants of RBF Networks.
 International Conference on Pattern Recognition pp. 2680-2683.
