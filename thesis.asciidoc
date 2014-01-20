@@ -195,7 +195,8 @@ Recurrent networks are generally hard to train, and their runtime performance is
 deterministic: they may take ten or hundred times longer to make a decision compared to 
 another. This rules that model out.
 
-The choice between MLP and RBF is somewhat arbitrary. RBF is said to ignore outliers better, 
+The choice between MLP and RBF is somewhat arbitrary. Liu and Gader (2000) found that RBF 
+ignores outliers better, 
 while MLP is said to perform better. MLP is also covered more in literature. MLP was chosen 
 here for the literature availability.
 
@@ -271,6 +272,9 @@ http://www.phoronix.com/scan.php?page=article&item=ubuntu_1210_amdstock&num=3
 Larabel, M. 2013a. AMD's Radeon Gallium3D Starts Posing A Threat To Catalyst. Phoronix. 
 Retrieved on Jan 15 2013.
 http://www.phoronix.com/scan.php?page=article&item=amd_catalyst_gallium80
+
+Liu, J., Gader, P. D. 2000. Outlier Rejection with MLPs and Variants of RBF Networks.
+International Conference on Pattern Recognition pp. 2680-2683.
 
 Mahoney, M. 1996. Fast text compression with neural networks. Proceedings of the Thirteenth 
 International Florida Artificial Intelligence Research Society Conference.
