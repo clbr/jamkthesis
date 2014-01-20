@@ -325,6 +325,32 @@ VRAM
 memory compaction operation may be measured in tens of milliseconds in the worst case, which 
 would be unacceptable stutter to the user.
 
+Simulation
+~~~~~~~~~~
+
+In order to measure fragmentation in different situations, a simulator was developed. It 
+replays the collected memory traces while simulating the VRAM placement using the existing 
+LRU strategy. The results will not apply directly to other placing strategies, but they will 
+be indicative of general trends regardless of the placing strategy.
+
+The simulator took snapshots of the VRAM state once per every ten memory operations, and 
+counted the amount of holes (fragmentation). It also printed a marker every time an eviction 
+was triggered.
+
+Two different allocation strategies were tested. The default allocator allocates buffers 
+from the start of VRAM. The proposed min-max allocator allocates buffers from two ends of 
+the VRAM space, based on the assumptions that smaller buffers are recycled more often than 
+large ones, and that recycling of each type would then only create fragmentation of the same 
+type.
+
+Nine common VRAM sizes were tested: 64 mb, 128 mb, 256 mb, 384 mb, 512 mb, 1024 mb, 1536 mb,
+2048 mb, and 4096 mb. In cases where the trace couldn't run on a configuration, that trace 
+was skipped. For example, Planetary Annihilation allocated a buffer of 78 mb in size; it is 
+obviously beyond the capabilities of a 64 mb VRAM graphics card.
+
+Several threshold values were tested for the min-max allocator in order to find a rough 
+optimum.
+
 Training the network
 --------------------
 
