@@ -263,6 +263,18 @@ selected as inputs:
 - whether the buffer should be considered high priority (MSAA, depth)
 - VRAM size
 
+Timing information was set at millisecond accuracy. A time measurement was chosen instead of 
+the frame number, because it ought to allow for a better user experience. Should frames take 
+long, inter-frame swapping should be minimized. Should frames be fast (< 10 ms / frame), 
+timing is good as well, since the user experience works on longer timescales.
+
+A game might 
+only draw shadows every other frame, or less often; this causes those frames to take longer 
+than the frames without such extra work. Yet, the user will notice if every Nth frame is 
+too slow. It remains to be seen whether this level of accuracy is good; other choices beside 
+the frame number include thresholds determined by common user studies (10 ms, 30 ms, 60 ms, 
+100 ms...)
+
 To enable those inputs to be replayed, the memory traces listed each operation on a buffer 
 along with timing information.
 
