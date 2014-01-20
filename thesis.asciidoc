@@ -178,7 +178,7 @@ One such approach is the neural network. Invented in the 60's, it mimics the
 biological brain cells. Such networks are able to generalize, to learn either independently 
 or with guidance, and tend to achieve quite decent results. Neural networks have been 
 applied to problems such as Backgammon (Tesauro 1994), business data mining (Bigus 1996), 
-and text compression (Mahoney 1996) with successful results.
+and text compression (Mahoney 1996) with success.
 
 Neural networks come in many varieties. The multi-layer perceptron (MLP) is the most common 
 one, used for classification, modeling, and time-series prediction. The radial basis 
