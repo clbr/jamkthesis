@@ -250,6 +250,24 @@ In addition to data gathered by the researcher, the public sent a wide variety o
 enhancing the coverage much further than would have been possible otherwise. The researcher 
 would like to thank all contributors.
 
+To get suitable data for the purposes of this research, the following data points were 
+selected as inputs:
+
+- number of reads
+- number of writes
+- time since last read
+- time since last write
+- buffer size
+- number of processor operations
+- time since last processor operation
+- whether the buffer should be considered high priority (MSAA, depth)
+
+To enable those inputs to be replayed, the memory traces listed each operation on a buffer 
+along with timing information.
+
+.Sample from a memory trace
+image::pics/trace.png[]
+
 Fragmentation
 -------------
 
