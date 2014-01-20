@@ -261,6 +261,7 @@ selected as inputs:
 - number of processor operations
 - time since last processor operation
 - whether the buffer should be considered high priority (MSAA, depth)
+- VRAM size
 
 To enable those inputs to be replayed, the memory traces listed each operation on a buffer 
 along with timing information.
