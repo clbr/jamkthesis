@@ -241,6 +241,12 @@ satisfactory results, evolutionary training.
 Fragmentation
 -------------
 
+Fragmentation is a common problem in all memory management. As buffers get allocated, moved 
+around, and deleted, the memory space becomes increasingly fragmented.
+
+.Fragmentation
+image::pics/fragmentation.png[scaledwidth="75%"]
+
 Training the network
 --------------------
 
