@@ -242,7 +242,10 @@ Fragmentation
 -------------
 
 Fragmentation is a common problem in all memory management. As buffers get allocated, moved 
-around, and deleted, the memory space becomes increasingly fragmented.
+around, and deleted, the memory space becomes increasingly fragmented. It limits the maximum 
+size of a new allocation, and so buffers bigger than this also cannot be moved to VRAM.
+footnote:[The very latest generation, HD 7000, can use non-continous memory areas with 
+small overhead, so this issue is not as pressing there.]
 
 .Fragmentation
 image::pics/fragmentation.png[scaledwidth="75%"]
