@@ -247,6 +247,22 @@ around, and deleted, the memory space becomes increasingly fragmented.
 .Fragmentation
 image::pics/fragmentation.png[scaledwidth="75%"]
 
+Fragmentation is an inevitable result of continued use. It can be mitigated by smart 
+allocation strategies, and it can be repaired after the fact by moving the used buffers 
+together (constraints allowing).
+
+In normal system RAM, both strategies are viable. Cleaning up the memory area, also known as 
+compaction (Corbet 2010), can be fairly low-impact to performance. It only involves 
+freezing the process, and changing some page table entries, which is a relatively fast 
+operation. The downside is that a TLB (translation look-aside buffer) cache flush is needed 
+so that the cache doesn't give out the old, wrong addresses.
+
+However, with current graphics cards this is not an option. The page tables reside in VRAM, 
+so accessing them on the main processor incurs heavy delays due to having to wait for the 
+GPU to finish its current work, plus the PCI-E bus latency. The delay caused by a VRAM 
+memory compaction operation may be measured in tens of milliseconds in the worst case, which 
+would be unacceptable stutter to the user.
+
 Training the network
 --------------------
 
@@ -270,6 +286,9 @@ Bigus, J. 1996. Data Mining with Neural Networks. 1st ed. Indiana: McGraw-Hill.
 
 Catalyst 13.1 release notes. 2013. AMD Knowledge Base. Retrieved on Jan 15 2013.
 http://support.amd.com/en-us/kb-articles/Pages/AMDCatalystSoftwareSuiteVersion131.aspx
+
+Corbet, J. 2010. Memory compaction. Retrieved on Jan 20 2013.
+http://lwn.net/Articles/368869/
 
 Larabel, M. 2012a. Ubuntu 12.10: Open-Source Radeon vs. AMD Catalyst Performance. Phoronix. 
 Retrieved on Jan 15 2013.
