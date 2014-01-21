@@ -352,7 +352,8 @@ was skipped. For example, Planetary Annihilation allocated a buffer of 78 mb in 
 obviously beyond the capabilities of a 64 mb VRAM graphics card.
 
 Several threshold values were tested for the min-max allocator in order to find a rough 
-optimum.
+optimum. The simulation took approximately 2.5 hours per run, and each run generated about 
+16 gb of data.
 
 Training the network
 --------------------
