@@ -356,6 +356,33 @@ optimum. The simulation took approximately 2.5 hours per run, and each run gener
 16 gb of data. As the amount of data was far too great to process on an ordinary office 
 suite, a custom graphing tool was developed.
 
+.64 mb VRAM
+image::pics/f64.png[scaledwidth="75%"]
+
+.128 mb VRAM
+image::pics/f128.png[scaledwidth="75%"]
+
+.256 mb VRAM
+image::pics/f256.png[scaledwidth="75%"]
+
+.384 mb VRAM
+image::pics/f384.png[scaledwidth="75%"]
+
+.512 mb VRAM
+image::pics/f512.png[scaledwidth="75%"]
+
+.1024 mb VRAM
+image::pics/f1024.png[scaledwidth="75%"]
+
+.1536 mb VRAM
+image::pics/f1536.png[scaledwidth="75%"]
+
+.2048 mb VRAM
+image::pics/f2048.png[scaledwidth="75%"]
+
+.4096 mb VRAM
+image::pics/f4096.png[scaledwidth="75%"]
+
 Training the network
 --------------------
 
