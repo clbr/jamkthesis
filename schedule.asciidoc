@@ -19,10 +19,10 @@ Week 4
 ------
 
 .Work
-- Calculate the different fragmentation strategies' efficiency
+- Calculate the different fragmentation strategies' efficiency (done)
 
 .Doc
-- Write the fragmentation chapter
+- Write the fragmentation chapter (done)
 
 Week 5
 ------
