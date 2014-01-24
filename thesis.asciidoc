@@ -412,7 +412,16 @@ rates, it is believed that that result can be ignored. The traces were generally
 1366x768 resolution or higher, and such high resolutions are not supported by most graphics 
 cards with 64 mb VRAM.
 
-In all other runs, the min-max allocation strategy improved swapping over the default.
+In all other runs, the min-max allocation strategy improved swapping over the default. For 
+the 128 mb, 256 mb, 384 mb, and 512 mb runs the improvement was in single-digit percentages.
+
+For 1024 mb and 4096 mb, the min-max allocation resulted in about 10% less swapping. For the 
+last ones, 1536 and 2048 mb, the highest results were measured: around 20%.
+
+At least for this test data, the optimal threshold for min-max allocation is 512 kb. While 
+for some VRAM sizes it did worse than the 1 mb threshold, it also outdid the higher 
+threshold in some cases. In no case did the 512 kb threshold lose to the 256 kb threshold, 
+however.
 
 Training the network
 --------------------
