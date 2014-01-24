@@ -404,6 +404,16 @@ created are more suitable for new allocations.
 
 Gathering the swapping statistics together, the optimal threshold value can be determined.
 
+.Swapping improvement over the default strategy.
+image::pics/swapping.png[scaledwidth="75%"]
+
+As the workload was far too heavy for a 64 mb VRAM graphics card, causing high swapping 
+rates, it is believed that that result can be ignored. The traces were generally recorded in 
+1366x768 resolution or higher, and such high resolutions are not supported by most graphics 
+cards with 64 mb VRAM.
+
+In all other runs, the min-max allocation strategy improved swapping over the default.
+
 Training the network
 --------------------
 
