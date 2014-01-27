@@ -444,7 +444,8 @@ had superior performance, reaching the highest accuracy off all tested functions
 So the question here is which type of function would give the best run-time performance; in 
 other words, fastest to calculate. Three options were tested: the default S-shaped 
 activation function, hyperbolic tangent; and an adaptation from the graphics world, Perlin's 
-smootherstep function, both in floating point, and converted to use fixed-point mathematics.
+smootherstep function, both in floating point, and when converted to use fixed-point 
+mathematics.
 
 As can be seen in the figure above, the hyperbolic tangent is less steep than the 
 smootherstep function. This shouldn't cause any issues in the decision-making.
