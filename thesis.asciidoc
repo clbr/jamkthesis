@@ -475,6 +475,9 @@ charge 5 000 $ for the latest two-page report), and the DRAM makers do not list 
 information in their financial reports, to get a rough view one had to resort to 
 checking the inventory levels of a web shop.
 
+.DDR3 inventory levels.
+image::pics/ddr3inventory.png[scaledwidth="50%"]
+
 For the average GDDR5 speed, a mid-high-end card from both Nvidia and AMD's latest 
 generations was chosen. Nvidia GTX 770 ships with a memory bandwidth of 224 GB/s, whereas 
 AMD Radeon 280 has 240 GB/s.
