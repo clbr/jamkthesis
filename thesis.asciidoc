@@ -457,7 +457,7 @@ took only \~8 ns per call.
 
 The slow performance of the fixed-point function is attributed to it consisting mainly of 
 multiplication. Fixed-point multiplication requires both a multiplication and a division, 
-making it an expensive operation.
+making it an expensive operation even when the division is implemented as a shift.
 
 As the floating-point smootherstep function beat the customary hyperbolic tangent by 36%, 
 and there is no hard requirement against the use of floating-point mathematics, it was 
