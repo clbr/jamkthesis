@@ -450,10 +450,11 @@ mathematics.
 As can be seen in the figure above, the hyperbolic tangent is less steep than the 
 smootherstep function. This shouldn't cause any issues in the decision-making.
 
-Each function was ran 10^9^ times. Surprisingly, the fixed point implementation was the 
-slowest of all. A single *tanhf()* call took approximately 12.6 ns. A single fixed-point 
-*smootherstep()* call took \~13.5 ns. The fastest of all, floating-point *smootherstep()*, 
-took only \~8 ns per call.
+Each function was ran 10^9^ times. Surprisingly, the fixed point implementation was not the 
+fastest of all. A single *tanhf()* call took approximately 4.8 ns (+- 0.2%). A single 
+fixed-point 
+*smootherstep()* call took \~4.1 ns. The fastest of all, floating-point *smootherstep()*, 
+took only \~2.8 ns per call.
 
 The slow performance of the fixed-point function is attributed to it consisting mainly of 
 multiplication. Fixed-point multiplication requires both a multiplication and a division, 
