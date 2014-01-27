@@ -426,11 +426,25 @@ however.
 Training the network
 --------------------
 
-Cost model
-~~~~~~~~~~
-
 Activation function
 ~~~~~~~~~~~~~~~~~~~
+
+The activation function is the transformation done inside each neuron, operating on the sum 
+of all weighted inputs (plus bias). A variety of functions have been used over time: 
+starting from simple step functions, continuing via exponential functions, to 
+S-shaped functions. S-shaped functions are considered to be closest to how real neurons 
+behave.
+
+Testing a variety of these functions, Karlik and Olgac (2011) found that S-shaped functions 
+had superior performance, reaching the highest accuracy off all tested functions.
+
+So the question here is which type of function would give the best run-time performance; in 
+other words, fastest to calculate. Two options were tested: the default S-shaped activation 
+function, hyperbolic tangent; and an adaptation from the graphics world, Perlin's 
+smootherstep function, converted to use fixed-point mathematics.
+
+Cost model
+~~~~~~~~~~
 
 Results
 -------
@@ -453,6 +467,10 @@ http://lwn.net/Articles/368869/
 Dawe, L. 2014. Help Make Open Source AMD Graphics Drivers Better. Gaming on Linux. Retrieved 
 on 20 Jan 2013.
 http://www.gamingonlinux.com/articles/help-make-open-source-amd-graphics-drivers-better.2938
+
+Karlic, B., Olgac. A. V. 2011. Performance analysis of various activation functions in 
+generalized MLP architectures of neural networks. International journal of Artificial 
+Intelligence and Expert Systems, volume 1, issue 4.
 
 Kasanen, L. 2014. Radeon VRAM Optimizations Coming, But Help Is Needed. Phoronix. Retrieved 
 on Jan 20 2013.
