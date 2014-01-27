@@ -435,13 +435,32 @@ starting from simple step functions, continuing via exponential functions, to
 S-shaped functions. S-shaped functions are considered to be closest to how real neurons 
 behave.
 
+.Hyperbolic tangent and smootherstep, scaled to use the same input/output
+image::pics/scurve.png[scaledwidth="50%"]
+
 Testing a variety of these functions, Karlik and Olgac (2011) found that S-shaped functions 
 had superior performance, reaching the highest accuracy off all tested functions.
 
 So the question here is which type of function would give the best run-time performance; in 
-other words, fastest to calculate. Two options were tested: the default S-shaped activation 
-function, hyperbolic tangent; and an adaptation from the graphics world, Perlin's 
-smootherstep function, converted to use fixed-point mathematics.
+other words, fastest to calculate. Three options were tested: the default S-shaped 
+activation function, hyperbolic tangent; and an adaptation from the graphics world, Perlin's 
+smootherstep function, both in floating point, and converted to use fixed-point mathematics.
+
+As can be seen in the figure above, the hyperbolic tangent is less steep than the 
+smootherstep function. This shouldn't cause any issues in the decision-making.
+
+Each function was ran 10^9 times. Surprisingly, the fixed point implementation was the 
+slowest of all. A single *tanh()* call took approximately 12.6 ns. A single fixed-point 
+*smootherstep()* call took ~13.5 ns. The fastest of all, floating-point *smootherstep()*, 
+took only ~8 ns per call.
+
+The slow performance of the fixed-point function is attributed to it consisting mainly of 
+multiplication. Fixed-point multiplication requires both a multiplication and a division, 
+making it an expensive operation.
+
+As the floating-point smootherstep function beat the customary hyperbolic tangent by 36%, 
+and there is no hard requirement against the use of floating-point mathematics, it was 
+selected as the activation function.
 
 Cost model
 ~~~~~~~~~~
