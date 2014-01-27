@@ -478,9 +478,12 @@ checking the inventory levels of a web shop.
 .DDR3 inventory levels.
 image::pics/ddr3inventory.png[scaledwidth="50%"]
 
+From the inventory levels it can be seen that 1600 MHz is the most popular type of DDR3 
+memory being sold. The bandwidth of such memory is 12.8 GB/s.
+
 For the average GDDR5 speed, a mid-high-end card from both Nvidia and AMD's latest 
 generations was chosen. Nvidia GTX 770 ships with a memory bandwidth of 224 GB/s, whereas 
-AMD Radeon 280 has 240 GB/s.
+AMD Radeon 280 has 240 GB/s. Taking the average ends up at 232 GB/s.
 
 Results
 -------
