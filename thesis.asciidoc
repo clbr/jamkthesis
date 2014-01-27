@@ -435,7 +435,7 @@ starting from simple step functions, continuing via exponential functions, to
 S-shaped functions. S-shaped functions are considered to be closest to how real neurons 
 behave.
 
-.Hyperbolic tangent and smootherstep, scaled to use the same input/output
+.Hyperbolic tangent and smootherstep, scaled to use the same input/output space.
 image::pics/scurve.png[scaledwidth="50%"]
 
 Testing a variety of these functions, Karlik and Olgac (2011) found that S-shaped functions 
