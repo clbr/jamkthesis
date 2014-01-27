@@ -475,7 +475,7 @@ charge 5 000 $ for the latest two-page report), and the DRAM makers do not list 
 information in their financial reports, to get a rough view one had to resort to 
 checking the inventory levels of a web shop.
 
-.DDR3 inventory levels.
+.DDR3 inventory levels (the number of SKUs per each speed class).
 image::pics/ddr3inventory.png[scaledwidth="50%"]
 
 From the inventory levels it can be seen that 1600 MHz is the most popular type of DDR3 
