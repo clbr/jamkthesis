@@ -485,6 +485,19 @@ For the average GDDR5 speed, a mid-high-end card from both Nvidia and AMD's late
 generations was chosen. Nvidia GTX 770 ships with a memory bandwidth of 224 GB/s, whereas 
 AMD Radeon 280 has 240 GB/s. Taking the average ends up at 232 GB/s.
 
+Other considerations
+^^^^^^^^^^^^^^^^^^^^
+
+For a buffer in either memory, the cost of a read or write can thus be calculated as the 
+buffer size divided by the memory bandwidth. However, a multitude of other considerations 
+must be taken into account.
+
+First of all, a GPU write to system RAM (cacheable memory) will incur a performance hit of 
+about 66%. A buffer move, beyond the overlapping read in one memory type and the write in 
+the other, also costs some PCI-E latency. If the buffer is needed immediately after the 
+move, the GPU engines will stall to wait for it, potentially delaying useful work.
+footnote:[This is a limitation of the current driver. The latest generation of graphics cards supports multiple engines, and they could work on independent pieces should the driver support be there. In that case, only one engine would stall.]
+
 Results
 -------
 
