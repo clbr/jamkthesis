@@ -454,7 +454,7 @@ Each function was ran 10^9^ times. Surprisingly, the fixed point implementation 
 fastest of all. A single *tanhf()* call took approximately 4.8 ns (+- 0.2%). A single 
 fixed-point 
 *smootherstep()* call took \~4.1 ns. The fastest of all, floating-point *smootherstep()*, 
-took only \~2.8 ns per call.
+took only ~2.8 ns per call.
 
 The slow performance of the fixed-point function is attributed to it consisting mainly of 
 multiplication. Fixed-point multiplication requires both a multiplication and a division, 
