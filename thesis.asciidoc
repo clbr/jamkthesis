@@ -467,6 +467,18 @@ selected as the activation function.
 Cost model
 ~~~~~~~~~~
 
+The basic outlines for the cost model can be had from the most common speeds of currently 
+used memory types (GDDR5 for the VRAM, DDR3 for the system RAM).
+
+As the major analyst houses keep this information behind paywalls (IDC for example would 
+charge 5 000 $ for the latest two-page report), and the DRAM makers do not list this 
+information in their financial reports, to get a rough view one had to resort to 
+checking the inventory levels of a web shop.
+
+For the average GDDR5 speed, a mid-high-end card from both Nvidia and AMD's latest 
+generations was chosen. Nvidia GTX 770 ships with a memory bandwidth of 224 GB/s, whereas 
+AMD Radeon 280 has 240 GB/s.
+
 Results
 -------
 
