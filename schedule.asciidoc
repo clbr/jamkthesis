@@ -28,11 +28,11 @@ Week 5
 ------
 
 .Work
-- Cost model
-- Activation function
+- Cost model (done)
+- Activation function (done)
 
 .Doc
-- Corresponding chapters
+- Corresponding chapters (done)
 
 Weeks 6-8
 ---------
