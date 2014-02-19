@@ -28,7 +28,7 @@ mipmapping::
 	A technique of accessing pre-scaled versions of a texture.
 
 r600g::
-	The open-source Gallium3D graphics driver responsible for Radeon HD 2000 - HD 6000 
+	The open-source Gallium3D graphics driver responsible for Radeon HD 2000 - HD 6000
 	models.
 
 RAM::
@@ -46,31 +46,31 @@ VRAM::
 Introduction
 ------------
 
-Graphics cards carry some fast, dedicated memory (VRAM). This memory is used to speed up 
-tasks such as rendering or parallel computations, by avoiding the latency in having the 
+Graphics cards carry some fast, dedicated memory (VRAM). This memory is used to speed up
+tasks such as rendering or parallel computations, by avoiding the latency in having the
 graphics card access the system memory.
 
-VRAM is a limited resource, and as such, all workloads may not fit in a given graphics 
-card. In a situation like that, the strategy that decides what parts of the working set to 
+VRAM is a limited resource, and as such, all workloads may not fit in a given graphics
+card. In a situation like that, the strategy that decides what parts of the working set to
 keep in VRAM, and which parts can be kept in regular system RAM, is of utmost importance.
 
-If the application needs to access a specific resource in system RAM, it will have a 
-corresponding hit in its performance. The VRAM placement strategy should try to rank the 
+If the application needs to access a specific resource in system RAM, it will have a
+corresponding hit in its performance. The VRAM placement strategy should try to rank the
 application's buffers in such a way to maximize the application's performance.
 
-Application performance is commonly measured in two ways: throughput (FPS, frames per 
-second) and smoothness (how stable the FPS is). For a good user experience, they both 
+Application performance is commonly measured in two ways: throughput (FPS, frames per
+second) and smoothness (how stable the FPS is). For a good user experience, they both
 must be above some user-dependent threshold.
 
-There are no generally accepted guidelines, as the minimum for an acceptable experience is 
+There are no generally accepted guidelines, as the minimum for an acceptable experience is
 quite subjective. However, many people place the line at 60 FPS with a minimum FPS of 55.
 (Minimum playable FPS 2012)
 
-Both throughput and smoothness must be above the user's minimum requirements, one alone will 
-not suffice. For example, a game running at a healthy throughput of 60 FPS, but dipping to 
-10 FPS once per second will be extremely irritating, perceived as stalling or stuttering. 
-Vice versa, a smooth FPS of 20 will not stutter, but the throughput is not high enough for 
-an enjoyable experience, as the user will notice individual images instead of the illusion 
+Both throughput and smoothness must be above the user's minimum requirements, one alone will
+not suffice. For example, a game running at a healthy throughput of 60 FPS, but dipping to
+10 FPS once per second will be extremely irritating, perceived as stalling or stuttering.
+Vice versa, a smooth FPS of 20 will not stutter, but the throughput is not high enough for
+an enjoyable experience, as the user will notice individual images instead of the illusion
 of movement.
 
 .Notice the huge frame time spikes on Catalyst: better performance, but worse smoothness. Image (C) Phoronix, printed with permission.
@@ -79,178 +79,178 @@ image::pics/frametime.png[]
 Problem background
 ~~~~~~~~~~~~~~~~~~
 
-The open source graphics drivers on Linux are generally thought of as lower performance, but 
-higher stability, than the proprietary drivers provided by the graphics card companies. This 
-is a result of the bar for quality in public work; each new version of a proprietary driver 
-generally includes many application-specific changes (Catalyst 13.1 release notes 2013), 
+The open source graphics drivers on Linux are generally thought of as lower performance, but
+higher stability, than the proprietary drivers provided by the graphics card companies. This
+is a result of the bar for quality in public work; each new version of a proprietary driver
+generally includes many application-specific changes (Catalyst 13.1 release notes 2013),
 which would not fly in an open-source driver.
 
-Recent advances in optimization have brought the r600g driver close to competing with the 
-proprietary Catalyst driver (Larabel 2013a). Depending on the benchmark and hardware, it 
+Recent advances in optimization have brought the r600g driver close to competing with the
+proprietary Catalyst driver (Larabel 2013a). Depending on the benchmark and hardware, it
 is within 60% - 110% of the Catalyst driver, generally around 80%.
 
 .Warsow benchmark at 2560x1600. Image (C) Phoronix, printed with permission.
 image::pics/warsow.png[]
 
-One of the remaining areas yet to be optimized is the VRAM placing strategy. In this 
+One of the remaining areas yet to be optimized is the VRAM placing strategy. In this
 thesis, research will be done on improving this area of the r600g driver.
 
-There are some practical constraints that the solution will need to abide by. First, there 
-is no central location with a holistic view of everything that happens on the graphics card. 
-Secondly, the run-time performance of the strategy itself must be adequate. It may have to 
-make thousands of decisions per second; having performance go down because the computer is 
+There are some practical constraints that the solution will need to abide by. First, there
+is no central location with a holistic view of everything that happens on the graphics card.
+Secondly, the run-time performance of the strategy itself must be adequate. It may have to
+make thousands of decisions per second; having performance go down because the computer is
 thinking on how to improve performance would be counterproductive.
 
-A perfect solution would know everything that goes on in the system. It could predict 
-exactly what the application will do next, and in what way does it access each buffer. 
+A perfect solution would know everything that goes on in the system. It could predict
+exactly what the application will do next, and in what way does it access each buffer.
 Sadly, either of those is a luxury not available in the real world.
 
-While recording the way the application accesses each buffer is possible in theory, this 
-would incur more overhead than could be gained. Thus, the strategy is limited to considering 
-worst-case possibilities, and has to make decisions as if the application would use each 
-buffer fully. In practice, many buffers are not fully read or written, but only parts of 
+While recording the way the application accesses each buffer is possible in theory, this
+would incur more overhead than could be gained. Thus, the strategy is limited to considering
+worst-case possibilities, and has to make decisions as if the application would use each
+buffer fully. In practice, many buffers are not fully read or written, but only parts of
 them are used, for example due to mipmapping.
 
-The current strategy used in r600g is a simple LRU (least recently used) list. While simple, 
-it can lead to quite a bad user experience in non-trivial cases that exceed the VRAM size. A 
-buffer that is needed next could have been swapped out to system RAM, dropping performance. 
-In the worst case, this creates a ping-pong effect where buffers are constantly moved back 
-and forth, dropping performance to single digits FPS. (Larabel 2012a; Very low FPS when 
+The current strategy used in r600g is a simple LRU (least recently used) list. While simple,
+it can lead to quite a bad user experience in non-trivial cases that exceed the VRAM size. A
+buffer that is needed next could have been swapped out to system RAM, dropping performance.
+In the worst case, this creates a ping-pong effect where buffers are constantly moved back
+and forth, dropping performance to single digits FPS. (Larabel 2012a; Very low FPS when
 video memory is full (GART & ram <-> vram swapping) 2013)
 
-Given that the absolute knowledge is not available, the system will have to make do with 
-what is there. For example, the system can keep accurate statistics on the times the 
-application declares it will read from a buffer. Though the system cannot know how much the 
-application will read, it does know the application will read from the buffer. Using this 
-information, it can make a worst-case estimation that the application will read the buffer 
+Given that the absolute knowledge is not available, the system will have to make do with
+what is there. For example, the system can keep accurate statistics on the times the
+application declares it will read from a buffer. Though the system cannot know how much the
+application will read, it does know the application will read from the buffer. Using this
+information, it can make a worst-case estimation that the application will read the buffer
 in full.
 
-Such worst-case estimation will directly improve the minimum FPS; in other words, the 
-smoothness. This has an indirect benefit to performance, but optimal performance will not be 
+Such worst-case estimation will directly improve the minimum FPS; in other words, the
+smoothness. This has an indirect benefit to performance, but optimal performance will not be
 reached by these means.
 
-The target of this work is to improve on the current strategy, particularly in the cases 
-that are currently pathological. The improved system may not gain significantly in 
+The target of this work is to improve on the current strategy, particularly in the cases
+that are currently pathological. The improved system may not gain significantly in
 throughput, but it should gain measurably in smoothness.
 
 Problem definition
 ~~~~~~~~~~~~~~~~~~
 
-Knowing what information the system has available, and with the goals in mind, the problem 
+Knowing what information the system has available, and with the goals in mind, the problem
 could be defined more clearly.
 
-The component that decides which buffer to place where is separate from the component that 
-has access to accurate statistics. Moving information between these components, the kernel 
+The component that decides which buffer to place where is separate from the component that
+has access to accurate statistics. Moving information between these components, the kernel
 and the userspace, is expensive; therefore the information moved must be minimized.
 
-According to the privilege separation, userspace should not be able to directly decide a 
-placement in memory space, as this could cause security holes. Moving the entire statistics 
-data over would be too expensive. How about ranking the buffers, giving each buffer an 
+According to the privilege separation, userspace should not be able to directly decide a
+placement in memory space, as this could cause security holes. Moving the entire statistics
+data over would be too expensive. How about ranking the buffers, giving each buffer an
 importance score?
 
-This limits the information needed to pass to the kernel to one integer per buffer. In 
-addition, the kernel is free to disregard this hint, keeping in line with the separation. 
-Having the relative importance of each buffer known, the kernel should be able to make much 
+This limits the information needed to pass to the kernel to one integer per buffer. In
+addition, the kernel is free to disregard this hint, keeping in line with the separation.
+Having the relative importance of each buffer known, the kernel should be able to make much
 better buffer placing decisions than the current LRU strategy.
 
-While giving each buffer a score could certainly be done by the usual programming 
-techniques, linear/weight calculations and a set of if-conditions, it is believed that the 
-relationship of the statistics to the buffer's importance is both non-linear and hard to 
+While giving each buffer a score could certainly be done by the usual programming
+techniques, linear/weight calculations and a set of if-conditions, it is believed that the
+relationship of the statistics to the buffer's importance is both non-linear and hard to
 model manually.
 
-Given this assumption, it is likely that such a manual method would not do well in many 
-cases, and it would be constantly tweaked to accommodate newly discovered pathological cases. 
-There is no existing model for a buffer's importance, and no single right answer to the 
+Given this assumption, it is likely that such a manual method would not do well in many
+cases, and it would be constantly tweaked to accommodate newly discovered pathological cases.
+There is no existing model for a buffer's importance, and no single right answer to the
 question "how important is this buffer?"
 
-The mainstream solution to solving non-linear, unknown models like that (also known as 
+The mainstream solution to solving non-linear, unknown models like that (also known as
 modeling or regression problems) is to use AI solutions such as neural networks.
 
 AI theory
 ---------
 
-There are many approaches to artificial intelligence. What is common to all of them is the 
-ability to make decisions the computer was not told explicitly how to do. They differ in 
-their areas of usability, theoretic foundations, whether they are based on real biological 
+There are many approaches to artificial intelligence. What is common to all of them is the
+ability to make decisions the computer was not told explicitly how to do. They differ in
+their areas of usability, theoretic foundations, whether they are based on real biological
 phenomena, and other ways.
 
-One such approach is the neural network. Invented in the 60's, it mimics the 
-biological brain cells. Such networks are able to generalize, to learn either independently 
-or with guidance, and tend to achieve quite decent results. Neural networks have been 
-applied to problems such as Backgammon (Tesauro 1994), business data mining (Bigus 1996), 
+One such approach is the neural network. Invented in the 60's, it mimics the
+biological brain cells. Such networks are able to generalize, to learn either independently
+or with guidance, and tend to achieve quite decent results. Neural networks have been
+applied to problems such as Backgammon (Tesauro 1994), business data mining (Bigus 1996),
 and text compression (Mahoney 1996) with success.
 
-Neural networks come in many varieties. The multi-layer perceptron (MLP) is the most common 
-one, used for classification, modeling, and time-series prediction. The radial basis 
-function network (RBF) shares the same uses. The adaptive resonance 
-theory network and Kohonen map are used for clustering. Recurrent networks are used for 
+Neural networks come in many varieties. The multi-layer perceptron (MLP) is the most common
+one, used for classification, modeling, and time-series prediction. The radial basis
+function network (RBF) shares the same uses. The adaptive resonance
+theory network and Kohonen map are used for clustering. Recurrent networks are used for
 extremely complex modeling problems. (Bigus 1996, p. 77)
 
 .Multi-layer perceptron.
 image::pics/mlp.png[scaledwidth="75%"]
 
-As the problem here is a modeling one, this narrows the choice to MLP, RBF or recurrent. 
+As the problem here is a modeling one, this narrows the choice to MLP, RBF or recurrent.
 
-Recurrent networks are generally hard to train, and their runtime performance is not 
-deterministic: they may take ten or hundred times longer to make a decision compared to 
+Recurrent networks are generally hard to train, and their runtime performance is not
+deterministic: they may take ten or hundred times longer to make a decision compared to
 another. This rules that model out.
 
-The choice between MLP and RBF is somewhat arbitrary. Liu and Gader (2000) found that RBF 
-ignores outliers better, 
-while MLP is said to perform better. MLP is also covered more in literature. MLP was chosen 
+The choice between MLP and RBF is somewhat arbitrary. Liu and Gader (2000) found that RBF
+ignores outliers better,
+while MLP is said to perform better. MLP is also covered more in literature. MLP was chosen
 here for the literature availability.
 
-There are many ways to train a MLP neural network. The algorithms are usually divided into 
-four: supervised, unsupervised, competitive, and reinforcement learning (Siddique & Adeli 
+There are many ways to train a MLP neural network. The algorithms are usually divided into
+four: supervised, unsupervised, competitive, and reinforcement learning (Siddique & Adeli
 2013).
 
-Supervised learning is used when you have clearly labeled test data. For example, if the 
-task was to detect if a picture contains a squirrel, you would feed in sets of pictures of 
-both squirrels and non-squirrels, each labeled by a human on whether it contains a squirrel. 
-Then the network's guesses are compared to the labels, and corrected until the network can 
+Supervised learning is used when you have clearly labeled test data. For example, if the
+task was to detect if a picture contains a squirrel, you would feed in sets of pictures of
+both squirrels and non-squirrels, each labeled by a human on whether it contains a squirrel.
+Then the network's guesses are compared to the labels, and corrected until the network can
 correctly determine whether a picture contains a small, furry creature or not.
 
-In unsupervised learning, the network is not told anything about the data. It's used mainly 
-in clustering problems, where the clusters are not defined beforehand. For example, the 
-network may be fed customer data, and asked to segment customers into four classes. Studying 
+In unsupervised learning, the network is not told anything about the data. It's used mainly
+in clustering problems, where the clusters are not defined beforehand. For example, the
+network may be fed customer data, and asked to segment customers into four classes. Studying
 the decisions it made can be very useful in finding new or undervalued customer segments.
 
-Competitive learning is used in classification problems mainly. Only the neuron that "wins" 
-the round, in other words whose guess was closest to correct, gets to be tweaked. This 
+Competitive learning is used in classification problems mainly. Only the neuron that "wins"
+the round, in other words whose guess was closest to correct, gets to be tweaked. This
 results in each neuron specializing to a specific type of input.
 
-Reinforcement learning is used in stateful problems, where each action may not be graded 
-alone, but only the full path of actions may be graded. For example, the Backgammon network 
+Reinforcement learning is used in stateful problems, where each action may not be graded
+alone, but only the full path of actions may be graded. For example, the Backgammon network
 of Tesauro (1994) used this method.
 
-Alternative methods for tweaking the network instead of training it include genetic and 
+Alternative methods for tweaking the network instead of training it include genetic and
 evolutionary methods.
 
-In the VRAM strategy case the seemingly only option would be reinforcement learning. 
-Supervised learning cannot be used, as a human cannot give any buffer an importance score; 
-unsupervised and competitive learning do not apply in modeling problems. However, 
-reinforcement learning is not a good fit for modeling problems (Wiering, Hasselt, Pietersma, 
-& Schomaker 2011). Wiering et al found that while reinforcement learning can be applied to 
-such problems, and the result performs on par with a network trained by supervised learning, 
-the training was slow, and there is no guarantee that the network will not get stuck in 
+In the VRAM strategy case the seemingly only option would be reinforcement learning.
+Supervised learning cannot be used, as a human cannot give any buffer an importance score;
+unsupervised and competitive learning do not apply in modeling problems. However,
+reinforcement learning is not a good fit for modeling problems (Wiering, Hasselt, Pietersma,
+& Schomaker 2011). Wiering et al found that while reinforcement learning can be applied to
+such problems, and the result performs on par with a network trained by supervised learning,
+the training was slow, and there is no guarantee that the network will not get stuck in
 local minima.
 
-It was decided to first attempt a Monte-Carlo method, and should that not produce 
+It was decided to first attempt a Monte-Carlo method, and should that not produce
 satisfactory results, evolutionary training.
 
 Data gathering
 --------------
 
-All further steps required data. In the first weeks, the needed data points were planned 
-out, and the data gathering was implemented as patches to Mesa. Since it was clear from the 
-start that wide coverage would be needed, the public was asked for assistance (Kasanen 2014; 
+All further steps required data. In the first weeks, the needed data points were planned
+out, and the data gathering was implemented as patches to Mesa. Since it was clear from the
+start that wide coverage would be needed, the public was asked for assistance (Kasanen 2014;
 Dawe 2014).
 
-In addition to data gathered by the researcher, the public sent a wide variety of traces, 
-enhancing the coverage much further than would have been possible otherwise. The researcher 
+In addition to data gathered by the researcher, the public sent a wide variety of traces,
+enhancing the coverage much further than would have been possible otherwise. The researcher
 would like to thank all contributors.
 
-To get suitable data for the purposes of this research, the following data points were 
+To get suitable data for the purposes of this research, the following data points were
 selected as inputs:
 
 - number of reads
@@ -263,117 +263,117 @@ selected as inputs:
 - whether the buffer should be considered high priority (MSAA, depth)
 - VRAM size
 
-Timing information was set at millisecond accuracy. A time measurement was chosen instead of 
-the frame number, because it ought to allow for a better user experience. Should frames take 
-long, inter-frame swapping should be minimized. Should frames be fast (< 10 ms / frame), 
+Timing information was set at millisecond accuracy. A time measurement was chosen instead of
+the frame number, because it ought to allow for a better user experience. Should frames take
+long, inter-frame swapping should be minimized. Should frames be fast (< 10 ms / frame),
 timing is good as well, since the user experience works on longer timescales.
 
-A game might 
-only draw shadows every other frame, or less often; this causes those frames to take longer 
-than the frames without such extra work. Yet, the user will notice if every Nth frame is 
-too slow. It remains to be seen whether this level of accuracy is good; other choices beside 
-the frame number include thresholds determined by common user studies (10 ms, 30 ms, 60 ms, 
+A game might
+only draw shadows every other frame, or less often; this causes those frames to take longer
+than the frames without such extra work. Yet, the user will notice if every Nth frame is
+too slow. It remains to be seen whether this level of accuracy is good; other choices beside
+the frame number include thresholds determined by common user studies (10 ms, 30 ms, 60 ms,
 100 ms...) or non-linear scaling.
 
-To enable those inputs to be replayed, the memory traces listed each operation on a buffer 
+To enable those inputs to be replayed, the memory traces listed each operation on a buffer
 along with timing information.
 
 .Sample from a memory trace.
 image::pics/trace.png[]
 
-As the traces took a considerable amount of space in their uncompressed text form, a custom 
-binary format was developed. A binary format also allows the traces to be read back much 
+As the traces took a considerable amount of space in their uncompressed text form, a custom
+binary format was developed. A binary format also allows the traces to be read back much
 faster, an important point for speedy training.
 
-The binary format filled the goals set quite nicely. It resulted in a compression ratio 
-better than that of XZ applied on the text form, by a variable amount (1.5 to 12x). 
-The compression ratio compared to uncompressed text varied from 150x to 1300x. It 
+The binary format filled the goals set quite nicely. It resulted in a compression ratio
+better than that of XZ applied on the text form, by a variable amount (1.5 to 12x).
+The compression ratio compared to uncompressed text varied from 150x to 1300x. It
 allows fast reading for the training and fragmentation simulation applications.
 
-Some helper applications were also developed to make it nicer to work with. Figure 4 
+Some helper applications were also developed to make it nicer to work with. Figure 4
 above is from one such helper: a reader for the format with color highlighting.
 
 Fragmentation
 -------------
 
-Fragmentation is a common problem in all memory management. As buffers get allocated, moved 
-around, and deleted, the memory space becomes increasingly fragmented. It limits the maximum 
+Fragmentation is a common problem in all memory management. As buffers get allocated, moved
+around, and deleted, the memory space becomes increasingly fragmented. It limits the maximum
 size of a new allocation, and so buffers bigger than this also cannot be moved to VRAM.
-footnote:[The very latest generation, HD 7000, can use non-continuous memory areas with 
+footnote:[The very latest generation, HD 7000, can use non-continuous memory areas with
 small overhead, so this issue is not as pressing there.]
 
-An example of the effects is reported by Larabel (2013b). Big buffer allocations were 
+An example of the effects is reported by Larabel (2013b). Big buffer allocations were
 failing due to fragmentation, causing the application to misrender and/or crash.
 
 .Fragmentation
 image::pics/fragmentation.png[scaledwidth="75%"]
 
-Fragmentation is an inevitable result of continued use. It can be mitigated by smart 
-allocation strategies, and it can be repaired after the fact by moving the used buffers 
+Fragmentation is an inevitable result of continued use. It can be mitigated by smart
+allocation strategies, and it can be repaired after the fact by moving the used buffers
 together (constraints allowing).
 
-In normal system RAM, both strategies are viable. Cleaning up the memory area, also known as 
-compaction (Corbet 2010), can be fairly low-impact to performance. It only involves 
-freezing the process, and changing some page table entries, which is a relatively fast 
-operation. The downside is that a TLB (translation look-aside buffer) cache flush is needed 
+In normal system RAM, both strategies are viable. Cleaning up the memory area, also known as
+compaction (Corbet 2010), can be fairly low-impact to performance. It only involves
+freezing the process, and changing some page table entries, which is a relatively fast
+operation. The downside is that a TLB (translation look-aside buffer) cache flush is needed
 so that the cache doesn't give out the old, wrong addresses.
 
-However, with current graphics cards this is not an option. The page tables reside in VRAM, 
-so accessing them on the main processor incurs heavy delays due to having to wait for the 
-graphics card to finish its current work, plus the PCI-E bus latency. The delay caused by a 
-VRAM 
-memory compaction operation may be measured in tens of milliseconds in the worst case, which 
+However, with current graphics cards this is not an option. The page tables reside in VRAM,
+so accessing them on the main processor incurs heavy delays due to having to wait for the
+graphics card to finish its current work, plus the PCI-E bus latency. The delay caused by a
+VRAM
+memory compaction operation may be measured in tens of milliseconds in the worst case, which
 would be unacceptable stutter to the user.
 
 Simulation
 ~~~~~~~~~~
 
-In order to measure fragmentation in different situations, a simulator was developed. It 
-replays the collected memory traces while simulating the VRAM placement using the existing 
-LRU strategy. The results will not apply directly to other placing strategies, but they will 
+In order to measure fragmentation in different situations, a simulator was developed. It
+replays the collected memory traces while simulating the VRAM placement using the existing
+LRU strategy. The results will not apply directly to other placing strategies, but they will
 be indicative of general trends regardless of the placing strategy.
 
-The simulator took snapshots of the VRAM state once per every ten memory operations, and 
-counted the amount of holes (fragmentation). It also printed a marker every time an eviction 
+The simulator took snapshots of the VRAM state once per every ten memory operations, and
+counted the amount of holes (fragmentation). It also printed a marker every time an eviction
 was triggered.
 
-Two different allocation strategies were tested. The default allocator allocates buffers 
-from the start of VRAM. The proposed min-max allocator allocates buffers from two ends of 
-the VRAM space, based on the assumptions that smaller buffers are recycled more often than 
-large ones, and that recycling of each type would then only create fragmentation of the same 
+Two different allocation strategies were tested. The default allocator allocates buffers
+from the start of VRAM. The proposed min-max allocator allocates buffers from two ends of
+the VRAM space, based on the assumptions that smaller buffers are recycled more often than
+large ones, and that recycling of each type would then only create fragmentation of the same
 type.
 
 .Allocation strategies.
 image::pics/allocations.png[scaledwidth="75%"]
 
 Nine common VRAM sizes were tested: 64 mb, 128 mb, 256 mb, 384 mb, 512 mb, 1024 mb, 1536 mb,
-2048 mb, and 4096 mb. In cases where the trace couldn't run on a configuration, that trace 
-was skipped. For example, Planetary Annihilation allocated a buffer of 78 mb in size; it is 
+2048 mb, and 4096 mb. In cases where the trace couldn't run on a configuration, that trace
+was skipped. For example, Planetary Annihilation allocated a buffer of 78 mb in size; it is
 obviously beyond the capabilities of a 64 mb VRAM graphics card.
 
-Several threshold values were tested for the min-max allocator in order to find a rough 
-optimum. The simulation took approximately 2.5 hours per run, and each run generated about 
-16 gb of data. As the amount of data was far too great to process on an ordinary office 
+Several threshold values were tested for the min-max allocator in order to find a rough
+optimum. The simulation took approximately 2.5 hours per run, and each run generated about
+16 gb of data. As the amount of data was far too great to process on an ordinary office
 suite, a custom graphing tool was developed.
 
 .64 mb VRAM
 image::pics/f64.png[scaledwidth="75%"]
 
-Starting off with the 64 mb VRAM run, it can be clearly seen that the workload is too heavy 
-for this size. Still, it's a good data point to have, in order to see how the strategies 
+Starting off with the 64 mb VRAM run, it can be clearly seen that the workload is too heavy
+for this size. Still, it's a good data point to have, in order to see how the strategies
 behave under heavy pressure.
 
 .128 mb VRAM
 image::pics/f128.png[scaledwidth="75%"]
 
-With 128 mb, all of the traces could be run through. Fragmentation is approximately equal in 
-all cases, but the swapping (eviction) is lower in all of the min-max runs compared to the 
+With 128 mb, all of the traces could be run through. Fragmentation is approximately equal in
+all cases, but the swapping (eviction) is lower in all of the min-max runs compared to the
 default run.
 
 .256 mb VRAM
 image::pics/f256.png[scaledwidth="75%"]
 
-The patterns become visible in the 256 mb run. Peak fragmentation is surprisingly higher in 
+The patterns become visible in the 256 mb run. Peak fragmentation is surprisingly higher in
 min-max, but swapping continues to be lower.
 
 .384 mb VRAM
@@ -385,7 +385,7 @@ image::pics/f512.png[scaledwidth="75%"]
 .1024 mb VRAM
 image::pics/f1024.png[scaledwidth="75%"]
 
-Starting with the 1 gb run, the average fragmentation of min-max starts to climb above the 
+Starting with the 1 gb run, the average fragmentation of min-max starts to climb above the
 default's.
 
 .1536 mb VRAM
@@ -397,9 +397,9 @@ image::pics/f2048.png[scaledwidth="75%"]
 .4096 mb VRAM
 image::pics/f4096.png[scaledwidth="75%"]
 
-In total, the min-max strategy turned out to actually increase fragmentation. Despite the 
-higher absolute amount of holes, they actually decreased swapping in all runs except the 64 
-mb one. It is assumed this is due to a better quality of fragmentation; that is, the holes 
+In total, the min-max strategy turned out to actually increase fragmentation. Despite the
+higher absolute amount of holes, they actually decreased swapping in all runs except the 64
+mb one. It is assumed this is due to a better quality of fragmentation; that is, the holes
 created are more suitable for new allocations.
 
 Gathering the swapping statistics together, the optimal threshold value can be determined.
@@ -407,20 +407,20 @@ Gathering the swapping statistics together, the optimal threshold value can be d
 .Swapping improvement over the default strategy.
 image::pics/swapping.png[scaledwidth="75%"]
 
-As the workload was far too heavy for a 64 mb VRAM graphics card, causing high swapping 
-rates, it is believed that that result can be ignored. The traces were generally recorded in 
-1366x768 resolution or higher, and such high resolutions are not supported by most graphics 
+As the workload was far too heavy for a 64 mb VRAM graphics card, causing high swapping
+rates, it is believed that that result can be ignored. The traces were generally recorded in
+1366x768 resolution or higher, and such high resolutions are not supported by most graphics
 cards with 64 mb VRAM.
 
-In all other runs, the min-max allocation strategy improved swapping over the default. For 
+In all other runs, the min-max allocation strategy improved swapping over the default. For
 the 128 mb, 256 mb, 384 mb, and 512 mb runs the improvement was in single-digit percentages.
 
-For 1024 mb and 4096 mb, the min-max allocation resulted in about 10% less swapping. For the 
+For 1024 mb and 4096 mb, the min-max allocation resulted in about 10% less swapping. For the
 last ones, 1536 and 2048 mb, the highest results were measured: around 20%.
 
-At least for this test data, the optimal threshold for min-max allocation is 512 kb. While 
-for some VRAM sizes it did worse than the 1 mb threshold, it also outdid the higher 
-threshold in some cases. In no case did the 512 kb threshold lose to the 256 kb threshold, 
+At least for this test data, the optimal threshold for min-max allocation is 512 kb. While
+for some VRAM sizes it did worse than the 1 mb threshold, it also outdid the higher
+threshold in some cases. In no case did the 512 kb threshold lose to the 256 kb threshold,
 however.
 
 Training the network
@@ -429,74 +429,117 @@ Training the network
 Activation function
 ~~~~~~~~~~~~~~~~~~~
 
-The activation function is the transformation done inside each neuron, operating on the sum 
-of all weighted inputs (plus bias). A variety of functions have been used over time: 
-starting from simple step functions, continuing via exponential functions, to 
-S-shaped functions. S-shaped functions are considered to be closest to how real neurons 
+The activation function is the transformation done inside each neuron, operating on the sum
+of all weighted inputs (plus bias). A variety of functions have been used over time:
+starting from simple step functions, continuing via exponential functions, to
+S-shaped functions. S-shaped functions are considered to be closest to how real neurons
 behave.
 
 .Hyperbolic tangent and smootherstep, scaled to use the same input/output space.
 image::pics/scurve.png[scaledwidth="50%"]
 
-Testing a variety of these functions, Karlik and Olgac (2011) found that S-shaped functions 
+Testing a variety of these functions, Karlik and Olgac (2011) found that S-shaped functions
 had superior performance, reaching the highest accuracy off all tested functions.
 
-So the question here is which type of function would give the best run-time performance; in 
-other words, fastest to calculate. Three options were tested: the default S-shaped 
-activation function, hyperbolic tangent; and an adaptation from the graphics world, Perlin's 
-smootherstep function, both in floating point, and when converted to use fixed-point 
+So the question here is which type of function would give the best run-time performance; in
+other words, fastest to calculate. Three options were tested: the default S-shaped
+activation function, hyperbolic tangent; and an adaptation from the graphics world, Perlin's
+smootherstep function, both in floating point, and when converted to use fixed-point
 mathematics.
 
-As can be seen in the figure above, the hyperbolic tangent is less steep than the 
+As can be seen in the figure above, the hyperbolic tangent is less steep than the
 smootherstep function. This shouldn't cause any issues in the decision-making.
 
-Each function was ran 10^9^ times. Surprisingly, the fixed point implementation was not the 
-fastest of all. A single *tanhf()* call took approximately 4.8 ns (+- 0.2%). A single 
-fixed-point 
-*smootherstep()* call took \~4.1 ns. The fastest of all, floating-point *smootherstep()*, 
+Each function was ran 10^9^ times. Surprisingly, the fixed point implementation was not the
+fastest of all. A single *tanhf()* call took approximately 4.8 ns (+- 0.2%). A single
+fixed-point
+*smootherstep()* call took \~4.1 ns. The fastest of all, floating-point *smootherstep()*,
 took only ~2.8 ns per call.
 
-The slow performance of the fixed-point function is attributed to it consisting mainly of 
-multiplication. Fixed-point multiplication requires both a multiplication and a division, 
+The slow performance of the fixed-point function is attributed to it consisting mainly of
+multiplication. Fixed-point multiplication requires both a multiplication and a division,
 making it an expensive operation even when the division is implemented as a shift.
 
-As the floating-point smootherstep function beat the customary hyperbolic tangent by 31%, 
-and there is no hard requirement against the use of floating-point mathematics, it was 
+As the floating-point smootherstep function beat the customary hyperbolic tangent by 31%,
+and there is no hard requirement against the use of floating-point mathematics, it was
 selected as the activation function.
 
 Cost model
 ~~~~~~~~~~
 
-The basic outlines for the cost model can be had from the most common speeds of currently 
+The basic outlines for the cost model can be had from the most common speeds of currently
 used memory types (GDDR5 for the VRAM, DDR3 for the system RAM).
 
-As the major analyst houses keep this information behind paywalls (IDC for example would 
-charge 5 000 $ for the latest two-page report), and the DRAM makers do not list this 
-information in their financial reports, to get a rough view one had to resort to 
+As the major analyst houses keep this information behind paywalls (IDC for example would
+charge 5 000 $ for the latest two-page report), and the DRAM makers do not list this
+information in their financial reports, to get a rough view one had to resort to
 checking the inventory levels of a web shop.
 
 .DDR3 inventory levels: the number of SKUs per each speed class.
 image::pics/ddr3inventory.png[scaledwidth="50%"]
 
-From the inventory levels it can be seen that 1600 MHz is the most popular type of DDR3 
+From the inventory levels it can be seen that 1600 MHz is the most popular type of DDR3
 memory being sold. The bandwidth of such memory is 12.8 GB/s.
 
-For the average GDDR5 speed, a mid-high-end card from both Nvidia and AMD's latest 
-generations was chosen. Nvidia GTX 770 ships with a memory bandwidth of 224 GB/s, whereas 
+For the average GDDR5 speed, a mid-high-end card from both Nvidia and AMD's latest
+generations was chosen. Nvidia GTX 770 ships with a memory bandwidth of 224 GB/s, whereas
 AMD Radeon 280 has 240 GB/s. Taking the average ends up at 232 GB/s.
 
 Other considerations
 ^^^^^^^^^^^^^^^^^^^^
 
-For a buffer in either memory, the cost of a read or write can thus be calculated as the 
-buffer size divided by the memory bandwidth. However, a multitude of other considerations 
+For a buffer in either memory, the cost of a read or write can thus be calculated as the
+buffer size divided by the memory bandwidth. However, a multitude of other considerations
 must be taken into account.
 
-First of all, a GPU write to system RAM (cacheable memory) will incur a performance hit of 
-about 66%. A buffer move, beyond the overlapping read in one memory type and the write in 
-the other, also costs some PCI-E latency. If the buffer is needed immediately after the 
+First of all, a GPU write to system RAM (cacheable memory) will incur a performance hit of
+about 66%. A buffer move, beyond the overlapping read in one memory type and the write in
+the other, also costs some PCI-E latency. If the buffer is needed immediately after the
 move, the GPU engines will stall to wait for it, potentially delaying useful work.
 footnote:[This is a limitation of the current driver. The latest generation of graphics cards supports multiple engines, and they could work on independent pieces should the driver support be there. In that case, only one engine would stall.]
+
+Monte-Carlo training
+~~~~~~~~~~~~~~~~~~~~
+
+Monte-Carlo methods work based on randomness. They are used in cases where an exhaustive
+search is impossible due to the computation required. Due to their nature, they will often
+find a "good enough" solution, but may also fail to find a solution altogether.
+
+In the simplest form, a Monte-Carlo method means making a random change, and measuring
+whether the results improved. Restricting the change in magnitude and the amount of
+variables changed can be used to guide the method.
+
+Evolutionary/genetic training
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Evolutionary or genetic methods follow the behavior seen in nature. They can conduct a
+global search over the whole search space with resources far below an exhaustive search, and
+often succeed in finding the global optimum (Siddique & Adeli 2013).
+
+The methods work as follows: the solution to the problem is converted to a genome form. A
+population of critters (animals, bacteria, etc.) is created by filling the genome of each
+randomly. This population is then allowed to have sex, intermingle, and mutate. After a few
+hundred or thousand generations, however long it takes for the population to converge
+close enough to a single solution, the "alpha male" is selected as the final solution.
+
+As the most fit individuals will have the most offspring, undesirable elements will die out
+of the population, and each individual will move closer to the global optimum. In this
+sense, these methods resemble the most brutal ideas of eugenics and darwinism.
+
+Various parameters can be tuned to guide the evolution. The method of sex, the probability
+of mutations, the chosen genetic representation, the size of the population, and so on all
+affect the converging speed and ability of the population.
+
+In the training application here, the following setup was chosen. The genome was encoded as
+118 bytes, each byte representing a floating-point value from -1 to 1 on a linear scale,
+giving it an accuracy of ~0.0078. The best half of the population was alloved to survive
+(the principle of elitism), and was also used as the source for eligible mates. Each
+individual was selected for mating based on its position when ordered by score, such
+that the most fit individual got to mate more than the second fit, and so on.
+
+The population size was kept constant, with the worse half being replaced with fresh
+children each generation. Sex was implemented on a random per-gene basis, with each gene
+coming whole from one parent. The mutation probability was set at 0.1% per generation.
 
 Results
 -------
@@ -516,50 +559,50 @@ http://support.amd.com/en-us/kb-articles/Pages/AMDCatalystSoftwareSuiteVersion13
 Corbet, J. 2010. Memory compaction. Retrieved on Jan 20 2013.
 http://lwn.net/Articles/368869/
 
-Dawe, L. 2014. Help Make Open Source AMD Graphics Drivers Better. Gaming on Linux. Retrieved 
+Dawe, L. 2014. Help Make Open Source AMD Graphics Drivers Better. Gaming on Linux. Retrieved
 on 20 Jan 2013.
 http://www.gamingonlinux.com/articles/help-make-open-source-amd-graphics-drivers-better.2938
 
-Karlic, B., Olgac. A. V. 2011. Performance analysis of various activation functions in 
-generalized MLP architectures of neural networks. International journal of Artificial 
+Karlic, B., Olgac. A. V. 2011. Performance analysis of various activation functions in
+generalized MLP architectures of neural networks. International journal of Artificial
 Intelligence and Expert Systems, volume 1, issue 4.
 
-Kasanen, L. 2014. Radeon VRAM Optimizations Coming, But Help Is Needed. Phoronix. Retrieved 
+Kasanen, L. 2014. Radeon VRAM Optimizations Coming, But Help Is Needed. Phoronix. Retrieved
 on Jan 20 2013.
 http://www.phoronix.com/scan.php?page=news_item&px=MTU2Nzk
 
-Larabel, M. 2012a. Ubuntu 12.10: Open-Source Radeon vs. AMD Catalyst Performance. Phoronix. 
+Larabel, M. 2012a. Ubuntu 12.10: Open-Source Radeon vs. AMD Catalyst Performance. Phoronix.
 Retrieved on Jan 15 2013.
 http://www.phoronix.com/scan.php?page=article&item=ubuntu_1210_amdstock&num=3
 
-Larabel, M. 2013a. AMD's Radeon Gallium3D Starts Posing A Threat To Catalyst. Phoronix. 
+Larabel, M. 2013a. AMD's Radeon Gallium3D Starts Posing A Threat To Catalyst. Phoronix.
 Retrieved on Jan 15 2013.
 http://www.phoronix.com/scan.php?page=article&item=amd_catalyst_gallium80
 
-Larabel, M. 2013b. CS Memory Accounting For Radeon Gallium3D. Phoronix. Retrieved on Jan 20 
+Larabel, M. 2013b. CS Memory Accounting For Radeon Gallium3D. Phoronix. Retrieved on Jan 20
 2013.
 http://www.phoronix.com/scan.php?page=news_item&px=MTI4OTM
 
 Liu, J., Gader, P. D. 2000. Outlier Rejection with MLPs and Variants of RBF Networks.
 International Conference on Pattern Recognition pp. 2680-2683.
 
-Mahoney, M. 1996. Fast text compression with neural networks. Proceedings of the Thirteenth 
+Mahoney, M. 1996. Fast text compression with neural networks. Proceedings of the Thirteenth
 International Florida Artificial Intelligence Research Society Conference.
 
-Minimum playable FPS. 2012. Whirlpool forums. Retrieved on Jan 15 2013. 
+Minimum playable FPS. 2012. Whirlpool forums. Retrieved on Jan 15 2013.
 http://forums.whirlpool.net.au/archive/1890684
 
-Siddique, N., Adeli, H. 2013. Synergies of fuzzy logic, neural networks and evolutionary 
+Siddique, N., Adeli, H. 2013. Synergies of fuzzy logic, neural networks and evolutionary
 computing. 1st ed. UK: John Wiley & Sons.
 
-Tesauro, G. 1994. TD-Gammon, a Self-Teaching Backgammon Program, Achieves Master-Level Play. 
+Tesauro, G. 1994. TD-Gammon, a Self-Teaching Backgammon Program, Achieves Master-Level Play.
 Neural Computation 6, 2 (March 1994)
 
-Very low FPS when video memory is full (GART & ram <-> vram swapping). 2013. FreeDesktop.org 
+Very low FPS when video memory is full (GART & ram <-> vram swapping). 2013. FreeDesktop.org
 Bugzilla. Retrieved on Jan 15 2013.
 https://bugs.freedesktop.org/show_bug.cgi?id=66632
 
-Wiering, M., Hasselt, H., Pietersma A.-D., Schomaker, L. 2011. Reinforcement Learning 
-Algorithms for solving Classification Problems. Adaptive Dynamic Programming And 
+Wiering, M., Hasselt, H., Pietersma A.-D., Schomaker, L. 2011. Reinforcement Learning
+Algorithms for solving Classification Problems. Adaptive Dynamic Programming And
 Reinforcement Learning, 2011 IEEE Symposium
 
