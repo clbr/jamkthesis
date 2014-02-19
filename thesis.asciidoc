@@ -547,6 +547,10 @@ Results
 Discussion
 ----------
 
+During the training phase it became quite clear that the hardware available was inadequate:
+6 cores and 8 GB of RAM were limiting the training speed. A setup with 64 cores and 128 GB
+of RAM is estimated as a sweet spot, but alas, one has to make do.
+
 [bibliography]
 Bibliography
 ------------
