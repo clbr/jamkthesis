@@ -10,7 +10,7 @@ Weeks 1-3
 - Research the state of the art in neural networks (done)
 - Add statistics gathering and data gathering functions to Mesa (done)
 - Once the gathering is widely available, publicly request traces (done)
-- Gather training data myself as well (ongoing)
+- Gather training data myself as well (done)
 
 .Doc
 - Write the intro and AI theory chapters (done)
@@ -38,7 +38,7 @@ Weeks 6-8
 ---------
 
 .Work
-- The training application itself
+- The training application itself (ongoing)
 
 Weeks 9-10
 ----------
