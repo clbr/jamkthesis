@@ -614,6 +614,7 @@ Reinforcement Learning, 2011 IEEE Symposium
 Data statistics
 ---------------
 
+[subs="quotes"]
 ----
 *0ad1.bin*:
 7146 buffers, runtime 626717 ms (~10.4 minutes)
