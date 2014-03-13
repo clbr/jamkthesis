@@ -610,3 +610,486 @@ Wiering, M., Hasselt, H., Pietersma A.-D., Schomaker, L. 2011. Reinforcement Lea
 Algorithms for solving Classification Problems. Adaptive Dynamic Programming And
 Reinforcement Learning, 2011 IEEE Symposium
 
+[appendix]
+Data statistics
+---------------
+
+0ad1.bin:
+7146 buffers, runtime 626717 ms (~10.4 minutes)
+7146 creates, 99612946 cpu ops, 221797452 reads, 2833214 writes, 6382 destroys
+11.4023 creates/s, 158944 cpu ops/s, 353904 reads/s, 4520.72 writes/s, 10.1832 destroys/s
+
+1995_1.bin: 1366x768
+5573 buffers, runtime 275870 ms (~4.6 minutes)
+5573 creates, 1441547 cpu ops, 3115245 reads, 461136 writes, 5371 destroys
+20.2015 creates/s, 5225.46 cpu ops/s, 11292.4 reads/s, 1671.57 writes/s, 19.4693 destroys/s
+
+1finger1.bin: 1366x768
+3173 buffers, runtime 111358 ms (~1.9 minutes)
+3173 creates, 246217 cpu ops, 621039 reads, 96671 writes, 2746 destroys
+28.4937 creates/s, 2211.04 cpu ops/s, 5576.96 reads/s, 868.11 writes/s, 24.6592 destroys/s
+
+471110_1.bin: 640x480
+16010 buffers, runtime 220284 ms (~3.7 minutes)
+16010 creates, 1677829 cpu ops, 10761557 reads, 109635 writes, 15957 destroys
+72.6789 creates/s, 7616.66 cpu ops/s, 48853.1 reads/s, 497.698 writes/s, 72.4383 destroys/s
+
+aaa1.bin: AAAaaaAAAaaa for the Awesome 1280x800 lowest
+9252 buffers, runtime 250385 ms (~4.2 minutes)
+9252 creates, 914870 cpu ops, 2119803 reads, 53523 writes, 5808 destroys
+36.9511 creates/s, 3653.85 cpu ops/s, 8466.17 reads/s, 213.763 writes/s, 23.1963 destroys/s
+
+altitude1.bin: 1280x800 highest
+9301 buffers, runtime 355298 ms (~5.9 minutes)
+9301 creates, 4940980 cpu ops, 9562028 reads, 45355 writes, 2559 destroys
+26.178 creates/s, 13906.6 cpu ops/s, 26912.7 reads/s, 127.653 writes/s, 7.2024 destroys/s
+
+amnesia1.bin: Amnesia: The dark descent
+43108 buffers, runtime 1164945 ms (~19.4 minutes)
+43108 creates, 6864013 cpu ops, 24936540 reads, 2250880 writes, 42609 destroys
+37.0045 creates/s, 5892.16 cpu ops/s, 21405.9 reads/s, 1932.19 writes/s, 36.5761 destroys/s
+
+amnesiamfp1.bin: Amnesia: A machine for pigs
+26210 buffers, runtime 284461 ms (~4.7 minutes)
+26210 creates, 7333150 cpu ops, 26498259 reads, 1874116 writes, 25080 destroys
+92.1392 creates/s, 25779.1 cpu ops/s, 93152.5 reads/s, 6588.31 writes/s, 88.1667 destroys/s
+
+anna1.bin: Anna extended version
+20520 buffers, runtime 529469 ms (~8.8 minutes)
+20520 creates, 13425313 cpu ops, 33238877 reads, 1598824 writes, 17093 destroys
+38.7558 creates/s, 25356.2 cpu ops/s, 62777.8 reads/s, 3019.67 writes/s, 32.2833 destroys/s
+
+anomaly2_1.bin:
+18871 buffers, runtime 1283439 ms (~21.4 minutes)
+18871 creates, 8312709 cpu ops, 30039021 reads, 689442 writes, 9566 destroys
+14.7035 creates/s, 6476.9 cpu ops/s, 23405.1 reads/s, 537.183 writes/s, 7.45341 destroys/s
+
+anomalywe1.bin: Anomaly Warzone Earth 1280x800 medium
+15748 buffers, runtime 745212 ms (~12.4 minutes)
+15748 creates, 8119419 cpu ops, 26148915 reads, 609975 writes, 8612 destroys
+21.1322 creates/s, 10895.4 cpu ops/s, 35089.2 reads/s, 818.525 writes/s, 11.5564 destroys/s
+
+aquaria1.bin:
+56260 buffers, runtime 1670661 ms (~27.8 minutes)
+56260 creates, 77000054 cpu ops, 52366501 reads, 1327605 writes, 56199 destroys
+33.6753 creates/s, 46089.6 cpu ops/s, 31344.8 reads/s, 794.659 writes/s, 33.6388 destroys/s
+
+assassin2_1.bin: No AA, shadows low, others max
+96464 buffers, runtime 313322 ms (~5.2 minutes)
+96464 creates, 16572977 cpu ops, 46558238 reads, 14797233 writes, 76940 destroys
+307.875 creates/s, 52894.4 cpu ops/s, 148595 reads/s, 47226.9 writes/s, 245.562 destroys/s
+
+avadon1.bin:
+2099 buffers, runtime 1987402 ms (~33.1 minutes)
+2099 creates, 92823145 cpu ops, 167751909 reads, 844353 writes, 2087 destroys
+1.05615 creates/s, 46705.8 cpu ops/s, 84407.7 reads/s, 424.853 writes/s, 1.05012 destroys/s
+
+awesomenauts1.bin: 1680x1050
+9954 buffers, runtime 475623 ms (~7.9 minutes)
+9954 creates, 16184830 cpu ops, 28928799 reads, 354491 writes, 7238 destroys
+20.9283 creates/s, 34028.7 cpu ops/s, 60823 reads/s, 745.319 writes/s, 15.2179 destroys/s
+
+badhotel1.bin:
+701 buffers, runtime 806671 ms (~13.4 minutes)
+701 creates, 335227 cpu ops, 537287 reads, 238459 writes, 639 destroys
+0.869004 creates/s, 415.568 cpu ops/s, 666.055 reads/s, 295.609 writes/s, 0.792145 destroys/s
+
+bastion1.bin: 1680x1050
+2697 buffers, runtime 414524 ms (~6.9 minutes)
+2697 creates, 5000417 cpu ops, 10032086 reads, 447846 writes, 3508 destroys
+6.50626 creates/s, 12063 cpu ops/s, 24201.5 reads/s, 1080.39 writes/s, 8.46272 destroys/s
+
+beathazard1.bin:
+450 buffers, runtime 214003 ms (~3.6 minutes)
+450 creates, 626289 cpu ops, 1277221 reads, 76510 writes, 272 destroys
+2.10277 creates/s, 2926.54 cpu ops/s, 5968.24 reads/s, 357.518 writes/s, 1.27101 destroys/s
+
+blackplague1.bin: Penumbra Black Plague
+90760 buffers, runtime 3159040 ms (~52.7 minutes)
+90760 creates, 10880143 cpu ops, 52930650 reads, 2315828 writes, 86884 destroys
+28.7302 creates/s, 3444.13 cpu ops/s, 16755.3 reads/s, 733.08 writes/s, 27.5033 destroys/s
+
+brokenage1.bin:
+9793 buffers, runtime 454253 ms (~7.6 minutes)
+9793 creates, 1390232 cpu ops, 5461675 reads, 224039 writes, 9376 destroys
+21.5585 creates/s, 3060.48 cpu ops/s, 12023.4 reads/s, 493.203 writes/s, 20.6405 destroys/s
+
+capsized1.bin:
+5912 buffers, runtime 243469 ms (~4.1 minutes)
+5912 creates, 538826 cpu ops, 1188568 reads, 204875 writes, 5861 destroys
+24.2824 creates/s, 2213.12 cpu ops/s, 4881.8 reads/s, 841.483 writes/s, 24.0729 destroys/s
+
+cim2_1.bin: Cities in Motion 2, AA on
+34880 buffers, runtime 235837 ms (~3.9 minutes)
+34880 creates, 20610385 cpu ops, 69527604 reads, 374507 writes, 30566 destroys
+147.899 creates/s, 87392.5 cpu ops/s, 294812 reads/s, 1587.99 writes/s, 129.606 destroys/s
+
+cim_1.bin: Cities in Motion 1, AA on
+23977 buffers, runtime 54989 ms (~0.9 minutes)
+23977 creates, 1845952 cpu ops, 4244715 reads, 48960 writes, 14172 destroys
+436.033 creates/s, 33569.5 cpu ops/s, 77192.1 reads/s, 890.36 writes/s, 257.724 destroys/s
+
+cogs1.bin: 1280x800 low
+962 buffers, runtime 114915 ms (~1.9 minutes)
+962 creates, 10094327 cpu ops, 23207662 reads, 141754 writes, 903 destroys
+8.3714 creates/s, 87841.7 cpu ops/s, 201955 reads/s, 1233.56 writes/s, 7.85798 destroys/s
+
+costumequest1.bin:
+18610 buffers, runtime 991851 ms (~16.5 minutes)
+18610 creates, 5778511 cpu ops, 27024325 reads, 710384 writes, 8828 destroys
+18.7629 creates/s, 5825.99 cpu ops/s, 27246.4 reads/s, 716.22 writes/s, 8.90053 destroys/s
+
+css1.bin: Counter-Strike Source 1680x1050
+101289 buffers, runtime 423090 ms (~7.1 minutes)
+101289 creates, 18682695 cpu ops, 58776135 reads, 3935324 writes, 94445 destroys
+239.403 creates/s, 44157.7 cpu ops/s, 138921 reads/s, 9301.39 writes/s, 223.227 destroys/s
+
+css2.bin: 1280x800
+20109 buffers, runtime 202185 ms (~3.4 minutes)
+20109 creates, 3483404 cpu ops, 11939843 reads, 381430 writes, 19922 destroys
+99.4584 creates/s, 17228.8 cpu ops/s, 59054 reads/s, 1886.54 writes/s, 98.5335 destroys/s
+
+darwinia1.bin:
+23379 buffers, runtime 557596 ms (~9.3 minutes)
+23379 creates, 12620525 cpu ops, 19909313 reads, 398361 writes, 23088 destroys
+41.9282 creates/s, 22633.8 cpu ops/s, 35705.6 reads/s, 714.426 writes/s, 41.4063 destroys/s
+
+dayofdefeat1.bin: 1280x800
+12249 buffers, runtime 326931 ms (~5.4 minutes)
+12249 creates, 14209267 cpu ops, 25994278 reads, 362432 writes, 10919 destroys
+37.4666 creates/s, 43462.6 cpu ops/s, 79510 reads/s, 1108.59 writes/s, 33.3985 destroys/s
+
+defcon1.bin: 1280x800
+12473 buffers, runtime 606759 ms (~10.1 minutes)
+12473 creates, 14876353 cpu ops, 23738555 reads, 419791 writes, 634 destroys
+20.5568 creates/s, 24517.7 cpu ops/s, 39123.5 reads/s, 691.858 writes/s, 1.0449 destroys/s
+
+dota2_1.bin: 1366x768 all max
+42608 buffers, runtime 488330 ms (~8.1 minutes)
+42608 creates, 25168716 cpu ops, 75314458 reads, 3407014 writes, 39140 destroys
+87.2525 creates/s, 51540.4 cpu ops/s, 154229 reads/s, 6976.87 writes/s, 80.1507 destroys/s
+
+dota2_2.bin: 1366x768 low shadows, others max
+46164 buffers, runtime 606763 ms (~10.1 minutes)
+46164 creates, 33690629 cpu ops, 95263522 reads, 4689068 writes, 42764 destroys
+76.0824 creates/s, 55525.2 cpu ops/s, 157003 reads/s, 7728.01 writes/s, 70.4789 destroys/s
+
+dota2_3.bin: 1920x1080 low shadows, others max
+44718 buffers, runtime 645179 ms (~10.8 minutes)
+44718 creates, 25107968 cpu ops, 72107259 reads, 3529311 writes, 41382 destroys
+69.311 creates/s, 38916.3 cpu ops/s, 111763 reads/s, 5470.28 writes/s, 64.1403 destroys/s
+
+dreamchild1.bin: 800x600
+2183 buffers, runtime 248116 ms (~4.1 minutes)
+2183 creates, 10208900 cpu ops, 14346802 reads, 85547 writes, 1769 destroys
+8.7983 creates/s, 41145.7 cpu ops/s, 57823 reads/s, 344.786 writes/s, 7.12973 destroys/s
+
+droidassault1.bin:
+35759 buffers, runtime 966990 ms (~16.1 minutes)
+35759 creates, 1180961 cpu ops, 7004758 reads, 652838 writes, 28588 destroys
+36.9797 creates/s, 1221.28 cpu ops/s, 7243.88 reads/s, 675.124 writes/s, 29.5639 destroys/s
+
+dub1.bin: 1366x768
+11037 buffers, runtime 346937 ms (~5.8 minutes)
+11037 creates, 777423 cpu ops, 1553133 reads, 84530 writes, 10998 destroys
+31.8127 creates/s, 2240.82 cpu ops/s, 4476.7 reads/s, 243.647 writes/s, 31.7003 destroys/s
+
+dungeondefenders1.bin:
+89381 buffers, runtime 1587944 ms (~26.5 minutes)
+89381 creates, 24980362 cpu ops, 76450150 reads, 4823395 writes, 88448 destroys
+56.2874 creates/s, 15731.3 cpu ops/s, 48144.2 reads/s, 3037.52 writes/s, 55.6998 destroys/s
+
+dynamitejack1.bin:
+22738 buffers, runtime 976838 ms (~16.3 minutes)
+22738 creates, 4876882 cpu ops, 6319728 reads, 139538 writes, 11540 destroys
+23.2771 creates/s, 4992.52 cpu ops/s, 6469.58 reads/s, 142.847 writes/s, 11.8136 destroys/s
+
+etqw1.bin: 1680*1050 all max
+163691 buffers, runtime 228847 ms (~3.8 minutes)
+163691 creates, 19586219 cpu ops, 56622992 reads, 4922848 writes, 156739 destroys
+715.286 creates/s, 85586.5 cpu ops/s, 247427 reads/s, 21511.5 writes/s, 684.907 destroys/s
+
+fez1.bin: 1366x768
+41111 buffers, runtime 923150 ms (~15.4 minutes)
+41111 creates, 12297160 cpu ops, 29500988 reads, 529001 writes, 4106 destroys
+44.5334 creates/s, 13320.9 cpu ops/s, 31956.9 reads/s, 573.039 writes/s, 4.44781 destroys/s
+
+fortrix2_1.bin: 1280x800
+23813 buffers, runtime 1274525 ms (~21.2 minutes)
+23813 creates, 1649199 cpu ops, 5641416 reads, 397754 writes, 9661 destroys
+18.6838 creates/s, 1293.97 cpu ops/s, 4426.27 reads/s, 312.079 writes/s, 7.58005 destroys/s
+
+fr-025_1.bin: 1366x768
+56462 buffers, runtime 228169 ms (~3.8 minutes)
+56462 creates, 4887837 cpu ops, 12310201 reads, 918191 writes, 55488 destroys
+247.457 creates/s, 21422 cpu ops/s, 53952.1 reads/s, 4024.17 writes/s, 243.188 destroys/s
+
+fr-043_1.bin: 1366x768
+2493 buffers, runtime 35411 ms (~0.6 minutes)
+2493 creates, 25707 cpu ops, 80828 reads, 9588 writes, 1750 destroys
+70.4019 creates/s, 725.961 cpu ops/s, 2282.57 reads/s, 270.763 writes/s, 49.4197 destroys/s
+
+fr-062_1.bin: 1366x768
+3513 buffers, runtime 89679 ms (~1.5 minutes)
+3513 creates, 57337 cpu ops, 188696 reads, 39096 writes, 3370 destroys
+39.1731 creates/s, 639.358 cpu ops/s, 2104.13 reads/s, 435.955 writes/s, 37.5785 destroys/s
+
+fr-063_1.bin: 1366x768 CSMT disabled
+6778 buffers, runtime 185501 ms (~3.1 minutes)
+6778 creates, 242007 cpu ops, 1176481 reads, 71363 writes, 5489 destroys
+36.5389 creates/s, 1304.61 cpu ops/s, 6342.18 reads/s, 384.704 writes/s, 29.5901 destroys/s
+
+frozensynapse1.bin: 1280x800
+15505 buffers, runtime 574674 ms (~9.6 minutes)
+15505 creates, 18428602 cpu ops, 28437521 reads, 202251 writes, 10811 destroys
+26.9805 creates/s, 32067.9 cpu ops/s, 49484.6 reads/s, 351.94 writes/s, 18.8124 destroys/s
+
+galconfusion1.bin: 1280x800
+19184 buffers, runtime 789742 ms (~13.2 minutes)
+19184 creates, 9486372 cpu ops, 12788079 reads, 121168 writes, 9362 destroys
+24.2915 creates/s, 12012 cpu ops/s, 16192.7 reads/s, 153.427 writes/s, 11.8545 destroys/s
+
+gateways1.bin:
+4768 buffers, runtime 325553 ms (~5.4 minutes)
+4768 creates, 480743 cpu ops, 1419793 reads, 188684 writes, 820 destroys
+14.6458 creates/s, 1476.7 cpu ops/s, 4361.17 reads/s, 579.58 writes/s, 2.51879 destroys/s
+
+glxgears1.bin: default res 300x300
+32 buffers, runtime 5323 ms (~0.1 minutes)
+32 creates, 138356 cpu ops, 360784 reads, 36081 writes, 3 destroys
+6.01165 creates/s, 25992.1 cpu ops/s, 67778.3 reads/s, 6778.32 writes/s, 0.563592 destroys/s
+
+glxgears2.bin: 1024x1024
+32 buffers, runtime 6176 ms (~0.1 minutes)
+32 creates, 8571 cpu ops, 22264 reads, 2229 writes, 4 destroys
+5.18135 creates/s, 1387.79 cpu ops/s, 3604.92 reads/s, 360.913 writes/s, 0.647668 destroys/s
+
+heaven1.bin: heaven 3.0 1920x1080, AF16x, shaders high, no AA
+18977 buffers, runtime 81739 ms (~1.4 minutes)
+18977 creates, 5184725 cpu ops, 19045672 reads, 207026 writes, 18691 destroys
+232.166 creates/s, 63430.2 cpu ops/s, 233006 reads/s, 2532.77 writes/s, 228.667 destroys/s
+
+heaven2.bin: heaven 3.0 1920x1080, AF16x, shaders high, no AA
+15409 buffers, runtime 62901 ms (~1.0 minutes)
+15409 creates, 3506809 cpu ops, 10173322 reads, 227019 writes, 15102 destroys
+244.972 creates/s, 55751.2 cpu ops/s, 161735 reads/s, 3609.15 writes/s, 240.092 destroys/s
+
+hl1.bin:
+17380 buffers, runtime 250279 ms (~4.2 minutes)
+17380 creates, 4328751 cpu ops, 9068139 reads, 141386 writes, 13978 destroys
+69.4425 creates/s, 17295.7 cpu ops/s, 36232.1 reads/s, 564.914 writes/s, 55.8497 destroys/s
+
+hl2ep2_1.bin: 1680x1050
+45391 buffers, runtime 372576 ms (~6.2 minutes)
+45391 creates, 8847952 cpu ops, 35169020 reads, 2379285 writes, 44783 destroys
+121.83 creates/s, 23748 cpu ops/s, 94394.2 reads/s, 6386.04 writes/s, 120.198 destroys/s
+
+kerbal1.bin: 0.18.3 demo
+42432 buffers, runtime 509566 ms (~8.5 minutes)
+42432 creates, 21653280 cpu ops, 35377597 reads, 2011964 writes, 27669 destroys
+83.2709 creates/s, 42493.6 cpu ops/s, 69426.9 reads/s, 3948.39 writes/s, 54.2991 destroys/s
+
+killingfloor1.bin: 1280x800, lowest
+18359 buffers, runtime 956582 ms (~15.9 minutes)
+18359 creates, 9136927 cpu ops, 16486720 reads, 151201 writes, 9499 destroys
+19.1923 creates/s, 9551.64 cpu ops/s, 17235 reads/s, 158.064 writes/s, 9.93015 destroys/s
+
+left4dead2_1.bin: 2.1.3.5 Dec 2013, 1920x1080, AA off, AF off, others med-low
+43771 buffers, runtime 262573 ms (~4.4 minutes)
+43771 creates, 11191310 cpu ops, 40006242 reads, 1639841 writes, 42437 destroys
+166.7 creates/s, 42621.7 cpu ops/s, 152362 reads/s, 6245.28 writes/s, 161.62 destroys/s
+
+left4dead2_2.bin: 1680x1050
+107979 buffers, runtime 430462 ms (~7.2 minutes)
+107979 creates, 17506153 cpu ops, 57786594 reads, 3734898 writes, 118183 destroys
+250.844 creates/s, 40668.3 cpu ops/s, 134243 reads/s, 8676.49 writes/s, 274.549 destroys/s
+
+lightsmark1.bin: 2008 1600x900
+11011 buffers, runtime 41105 ms (~0.7 minutes)
+11011 creates, 12205771 cpu ops, 19842333 reads, 457080 writes, 10381 destroys
+267.875 creates/s, 296941 cpu ops/s, 482723 reads/s, 11119.8 writes/s, 252.548 destroys/s
+
+lugaru1.bin: 1680x1050
+736 buffers, runtime 326224 ms (~5.4 minutes)
+736 creates, 22074717 cpu ops, 44010547 reads, 147428 writes, 655 destroys
+2.25612 creates/s, 67667.4 cpu ops/s, 134909 reads/s, 451.923 writes/s, 2.00782 destroys/s
+
+minecraft1.bin: 1.7.4
+233112 buffers, runtime 378591 ms (~6.3 minutes)
+233112 creates, 39786967 cpu ops, 73145225 reads, 16851274 writes, 216618 destroys
+615.736 creates/s, 105092 cpu ops/s, 193204 reads/s, 44510.5 writes/s, 572.169 destroys/s
+
+minecraft2.bin: Sonic Ether GLSL deferred mod
+121314 buffers, runtime 200004 ms (~3.3 minutes)
+121314 creates, 34958394 cpu ops, 47989789 reads, 10320624 writes, 109569 destroys
+606.558 creates/s, 174788 cpu ops/s, 239944 reads/s, 51602.1 writes/s, 547.834 destroys/s
+
+muoto1.bin: 1366x768 2xMSAA
+9796 buffers, runtime 559567 ms (~9.3 minutes)
+9796 creates, 2677823 cpu ops, 3727288 reads, 85564 writes, 9717 destroys
+17.5064 creates/s, 4785.53 cpu ops/s, 6661.02 reads/s, 152.911 writes/s, 17.3652 destroys/s
+
+nederland1.bin: 1366x768
+3166 buffers, runtime 27554 ms (~0.5 minutes)
+3166 creates, 37799 cpu ops, 82153 reads, 14441 writes, 3032 destroys
+114.902 creates/s, 1371.82 cpu ops/s, 2981.53 reads/s, 524.098 writes/s, 110.038 destroys/s
+
+nexuiz1.bin: 1680x1050
+3881 buffers, runtime 30212 ms (~0.5 minutes)
+3881 creates, 1670369 cpu ops, 2809243 reads, 45932 writes, 3618 destroys
+128.459 creates/s, 55288.3 cpu ops/s, 92984.3 reads/s, 1520.32 writes/s, 119.754 destroys/s
+
+openarena1.bin: 1680x1050
+28167 buffers, runtime 96698 ms (~1.6 minutes)
+28167 creates, 7189303 cpu ops, 11562523 reads, 180637 writes, 28120 destroys
+291.288 creates/s, 74348 cpu ops/s, 119574 reads/s, 1868.05 writes/s, 290.802 destroys/s
+
+osmos1.bin:
+22573 buffers, runtime 945099 ms (~15.8 minutes)
+22573 creates, 2913147 cpu ops, 5194245 reads, 97815 writes, 12165 destroys
+23.8843 creates/s, 3082.37 cpu ops/s, 5495.98 reads/s, 103.497 writes/s, 12.8717 destroys/s
+
+pa1.bin: Planetary Annihilation v58772, 1920x1200, AA off, others max
+45899 buffers, runtime 356410 ms (~5.9 minutes)
+45899 creates, 14865342 cpu ops, 42849015 reads, 1067966 writes, 44909 destroys
+128.781 creates/s, 41708.5 cpu ops/s, 120224 reads/s, 2996.45 writes/s, 126.004 destroys/s
+
+party_heart1.bin: 1366x768
+1135 buffers, runtime 22844 ms (~0.4 minutes)
+1135 creates, 348676 cpu ops, 1094953 reads, 29085 writes, 356 destroys
+49.6848 creates/s, 15263.4 cpu ops/s, 47931.8 reads/s, 1273.2 writes/s, 15.584 destroys/s
+
+penumbra1.bin: Penumbra Overture
+43391 buffers, runtime 1245889 ms (~20.8 minutes)
+43391 creates, 7030974 cpu ops, 24562594 reads, 1093264 writes, 41585 destroys
+34.8273 creates/s, 5643.33 cpu ops/s, 19714.9 reads/s, 877.496 writes/s, 33.3777 destroys/s
+
+portal1.bin:
+52220 buffers, runtime 1174949 ms (~19.6 minutes)
+52220 creates, 4438903 cpu ops, 16722290 reads, 1522403 writes, 48040 destroys
+44.4444 creates/s, 3777.95 cpu ops/s, 14232.3 reads/s, 1295.72 writes/s, 40.8868 destroys/s
+
+runner2_1.bin:
+2889 buffers, runtime 332467 ms (~5.5 minutes)
+2889 creates, 6228468 cpu ops, 19476499 reads, 484490 writes, 2041 destroys
+8.68958 creates/s, 18734.1 cpu ops/s, 58581.8 reads/s, 1457.26 writes/s, 6.13896 destroys/s
+
+sam3_1.bin:
+31793 buffers, runtime 392958 ms (~6.5 minutes)
+31793 creates, 25691533 cpu ops, 74516950 reads, 9283906 writes, 36180 destroys
+80.9069 creates/s, 65379.8 cpu ops/s, 189631 reads/s, 23625.7 writes/s, 92.0709 destroys/s
+
+shatter1.bin:
+10955 buffers, runtime 609124 ms (~10.2 minutes)
+10955 creates, 42113301 cpu ops, 131868976 reads, 1356390 writes, 9982 destroys
+17.9848 creates/s, 69137.5 cpu ops/s, 216490 reads/s, 2226.79 writes/s, 16.3875 destroys/s
+
+skyrim1.bin: Wine git, AA off, others max
+26782 buffers, runtime 252779 ms (~4.2 minutes)
+26782 creates, 19579474 cpu ops, 56841792 reads, 1523215 writes, 19522 destroys
+105.95 creates/s, 77456.9 cpu ops/s, 224868 reads/s, 6025.88 writes/s, 77.2295 destroys/s
+
+smokingguns1.bin: 1680x1050
+3304 buffers, runtime 54131 ms (~0.9 minutes)
+3304 creates, 3254020 cpu ops, 4781877 reads, 39733 writes, 3261 destroys
+61.0371 creates/s, 60113.8 cpu ops/s, 88339 reads/s, 734.016 writes/s, 60.2427 destroys/s
+
+spectraball1.bin:
+24396 buffers, runtime 1254921 ms (~20.9 minutes)
+24396 creates, 8317176 cpu ops, 21536280 reads, 1448571 writes, 12254 destroys
+19.4403 creates/s, 6627.65 cpu ops/s, 17161.5 reads/s, 1154.31 writes/s, 9.76477 destroys/s
+
+spin1.bin: 1366x768 AA disabled
+6263 buffers, runtime 332997 ms (~5.5 minutes)
+6263 creates, 3945728 cpu ops, 5784178 reads, 156554 writes, 6137 destroys
+18.808 creates/s, 11849.1 cpu ops/s, 17370.1 reads/s, 470.136 writes/s, 18.4296 destroys/s
+
+splice1.bin:
+14214 buffers, runtime 549177 ms (~9.2 minutes)
+14214 creates, 3200172 cpu ops, 5314888 reads, 802671 writes, 5301 destroys
+25.8824 creates/s, 5827.21 cpu ops/s, 9677.91 reads/s, 1461.59 writes/s, 9.65263 destroys/s
+
+stargazer1.bin: 1366x768
+10431 buffers, runtime 340095 ms (~5.7 minutes)
+10431 creates, 941067 cpu ops, 4019647 reads, 452470 writes, 9772 destroys
+30.6708 creates/s, 2767.07 cpu ops/s, 11819.2 reads/s, 1330.42 writes/s, 28.7331 destroys/s
+
+supertuxkart1.bin: STK cand git, mid settings, Hacienda level
+1042 buffers, runtime 70860 ms (~1.2 minutes)
+1042 creates, 1718798 cpu ops, 3054361 reads, 230699 writes, 839 destroys
+14.7051 creates/s, 24256.3 cpu ops/s, 43104.2 reads/s, 3255.7 writes/s, 11.8402 destroys/s
+
+supertuxkart2.bin: STK cand git, mid settings, Jungle level
+995 buffers, runtime 62564 ms (~1.0 minutes)
+995 creates, 990683 cpu ops, 1859964 reads, 198964 writes, 803 destroys
+15.9037 creates/s, 15834.7 cpu ops/s, 29729 reads/s, 3180.17 writes/s, 12.8349 destroys/s
+
+surgeonsim1.bin: Surgeon Simulator 2013
+4779 buffers, runtime 482913 ms (~8.0 minutes)
+4779 creates, 17014187 cpu ops, 42367908 reads, 1733657 writes, 3958 destroys
+9.89619 creates/s, 35232.4 cpu ops/s, 87734 reads/s, 3590 writes/s, 8.19609 destroys/s
+
+tf2_1.bin: 1680x1050
+163790 buffers, runtime 282378 ms (~4.7 minutes)
+163790 creates, 2616594 cpu ops, 6579247 reads, 370589 writes, 163786 destroys
+580.038 creates/s, 9266.28 cpu ops/s, 23299.4 reads/s, 1312.39 writes/s, 580.024 destroys/s
+
+tf2_2.bin: pl_barnblitz map
+83916 buffers, runtime at 739482 ms (~12.3 minutes)
+83916 creates, 26092639 cpu ops, 93014190 reads, 4167907 writes, 73393 destroys
+113.479 creates/s, 35285 cpu ops/s, 125783 reads/s, 170.096 writes/s, 99.2492 destroys/s
+
+thomas1.bin: And Thomas was alone
+31812 buffers, runtime 979275 ms (~16.3 minutes)
+31812 creates, 6528456 cpu ops, 7966090 reads, 427896 writes, 31667 destroys
+32.4853 creates/s, 6666.62 cpu ops/s, 8134.68 reads/s, 436.952 writes/s, 32.3372 destroys/s
+
+tremulous1.bin: 1680x1050
+3386 buffers, runtime 64854 ms (~1.1 minutes)
+3386 creates, 2029521 cpu ops, 2875981 reads, 22162 writes, 3349 destroys
+52.2096 creates/s, 31293.7 cpu ops/s, 44345.5 reads/s, 341.721 writes/s, 51.6391 destroys/s
+
+trine2_1.bin: 1680x1050
+25716 buffers, runtime 228570 ms (~3.8 minutes)
+25716 creates, 1327581 cpu ops, 5952135 reads, 77524 writes, 23402 destroys
+112.508 creates/s, 5808.2 cpu ops/s, 26040.8 reads/s, 339.17 writes/s, 102.384 destroys/s
+
+urbanterror1.bin: 1680x1050
+6073 buffers, runtime 201869 ms (~3.4 minutes)
+6073 creates, 25001394 cpu ops, 29069898 reads, 116012 writes, 6023 destroys
+30.0839 creates/s, 123850 cpu ops/s, 144004 reads/s, 574.69 writes/s, 29.8362 destroys/s
+
+worldofgoo1.bin:
+24529 buffers, runtime 1125350 ms (~18.8 minutes)
+24529 creates, 16091201 cpu ops, 29775067 reads, 218387 writes, 24497 destroys
+21.7968 creates/s, 14298.8 cpu ops/s, 26458.5 reads/s, 194.061 writes/s, 21.7683 destroys/s
+
+worldofpadman1.bin: 1680x1050
+6370 buffers, runtime 174534 ms (~2.9 minutes)
+6370 creates, 17420486 cpu ops, 25720048 reads, 128989 writes, 6322 destroys
+36.4972 creates/s, 99811.4 cpu ops/s, 147364 reads/s, 739.048 writes/s, 36.2222 destroys/s
+
+wormsreloaded1.bin:
+2308 buffers, runtime 258014 ms (~4.3 minutes)
+2308 creates, 20300997 cpu ops, 24656646 reads, 143092 writes, 2266 destroys
+8.94525 creates/s, 78681.8 cpu ops/s, 95563.2 reads/s, 554.59 writes/s, 8.78247 destroys/s
+
+xonotic1.bin: git, Solarium map, 1680x1050, all max, no TC
+8794 buffers, runtime 237665 ms (~4.0 minutes)
+8794 creates, 12744266 cpu ops, 29794420 reads, 316599 writes, 15910 destroys
+37.0017 creates/s, 53622.8 cpu ops/s, 125363 reads/s, 1332.12 writes/s, 66.943 destroys/s
+
+xonotic2.bin: 1680x1050
+6075 buffers, runtime 487698 ms (~8.1 minutes)
+6075 creates, 17374997 cpu ops, 32298481 reads, 721045 writes, 5628 destroys
+12.4565 creates/s, 35626.5 cpu ops/s, 66226.4 reads/s, 1478.47 writes/s, 11.5399 destroys/s
+
+yetitmoves1.bin: 1280x800 high
+16577 buffers, runtime 785419 ms (~13.1 minutes)
+16577 creates, 4504140 cpu ops, 11575205 reads, 95205 writes, 13878 destroys
+21.1059 creates/s, 5734.7 cpu ops/s, 14737.6 reads/s, 121.216 writes/s, 17.6695 destroys/s
+
+youshould1.bin: 1366x768
+5606 buffers, runtime 392804 ms (~6.5 minutes)
+5606 creates, 751242 cpu ops, 1676496 reads, 137225 writes, 5081 destroys
+14.2717 creates/s, 1912.51 cpu ops/s, 4268.02 reads/s, 349.347 writes/s, 12.9352 destroys/s
