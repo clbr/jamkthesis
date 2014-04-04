@@ -45,7 +45,7 @@ Weeks 9-10
 
 .Work
 - Sort out the ioctl in libdrm, ddx, kernel
-- Write TTM logic to use it
+- Write TTM logic to use it (ongoing)
 
 Weeks 11-12
 -----------
