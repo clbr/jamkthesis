@@ -44,14 +44,14 @@ Weeks 9-10
 ----------
 
 .Work
-- Sort out the ioctl in libdrm, ddx, kernel
-- Write TTM logic to use it (ongoing)
+- Sort out the ioctl in libdrm, ddx, kernel, mesa (libdrm unneeded, kernel done)
+- Write TTM logic to use it (done)
 
 Weeks 11-12
 -----------
 
 .Work
-- Benchmarking
+- Benchmarking (ongoing)
 
 .Doc
 - Write the remaining chapters
