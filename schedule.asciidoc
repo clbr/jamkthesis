@@ -44,7 +44,7 @@ Weeks 9-10
 ----------
 
 .Work
-- Sort out the ioctl in libdrm, ddx, kernel, mesa (libdrm unneeded, ddx skippable, kernel done)
+- Sort out the ioctl in libdrm, ddx, kernel, mesa (libdrm unneeded, ddx skippable, kernel and mesa done)
 - Write TTM logic to use it (done)
 
 Weeks 11-12
