@@ -548,11 +548,8 @@ The initial research vector, reducing fragmentation by two-ended allocation, was
 In no case did it do worse, and at best it could reduce eviction by up to 20%. The change 
 was accepted into future Linux kernels.
 
-The training took almost three times longer than anticipated (8 weeks, when 3 were planned). 
-Of course given the problem space, 256^118^ combinations, copious computing time was to be 
-expected. In the end, a satisfactory solution was found.
-
-During the initial attemps it became clear that a solution with this amount of nodes could 
+During the initial training attemps it became clear that a solution with this amount of 
+nodes could 
 not perform well both the extreme low end (64 mb and 128 mb VRAM sizes) and at the more 
 common sizes. As the common graphics cards for sale are approaching 2 gb, and the wide 
 installed base concentrates around 512 mb, the two lowest VRAM sizes were dropped from 
@@ -586,6 +583,10 @@ Discussion
 During the training phase it became quite clear that the hardware available was inadequate:
 6 cores and 8 GB of RAM were limiting the training speed. A setup with 64 cores and 128 GB
 of RAM is estimated as a sweet spot, but alas, one has to make do.
+
+The training took almost three times longer than anticipated (8 weeks, when 3 were planned). 
+Of course given the problem space, 256^118^ combinations, copious computing time was to be 
+expected. In the end, a satisfactory solution was found.
 
 [bibliography]
 Bibliography
