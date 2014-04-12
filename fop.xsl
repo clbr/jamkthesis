@@ -14,6 +14,8 @@
 
 <xsl:param name="orderedlist.label.width">1.5em</xsl:param>
 
+<xsl:param name="generate.toc" select="'article toc,title,figure,table'"/>
+
 <xsl:template match="simpara">
   <xsl:variable name="keep.together">
     <xsl:call-template name="pi.dbfo_keep-together"/>
