@@ -7,6 +7,9 @@
 <!-- Include basic AsciiDoc FOP formatting -->
 <xsl:import href="file:///etc/asciidoc/docbook-xsl/fo.xsl"/>
 
+<!-- My title pages -->
+<xsl:import href="mytitlepages.xsl"/>
+
 <xsl:attribute-set name="root.properties">
 	<xsl:attribute name="widows">4</xsl:attribute>
 	<xsl:attribute name="orphans">4</xsl:attribute>
