@@ -14,6 +14,17 @@
 
 <xsl:param name="orderedlist.label.width">1.5em</xsl:param>
 
+<xsl:template match="simpara">
+  <xsl:variable name="keep.together">
+    <xsl:call-template name="pi.dbfo_keep-together"/>
+  </xsl:variable>
+  <fo:block xsl:use-attribute-sets="normal.para.spacing">
+      <xsl:attribute name="keep-together.within-column">always</xsl:attribute>
+    <xsl:call-template name="anchor"/>
+    <xsl:apply-templates/>
+  </fo:block>
+</xsl:template>
+
   <!-- 1.2 section -->
   <xsl:attribute-set name="section.title.level1.properties">
     <xsl:attribute name="font-size">
