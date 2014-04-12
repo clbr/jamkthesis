@@ -1,6 +1,8 @@
 #!/bin/sh -e
 
-a2x -f pdf --fop --fop-opts="-dpi 300" -L thesis.asciidoc
+a2x -f pdf --fop --fop-opts="-dpi 300" -L \
+	--xsl-file='fop.xsl' \
+	thesis.asciidoc
 
 mv thesis.pdf tmpy
 gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite \
