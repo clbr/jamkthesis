@@ -13,6 +13,11 @@
 	<xsl:attribute name="line-height">1.5</xsl:attribute>
 </xsl:attribute-set>
 
+<xsl:attribute-set name="formal.title.properties">
+	<xsl:attribute name="font-weight">normal</xsl:attribute>
+	<xsl:attribute name="font-size">normal</xsl:attribute>
+</xsl:attribute-set>
+
 <xsl:param name="orderedlist.label.width">1.5em</xsl:param>
 
 <xsl:param name="generate.toc" select="'article toc,title,figure,table'"/>
