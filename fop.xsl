@@ -10,6 +10,7 @@
 <xsl:attribute-set name="root.properties">
 	<xsl:attribute name="widows">4</xsl:attribute>
 	<xsl:attribute name="orphans">4</xsl:attribute>
+	<xsl:attribute name="line-height">1.5</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:param name="orderedlist.label.width">1.5em</xsl:param>
