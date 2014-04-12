@@ -2,6 +2,7 @@
 
 a2x -f pdf --fop --fop-opts="-dpi 300" -L \
 	--xsl-file='fop.xsl' -k \
+	--xsltproc-opts='--stringparam body.start.indent 0pt' \
 	thesis.asciidoc
 
 mv thesis.pdf tmpy
