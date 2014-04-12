@@ -30,21 +30,21 @@
   <!-- 1.2 section -->
   <xsl:attribute-set name="section.title.level1.properties">
     <xsl:attribute name="font-size">
-      <xsl:value-of select="$body.font.master * 1.5"/>
+      <xsl:value-of select="$body.font.master * 1.36"/>
       <xsl:text>pt</xsl:text>
     </xsl:attribute>
   </xsl:attribute-set>
   <!-- 1.2.3 section -->
   <xsl:attribute-set name="section.title.level2.properties">
     <xsl:attribute name="font-size">
-      <xsl:value-of select="$body.font.master * 1.36"/>
+      <xsl:value-of select="$body.font.master * 1.2"/>
       <xsl:text>pt</xsl:text>
     </xsl:attribute>
   </xsl:attribute-set>
   <!-- 1.2.3.4 section -->
   <xsl:attribute-set name="section.title.level3.properties">
     <xsl:attribute name="font-size">
-      <xsl:value-of select="$body.font.master * 1.2"/>
+      <xsl:value-of select="$body.font.master * 1.1"/>
       <xsl:text>pt</xsl:text>
     </xsl:attribute>
   </xsl:attribute-set>
