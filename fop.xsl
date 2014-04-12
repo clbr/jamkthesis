@@ -20,6 +20,9 @@
 
 <xsl:param name="orderedlist.label.width">1.5em</xsl:param>
 
+<xsl:param name="header.rule">0</xsl:param>
+<xsl:param name="footer.rule">0</xsl:param>
+
 <xsl:param name="generate.toc" select="'article toc,title,figure,table'"/>
 
 <xsl:param name="formal.title.placement">
