@@ -17,6 +17,14 @@
 
 <xsl:param name="generate.toc" select="'article toc,title,figure,table'"/>
 
+<xsl:param name="formal.title.placement">
+figure after
+example before
+equation after
+table before
+procedure before
+</xsl:param>
+
 <xsl:template match="simpara">
   <xsl:variable name="keep.together">
     <xsl:call-template name="pi.dbfo_keep-together"/>
