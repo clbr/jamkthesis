@@ -357,45 +357,45 @@ optimum. The simulation took approximately 2.5 hours per run, and each run gener
 suite, a custom graphing tool was developed.
 
 .64 mb VRAM
-image::pics/f64.png[scaledwidth="75%"]
+image::pics/f64.png[scaledwidth="95%"]
 
 Starting off with the 64 mb VRAM run, it can be clearly seen that the workload is too heavy
 for this size. Still, it's a good data point to have, in order to see how the strategies
 behave under heavy pressure.
 
 .128 mb VRAM
-image::pics/f128.png[scaledwidth="75%"]
+image::pics/f128.png[scaledwidth="95%"]
 
 With 128 mb, all of the traces could be run through. Fragmentation is approximately equal in
 all cases, but the swapping (eviction) is lower in all of the min-max runs compared to the
 default run.
 
 .256 mb VRAM
-image::pics/f256.png[scaledwidth="75%"]
+image::pics/f256.png[scaledwidth="95%"]
 
 The patterns become visible in the 256 mb run. Peak fragmentation is surprisingly higher in
 min-max, but swapping continues to be lower.
 
 .384 mb VRAM
-image::pics/f384.png[scaledwidth="75%"]
+image::pics/f384.png[scaledwidth="95%"]
 
 .512 mb VRAM
-image::pics/f512.png[scaledwidth="75%"]
+image::pics/f512.png[scaledwidth="95%"]
 
 .1024 mb VRAM
-image::pics/f1024.png[scaledwidth="75%"]
+image::pics/f1024.png[scaledwidth="95%"]
 
 Starting with the 1 gb run, the average fragmentation of min-max starts to climb above the
 default's.
 
 .1536 mb VRAM
-image::pics/f1536.png[scaledwidth="75%"]
+image::pics/f1536.png[scaledwidth="95%"]
 
 .2048 mb VRAM
-image::pics/f2048.png[scaledwidth="75%"]
+image::pics/f2048.png[scaledwidth="95%"]
 
 .4096 mb VRAM
-image::pics/f4096.png[scaledwidth="75%"]
+image::pics/f4096.png[scaledwidth="95%"]
 
 In total, the min-max strategy turned out to actually increase fragmentation. Despite the
 higher absolute amount of holes, they actually decreased swapping in all runs except the 64
@@ -572,10 +572,10 @@ smaller than the number of big wins.
 image::pics/indres256.png[scaledwidth="75%"]
 
 .Major results in 384 mb.
-image::pics/indres384.png[scaledwidth="75%"]
+image::pics/indres384.png[scaledwidth="55%"]
 
 .Major results in 512 mb.
-image::pics/indres512.png[scaledwidth="75%"]
+image::pics/indres512.png[scaledwidth="35%"]
 
 Testing with real hardware, it could be seen that the cpu overhead of calculating the score
 was negligible. Passing the score to the kernel initially took 3% cpu, but that could be
