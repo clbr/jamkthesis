@@ -74,7 +74,7 @@ an enjoyable experience, as the user will notice individual images instead of th
 of movement.
 
 .Notice the huge frame time spikes on Catalyst: better performance, but worse smoothness. Image (C) Phoronix, printed with permission.
-image::pics/frametime.png[]
+image::pics/frametime.png[scaledwidth="75%"]
 
 Problem background
 ~~~~~~~~~~~~~~~~~~
@@ -90,7 +90,7 @@ proprietary Catalyst driver (Larabel 2013a). Depending on the benchmark and hard
 is within 60% - 110% of the Catalyst driver, generally around 80%.
 
 .Warsow benchmark at 2560x1600. Image (C) Phoronix, printed with permission.
-image::pics/warsow.png[]
+image::pics/warsow.png[scaledwidth="75%"]
 
 One of the remaining areas yet to be optimized is the VRAM placing strategy. In this
 thesis, research will be done on improving this area of the r600g driver.
@@ -279,7 +279,7 @@ To enable those inputs to be replayed, the memory traces listed each operation o
 along with timing information.
 
 .Sample from a memory trace.
-image::pics/trace.png[]
+image::pics/trace.png[scaledwidth="50%"]
 
 As the traces took a considerable amount of space in their uncompressed text form, a custom
 binary format was developed. A binary format also allows the traces to be read back much
