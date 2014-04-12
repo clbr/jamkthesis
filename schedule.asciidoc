@@ -38,7 +38,7 @@ Weeks 6-8
 ---------
 
 .Work
-- The training application itself (ongoing)
+- The training application itself (done)
 
 Weeks 9-10
 ----------
@@ -51,7 +51,7 @@ Weeks 11-12
 -----------
 
 .Work
-- Benchmarking (ongoing)
+- Benchmarking (done)
 
 .Doc
 - Write the remaining chapters (ongoing)
@@ -60,4 +60,4 @@ Week 13
 -------
 
 .Doc
-- Format the doc according to JAMK standards
+- Format the doc according to JAMK standards (ongoing)
