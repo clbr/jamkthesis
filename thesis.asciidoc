@@ -577,6 +577,10 @@ image::pics/indres384.png[scaledwidth="75%"]
 .Major results in 512 mb.
 image::pics/indres512.png[scaledwidth="75%"]
 
+Testing with real hardware, it could be seen that the cpu overhead of calculating the score
+was negligible. Passing the score to the kernel initially took 3% cpu, but that could be
+optimized away by embedding the score in an existing call (the cs ioctl).
+
 Discussion
 ----------
 
