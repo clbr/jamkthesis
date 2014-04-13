@@ -171,6 +171,85 @@ procedure before
     </xsl:attribute>
   </xsl:attribute-set>
 
+<xsl:template name="make-glossary">
+  <xsl:param name="divs" select="glossdiv"/>
+  <xsl:param name="entries" select="glossentry"/>
+  <xsl:param name="preamble" select="*[not(self::title
+                                           or self::subtitle
+                                           or self::glossdiv
+                                           or self::glossentry)]"/>
+
+
+  <xsl:variable name="id">
+    <xsl:call-template name="object.id"/>
+  </xsl:variable>
+
+  <xsl:variable name="presentation">
+    <xsl:call-template name="pi.dbfo_glossary-presentation"/>
+  </xsl:variable>
+
+  <xsl:variable name="term-width">
+    <xsl:call-template name="pi.dbfo_glossterm-width"/>
+  </xsl:variable>
+
+  <xsl:variable name="width">
+    <xsl:choose>
+      <xsl:when test="$term-width = ''">
+        <xsl:value-of select="$glossterm.width"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$term-width"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+
+  <fo:block id="{$id}">
+    <xsl:call-template name="glossary.titlepage"/>
+  </fo:block>
+
+  <xsl:if test="$preamble">
+    <xsl:apply-templates select="$preamble"/>
+  </xsl:if>
+
+  <xsl:choose>
+    <xsl:when test="$presentation = 'list'">
+      <xsl:apply-templates select="$divs" mode="glossary.as.list">
+        <xsl:with-param name="width" select="$width"/>
+      </xsl:apply-templates>
+      <xsl:if test="$entries">
+        <fo:list-block provisional-distance-between-starts="{$width}"
+                       provisional-label-separation="{$glossterm.separation}"
+                       xsl:use-attribute-sets="normal.para.spacing"
+                       break-after="page">
+              <xsl:apply-templates select="$entries" mode="glossary.as.list"/>
+        </fo:list-block>
+      </xsl:if>
+    </xsl:when>
+    <xsl:when test="$presentation = 'blocks'">
+      <xsl:apply-templates select="$divs" mode="glossary.as.blocks"/>
+          <xsl:apply-templates select="$entries" mode="glossary.as.blocks"/>
+    </xsl:when>
+    <xsl:when test="$glossary.as.blocks != 0">
+      <xsl:apply-templates select="$divs" mode="glossary.as.blocks"/>
+          <xsl:apply-templates select="$entries" mode="glossary.as.blocks"/>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:apply-templates select="$divs" mode="glossary.as.list">
+        <xsl:with-param name="width" select="$width"/>
+      </xsl:apply-templates>
+      <xsl:if test="$entries">
+        <fo:list-block provisional-distance-between-starts="{$width}"
+                       provisional-label-separation="{$glossterm.separation}"
+                       xsl:use-attribute-sets="normal.para.spacing"
+                       break-after="page">
+              <xsl:apply-templates select="$entries" mode="glossary.as.list"/>
+        </fo:list-block>
+      </xsl:if>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+
 <xsl:attribute-set name="monospace.verbatim.properties">
 	<xsl:attribute name="keep-together.within-column">always</xsl:attribute>
 </xsl:attribute-set>
