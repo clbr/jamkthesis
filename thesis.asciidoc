@@ -585,6 +585,42 @@ Likewise, the use of a priority queue in place of the LRU linked list did not me
 increase cpu overhead. The change turned a few operations from O(1) to O(log n), but the 
 amount of buffers in VRAM at once is fairly low, in the single thousands.
 
+.Test hardware
+image::pics/pts1.png[scaledwidth="50%"]
+
+Only 256 MB was tested, as the available tests don't require enough VRAM to cause memory 
+pressure under higher VRAM amounts.
+
+.Test scores
+image::pics/pts2.png[scaledwidth="35%"]
+
+Phoronix Test Suite runs each test a minimum of three times, more if there is variance. This 
+means that even fairly small differences, starting from around 0.5%, are statistically 
+significant.
+
+.Visual scores
+image::pics/pts3.png[scaledwidth="95%"]
+
+For most tests, improvements of 1-2% can be seen. There were three regressions: Smoking Guns 
+0.2%, Tremulous 0.3%, and Urban Terror 10.2%. The regression in Urban Terror is interesting, 
+as that test was equal under the simulation.
+
+Two of the tests support frame time recording: OpenArena and Urban Terror.
+
+.OpenArena frame time
+image::pics/pts4.png[scaledwidth="70%"]
+
+In OpenArena, the average frame time was 0.8 ms lower, and most peaks are lower as well. The 
+highest peak coincides with the comparison target, but it seems to be fairly rare. So for 
+OpenArena, the goal of increasing smoothness was reached.
+
+.Urban Terror frame time
+image::pics/pts5.png[scaledwidth="70%"]
+
+Urban Terror had regressed 10.2% in FPS, and here the frame time average is larger as well. 
+However, the peaks are greatly lower, and there are less of them. The highest peak was 69 ms 
+vs 90 ms. The smoothness here improved greatly.
+
 Discussion
 ----------
 
