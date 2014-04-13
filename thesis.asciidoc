@@ -59,7 +59,7 @@ keep in VRAM, and which parts can be kept in regular system RAM, is of utmost im
 
 If the application needs to access a specific resource in system RAM, it will have a
 corresponding hit in its performance. The VRAM placement strategy should try to rank the
-application's buffers in such a way to maximize the application's performance.
+application's buffers in such a way as to maximize the application's performance.
 
 Application performance is commonly measured in two ways: throughput (FPS, frames per
 second) and smoothness (how stable the FPS is). For a good user experience, they both
