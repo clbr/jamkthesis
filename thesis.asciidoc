@@ -643,7 +643,8 @@ global optimum. Thus three paths forward can be seen.
 
 First, the parameters can be adequate, and merely more computing time is needed to find a 
 better solution. Second, it is possible the input parameters are adequate, but the 
-processing power of the network is not. If so, it would need more hidden nodes.
+processing power of the network is not. If so, it would need more hidden nodes, which would 
+also mean slower training.
 
 Finally, it is possible that the input parameters are not the best possible. It may be that 
 some different input can be easily gathered, and that input provides great correlation to a 
