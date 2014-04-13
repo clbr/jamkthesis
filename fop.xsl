@@ -90,6 +90,30 @@ procedure before
     <xsl:apply-templates select="." mode="label.markup"/>
   </xsl:variable>
 
+<!-- Appendices hack -->
+ <xsl:if test="self::appendix">
+  <fo:block xsl:use-attribute-sets="toc.line.properties">
+
+    <fo:inline keep-with-next.within-line="always">
+      <fo:basic-link internal-destination="{$id}">
+       	<xsl:text>Appendices</xsl:text>
+      </fo:basic-link>
+    </fo:inline>
+
+    <fo:inline keep-together.within-line="always">
+      <xsl:text> </xsl:text>
+      <fo:leader leader-pattern="dots"
+                 leader-pattern-width="3pt"
+                 leader-alignment="reference-area"
+                 keep-with-next.within-line="always"/>
+      <xsl:text> </xsl:text>
+      <fo:basic-link internal-destination="{$id}">
+        <fo:page-number-citation ref-id="{$id}"/>
+      </fo:basic-link>
+    </fo:inline>
+  </fo:block>
+ </xsl:if>
+
   <fo:block xsl:use-attribute-sets="toc.line.properties">
     <fo:inline keep-with-next.within-line="always">
       <fo:basic-link internal-destination="{$id}">
