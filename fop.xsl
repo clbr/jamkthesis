@@ -28,6 +28,13 @@
 
 <xsl:param name="generate.toc" select="'article toc,title,figure,table'"/>
 
+<xsl:param name="local.l10n.xml" select="document('')"/>
+<l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
+  <l:l10n language="en">
+    <l:gentext key="TableofContents" text="Contents"/>
+  </l:l10n>
+</l:i18n>
+
 <xsl:param name="formal.title.placement">
 figure after
 example before
