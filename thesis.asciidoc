@@ -596,6 +596,11 @@ The training took almost three times longer than anticipated (8 weeks, when 3 we
 Of course given the problem space, 256^118^ combinations, copious computing time was to be 
 expected. In the end, a satisfactory solution was found.
 
+Acknowledgements
+----------------
+
+I would like to thank Jerome Glisse for his guidance.
+
 [bibliography]
 Bibliography
 ------------
