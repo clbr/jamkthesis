@@ -133,6 +133,22 @@ procedure before
   </fo:block>
 </xsl:template>
 
+<xsl:template match="footnote/para[1]
+                     |footnote/simpara[1]
+                     |footnote/formalpara[1]"
+              priority="2">
+  <!-- this only works if the first thing in a footnote is a para, -->
+  <!-- which is ok, because it usually is. -->
+  <fo:block>
+    <xsl:call-template name="format.footnote.mark">
+      <xsl:with-param name="mark">
+        <xsl:apply-templates select="ancestor::footnote" mode="footnote.number"/>
+      </xsl:with-param>
+    </xsl:call-template>
+    <xsl:apply-templates/>
+  </fo:block>
+</xsl:template>
+
   <!-- 1.2 section -->
   <xsl:attribute-set name="section.title.level1.properties">
     <xsl:attribute name="font-size">
