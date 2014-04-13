@@ -247,8 +247,8 @@ start that wide coverage would be needed, the public was asked for assistance (K
 Dawe 2014).
 
 In addition to data gathered by the researcher, the public sent a wide variety of traces,
-enhancing the coverage much further than would have been possible otherwise. The researcher
-would like to thank all contributors.
+enhancing the coverage much further than would have been possible otherwise. Thanks to all 
+contributors.
 
 To get suitable data for the purposes of this research, the following data points were
 selected as inputs:
@@ -599,7 +599,8 @@ expected. In the end, a satisfactory solution was found.
 Acknowledgements
 ----------------
 
-I would like to thank Jerome Glisse for his guidance.
+I would like to thank Jerome Glisse for his guidance, Thomas Hellstrom for reviews, and 
+everyone who contributed data.
 
 [bibliography]
 Bibliography
