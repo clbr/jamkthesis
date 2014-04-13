@@ -22,7 +22,10 @@ Frame time::
 	The inverse of FPS, ie. (milli)seconds per frame.
 
 Linux::
-	An open-source operating system
+	An open-source operating system.
+
+LRU::
+	Least Recently Used, a type of cache algorithm.
 
 mipmapping::
 	A technique of accessing pre-scaled versions of a texture.
