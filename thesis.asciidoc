@@ -346,60 +346,60 @@ type.
 .Allocation strategies.
 image::pics/allocations.png[scaledwidth="75%"]
 
-Nine common VRAM sizes were tested: 64 mb, 128 mb, 256 mb, 384 mb, 512 mb, 1024 mb, 1536 mb,
-2048 mb, and 4096 mb. In cases where the trace couldn't run on a configuration, that trace
-was skipped. For example, Planetary Annihilation allocated a buffer of 78 mb in size; it is
-obviously beyond the capabilities of a 64 mb VRAM graphics card.
+Nine common VRAM sizes were tested: 64 MB, 128 MB, 256 MB, 384 MB, 512 MB, 1024 MB, 1536 MB,
+2048 MB, and 4096 MB. In cases where the trace couldn't run on a configuration, that trace
+was skipped. For example, Planetary Annihilation allocated a buffer of 78 MB in size; it is
+obviously beyond the capabilities of a 64 MB VRAM graphics card.
 
 Several threshold values were tested for the min-max allocator in order to find a rough
 optimum. The simulation took approximately 2.5 hours per run, and each run generated about
 16 GB of data. As the amount of data was far too great to process on an ordinary office
 suite, a custom graphing tool was developed.
 
-.64 mb VRAM
+.64 MB VRAM
 image::pics/f64.png[scaledwidth="95%"]
 
-Starting off with the 64 mb VRAM run, it can be clearly seen that the workload is too heavy
+Starting off with the 64 MB VRAM run, it can be clearly seen that the workload is too heavy
 for this size. Still, it's a good data point to have, in order to see how the strategies
 behave under heavy pressure.
 
-.128 mb VRAM
+.128 MB VRAM
 image::pics/f128.png[scaledwidth="95%"]
 
-With 128 mb, all of the traces could be run through. Fragmentation is approximately equal in
+With 128 MB, all of the traces could be run through. Fragmentation is approximately equal in
 all cases, but the swapping (eviction) is lower in all of the min-max runs compared to the
 default run.
 
-.256 mb VRAM
+.256 MB VRAM
 image::pics/f256.png[scaledwidth="95%"]
 
-The patterns become visible in the 256 mb run. Peak fragmentation is surprisingly higher in
+The patterns become visible in the 256 MB run. Peak fragmentation is surprisingly higher in
 min-max, but swapping continues to be lower.
 
-.384 mb VRAM
+.384 MB VRAM
 image::pics/f384.png[scaledwidth="95%"]
 
-.512 mb VRAM
+.512 MB VRAM
 image::pics/f512.png[scaledwidth="95%"]
 
-.1024 mb VRAM
+.1024 MB VRAM
 image::pics/f1024.png[scaledwidth="95%"]
 
 Starting with the 1 GB run, the average fragmentation of min-max starts to climb above the
 default's.
 
-.1536 mb VRAM
+.1536 MB VRAM
 image::pics/f1536.png[scaledwidth="95%"]
 
-.2048 mb VRAM
+.2048 MB VRAM
 image::pics/f2048.png[scaledwidth="95%"]
 
-.4096 mb VRAM
+.4096 MB VRAM
 image::pics/f4096.png[scaledwidth="95%"]
 
 In total, the min-max strategy turned out to actually increase fragmentation. Despite the
 higher absolute amount of holes, they actually decreased swapping in all runs except the 64
-mb one. It is assumed this is due to a better quality of fragmentation; that is, the holes
+MB one. It is assumed this is due to a better quality of fragmentation; that is, the holes
 created are more suitable for new allocations.
 
 Gathering the swapping statistics together, the optimal threshold value can be determined.
@@ -407,19 +407,19 @@ Gathering the swapping statistics together, the optimal threshold value can be d
 .Swapping improvement over the default strategy.
 image::pics/swapping.png[scaledwidth="75%"]
 
-As the workload was far too heavy for a 64 mb VRAM graphics card, causing high swapping
+As the workload was far too heavy for a 64 MB VRAM graphics card, causing high swapping
 rates, it is believed that that result can be ignored. The traces were generally recorded in
 1366x768 resolution or higher, and such high resolutions are not supported by most graphics
-cards with 64 mb VRAM.
+cards with 64 MB VRAM.
 
 In all other runs, the min-max allocation strategy improved swapping over the default. For
-the 128 mb, 256 mb, 384 mb, and 512 mb runs the improvement was in single-digit percentages.
+the 128 MB, 256 MB, 384 MB, and 512 MB runs the improvement was in single-digit percentages.
 
-For 1024 mb and 4096 mb, the min-max allocation resulted in about 10% less swapping. For the
-last ones, 1536 and 2048 mb, the highest results were measured: around 20%.
+For 1024 MB and 4096 MB, the min-max allocation resulted in about 10% less swapping. For the
+last ones, 1536 and 2048 MB, the highest results were measured: around 20%.
 
 At least for this test data, the optimal threshold for min-max allocation is 512 kb. While
-for some VRAM sizes it did worse than the 1 mb threshold, it also outdid the higher
+for some VRAM sizes it did worse than the 1 MB threshold, it also outdid the higher
 threshold in some cases. In no case did the 512 kb threshold lose to the 256 kb threshold,
 however.
 
@@ -550,9 +550,9 @@ was accepted into future Linux kernels.
 
 During the initial training attempts it became clear that a solution with this amount of 
 nodes could 
-not perform well both the extreme low end (64 mb and 128 mb VRAM sizes) and at the more 
+not perform well both the extreme low end (64 MB and 128 MB VRAM sizes) and at the more 
 common sizes. As the common graphics cards for sale are approaching 2 GB, and the wide 
-installed base concentrates around 512 mb, the two lowest VRAM sizes were dropped from 
+installed base concentrates around 512 MB, the two lowest VRAM sizes were dropped from 
 consideration.
 
 On average, the found solution gives approximately 1% improvement over LRU, as measured by 
@@ -568,13 +568,13 @@ Taking a look at the simulated results over 2% in either direction, we see that 
 concentrate on the lower VRAM sizes. We can also see that the number of big losses is 
 smaller than the number of big wins.
 
-.Major results in 256 mb.
+.Major results in 256 MB.
 image::pics/indres256.png[scaledwidth="75%"]
 
-.Major results in 384 mb.
+.Major results in 384 MB.
 image::pics/indres384.png[scaledwidth="55%"]
 
-.Major results in 512 mb.
+.Major results in 512 MB.
 image::pics/indres512.png[scaledwidth="35%"]
 
 Testing with real hardware, it could be seen that the cpu overhead of calculating the score
