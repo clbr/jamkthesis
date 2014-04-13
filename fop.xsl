@@ -21,6 +21,10 @@
 	<xsl:attribute name="font-size">normal</xsl:attribute>
 </xsl:attribute-set>
 
+<xsl:attribute-set name="component.title.properties">
+	<xsl:attribute name="text-align">normal</xsl:attribute>
+</xsl:attribute-set>
+
 <xsl:param name="orderedlist.label.width">1.5em</xsl:param>
 
 <xsl:param name="header.rule">0</xsl:param>
