@@ -637,7 +637,7 @@ expected. In the end, a satisfactory solution was found.
 
 It is interesting how only three inputs were chosen as useful. Further, the connection of 
 buffer writes deduced by the AI was extremely surprising: a small number of writes meant a 
-/reduction/ in score. As the number of writes increased, the score started to increase 
+_reduction_ in score. As the number of writes increased, the score started to increase 
 again. It is exactly this kind of new, unexpected connections that neural networks excel at, 
 and which humans may never find.
 
