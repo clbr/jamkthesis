@@ -632,6 +632,27 @@ The training took almost three times longer than anticipated (8 weeks, when 3 we
 Of course given the problem space, 256^118^ combinations, copious computing time was to be 
 expected. In the end, a satisfactory solution was found.
 
+The results fell a bit short of expectations. Given the difference to Catalyst, I hoped for 
+an improvement of about 5%.
+
+Future work and conclusion
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+With the enormous problem space, it cannot be said that the solution reached here is the 
+global optimum. Thus three paths forward can be seen.
+
+First, the parameters can be adequate, and merely more computing time is needed to find a 
+better solution. Second, it is possible the input parameters are adequate, but the 
+processing power of the network is not. If so, it would need more hidden nodes.
+
+Finally, it is possible that the input parameters are not the best possible. It may be that 
+some different input can be easily gathered, and that input provides great correlation to a 
+buffer's importance.
+
+It was proved that LRU is not the most optimal solution, and that a neural network can beat 
+it. This opens up chances for other kinds of competition as well, outside that of artificial 
+intelligence.
+
 Acknowledgements
 ----------------
 
