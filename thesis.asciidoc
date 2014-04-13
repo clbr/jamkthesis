@@ -632,6 +632,12 @@ The training took almost three times longer than anticipated (8 weeks, when 3 we
 Of course given the problem space, 256^118^ combinations, copious computing time was to be 
 expected. In the end, a satisfactory solution was found.
 
+It is interesting how only three inputs were chosen as useful. Further, the connection of 
+buffer writes deduced by the AI was extremely surprising: a small number of writes meant a 
+/reduction/ in score. As the number of writes increased, the score started to increase 
+again. It is exactly this kind of new, unexpected connections that neural networks excel at, 
+and which humans may never find.
+
 The results fell a bit short of expectations. Given the difference to Catalyst, I hoped for 
 an improvement of about 5%.
 
