@@ -36,6 +36,9 @@ table before
 procedure before
 </xsl:param>
 
+<xsl:template name="footer.content">
+</xsl:template>
+
 <xsl:template match="simpara">
   <xsl:variable name="keep.together">
     <xsl:call-template name="pi.dbfo_keep-together"/>
