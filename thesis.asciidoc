@@ -532,7 +532,7 @@ affect the converging speed and ability of the population.
 
 In the training application here, the following setup was chosen. The genome was encoded as
 118 bytes, each byte representing a floating-point value from -1 to 1 on a linear scale,
-giving it an accuracy of ~0.0078. The best half of the population was alloved to survive
+giving it an accuracy of ~0.0078. The best half of the population was allowed to survive
 (the principle of elitism), and was also used as the source for eligible mates. Each
 individual was selected for mating based on its position when ordered by score, such
 that the most fit individual got to mate more than the second fit, and so on.
@@ -548,7 +548,7 @@ The initial research vector, reducing fragmentation by two-ended allocation, was
 In no case did it do worse, and at best it could reduce eviction by up to 20%. The change 
 was accepted into future Linux kernels.
 
-During the initial training attemps it became clear that a solution with this amount of 
+During the initial training attempts it became clear that a solution with this amount of 
 nodes could 
 not perform well both the extreme low end (64 mb and 128 mb VRAM sizes) and at the more 
 common sizes. As the common graphics cards for sale are approaching 2 gb, and the wide 
