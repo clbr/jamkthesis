@@ -39,6 +39,32 @@ procedure before
 <xsl:template name="footer.content">
 </xsl:template>
 
+<xsl:template name="header.content">
+  <xsl:param name="pageclass" select="''"/>
+  <xsl:param name="sequence" select="''"/>
+  <xsl:param name="position" select="''"/>
+  <xsl:param name="gentext-key" select="''"/>
+
+  <fo:block>
+    <!-- pageclass can be front, body, back -->
+    <!-- sequence can be odd, even, first, blank -->
+    <!-- position can be left, center, right -->
+    <xsl:choose>
+      <xsl:when test="$pageclass = 'titlepage'">
+        <!-- nop; no header on title pages -->
+      </xsl:when>
+
+      <xsl:when test="$position='right'">
+        <fo:page-number/>
+      </xsl:when>
+
+      <xsl:otherwise>
+        <!-- nop -->
+      </xsl:otherwise>
+    </xsl:choose>
+  </fo:block>
+</xsl:template>
+
 <xsl:template match="simpara">
   <xsl:variable name="keep.together">
     <xsl:call-template name="pi.dbfo_keep-together"/>
