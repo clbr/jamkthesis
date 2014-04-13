@@ -12,6 +12,6 @@ mv thesis.pdf tmpy
 gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite \
 	-dCompatibilityLevel=1.3 \
 	-dPDFSETTINGS=/prepress \
-	-o thesis.pdf tmpy
+	-o thesis.pdf cover.pdf tmpy pdfmarks
 
 rm tmpy
