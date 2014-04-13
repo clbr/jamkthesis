@@ -115,6 +115,11 @@ procedure before
  </xsl:if>
 
   <fo:block xsl:use-attribute-sets="toc.line.properties">
+        <xsl:if test="self::appendix">
+        	<xsl:attribute name="margin-{$direction.align.start}">
+        		24pt
+        	</xsl:attribute>
+        </xsl:if>
     <fo:inline keep-with-next.within-line="always">
       <fo:basic-link internal-destination="{$id}">
         <xsl:if test="self::appendix">
