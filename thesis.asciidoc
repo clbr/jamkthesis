@@ -353,7 +353,7 @@ obviously beyond the capabilities of a 64 mb VRAM graphics card.
 
 Several threshold values were tested for the min-max allocator in order to find a rough
 optimum. The simulation took approximately 2.5 hours per run, and each run generated about
-16 gb of data. As the amount of data was far too great to process on an ordinary office
+16 GB of data. As the amount of data was far too great to process on an ordinary office
 suite, a custom graphing tool was developed.
 
 .64 mb VRAM
@@ -385,7 +385,7 @@ image::pics/f512.png[scaledwidth="95%"]
 .1024 mb VRAM
 image::pics/f1024.png[scaledwidth="95%"]
 
-Starting with the 1 gb run, the average fragmentation of min-max starts to climb above the
+Starting with the 1 GB run, the average fragmentation of min-max starts to climb above the
 default's.
 
 .1536 mb VRAM
@@ -551,7 +551,7 @@ was accepted into future Linux kernels.
 During the initial training attempts it became clear that a solution with this amount of 
 nodes could 
 not perform well both the extreme low end (64 mb and 128 mb VRAM sizes) and at the more 
-common sizes. As the common graphics cards for sale are approaching 2 gb, and the wide 
+common sizes. As the common graphics cards for sale are approaching 2 GB, and the wide 
 installed base concentrates around 512 mb, the two lowest VRAM sizes were dropped from 
 consideration.
 
