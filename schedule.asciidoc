@@ -54,10 +54,10 @@ Weeks 11-12
 - Benchmarking (done)
 
 .Doc
-- Write the remaining chapters (ongoing)
+- Write the remaining chapters (done)
 
 Week 13
 -------
 
 .Doc
-- Format the doc according to JAMK standards (ongoing)
+- Format the doc according to JAMK standards (done)
