@@ -592,7 +592,12 @@ amount of buffers in VRAM at once is fairly low, in the single thousands.
 image::pics/pts1.png[scaledwidth="50%"]
 
 Only 256 MB was tested, as the available tests don't require enough VRAM to cause memory 
-pressure under higher VRAM amounts.
+pressure under higher VRAM amounts. The Radeon driver allows one to limit VRAM to a value 
+below what the card is actually capable of, which is great for testing such as this.
+
+The tests here only changed Mesa, using the same kernel. Under the baseline target, named 
+*256mb-master*, the kernel emulated the scoring in such a way that it essentially becomes 
+LRU. No overhead was measured from the emulation compared to real LRU.
 
 .Test scores
 image::pics/pts2.png[scaledwidth="35%"]
@@ -601,12 +606,13 @@ Phoronix Test Suite runs each test a minimum of three times, more if there is va
 means that even fairly small differences, starting from around 0.5%, are statistically 
 significant.
 
-.Visual scores
-image::pics/pts3.png[scaledwidth="95%"]
+.Scores arranged visually
+image::pics/pts3.png[scaledwidth="99%"]
 
 For most tests, improvements of 1-2% can be seen. There were three regressions: Smoking Guns 
 0.2%, Tremulous 0.3%, and Urban Terror 10.2%. The regression in Urban Terror is interesting, 
-as that test was equal under the simulation.
+as that test was equal under the simulation. Whether there is a corresponding decrease in 
+smoothness or not needs to be checked from the frame time.
 
 Two of the tests support frame time recording: OpenArena and Urban Terror.
 
@@ -614,7 +620,8 @@ Two of the tests support frame time recording: OpenArena and Urban Terror.
 image::pics/pts4.png[scaledwidth="70%"]
 
 In OpenArena, the average frame time was 0.8 ms lower, and most peaks are lower as well. The 
-highest peak coincides with the comparison target, but it seems to be fairly rare. So for 
+highest peak coincides with the baseline, but it seems to be fairly rare - there are only 
+two such peaks. Most peaks are visibly lower when compared to the baseline. For 
 OpenArena, the goal of increasing smoothness was reached.
 
 .Urban Terror frame time
@@ -623,6 +630,9 @@ image::pics/pts5.png[scaledwidth="70%"]
 Urban Terror had regressed 10.2% in FPS, and here the frame time average is larger as well. 
 However, the peaks are greatly lower, and there are less of them. The highest peak was 69 ms 
 vs 90 ms. The smoothness here improved greatly.
+
+Given the improvement in smoothness was far greater than the decrease in throughput, even 
+this case can be termed a success.
 
 Discussion
 ----------
