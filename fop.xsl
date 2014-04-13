@@ -18,11 +18,11 @@
 
 <xsl:attribute-set name="formal.title.properties">
 	<xsl:attribute name="font-weight">normal</xsl:attribute>
-	<xsl:attribute name="font-size">normal</xsl:attribute>
+	<xsl:attribute name="font-size">100%</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="component.title.properties">
-	<xsl:attribute name="text-align">normal</xsl:attribute>
+	<xsl:attribute name="text-align">left</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:param name="orderedlist.label.width">1.5em</xsl:param>
