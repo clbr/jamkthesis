@@ -665,7 +665,10 @@ Reinforcement Learning, 2011 IEEE Symposium
 Data statistics
 ---------------
 
-In total, about 60 GB of data was collected.
+In total, about 60 GB of data was collected. In a delta-compressed memory format, it takes 
+about 16 GB; in the custom storage format, 830 MB.
+
+Details and statistics on each memory trace:
 
 0ad1.bin: +
 7146 buffers, runtime 626717 ms (~10.4 minutes) +
