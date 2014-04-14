@@ -153,7 +153,7 @@ importance score?
 
 This limits the information needed to pass to the kernel to one integer per buffer. In
 addition, the kernel is free to disregard this hint, keeping in line with the separation.
-Having the relative importance of each buffer known, the kernel should be able to make much
+Knowing the relative importance of each buffer, the kernel should be able to make much
 better buffer placing decisions than the current LRU strategy.
 
 While giving each buffer a score could certainly be done by the usual programming
