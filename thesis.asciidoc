@@ -193,7 +193,8 @@ extremely complex modeling problems. (Bigus 1996, p. 77)
 .Multi-layer perceptron.
 image::pics/mlp.png[scaledwidth="75%"]
 
-As the problem here is a modeling one, this narrows the choice to MLP, RBF or recurrent.
+As the problem here is a modeling one, this narrows the choice to either MLP, RBF or
+recurrent.
 
 Recurrent networks are generally hard to train, and their runtime performance is not
 deterministic: they may take ten or hundred times longer to make a decision compared to
