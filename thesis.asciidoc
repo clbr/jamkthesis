@@ -172,8 +172,9 @@ modeling or regression problems) is to use AI solutions such as neural networks.
 AI theory
 ---------
 
-There are many approaches to artificial intelligence. What is common to all of them is the
-ability to make decisions the computer was not told explicitly how to do. They differ in
+There are many approaches to artificial intelligence. What is common to all of them 
+though, is the
+ability to make decisions the computer was not told explicitly how to make. They differ in
 their areas of usability, theoretic foundations, whether they are based on real biological
 phenomena, and other ways.
 
