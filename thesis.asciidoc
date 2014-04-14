@@ -573,6 +573,10 @@ Taking a look at the simulated results over 2% in either direction, we see that 
 concentrate on the lower VRAM sizes. We can also see that the number of big losses is 
 smaller than the number of big wins.
 
+The simulator measures the total cost of a memory trace. In the following charts, the cost 
+of the LRU run was divided by the cost of the AI run, so that 1 means no change, 1.2 means 
+20% improvement, and so on.
+
 .Major results in 256 MB.
 image::pics/indres256.png[scaledwidth="75%"]
 
