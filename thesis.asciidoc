@@ -66,7 +66,7 @@ second) and smoothness (how stable the FPS is). For a good user experience, they
 must be above some user-dependent threshold.
 
 There are no generally accepted guidelines, as the minimum for an acceptable experience is
-quite subjective. However, many people place the line at 60 FPS with a minimum FPS of 55.
+quite subjective. However, many people draw the line at 60 FPS with a minimum FPS of 55.
 (Minimum playable FPS 2012)
 
 Both throughput and smoothness must be above the user's minimum requirements, one alone will
