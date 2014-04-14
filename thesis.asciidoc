@@ -671,7 +671,8 @@ better solution.
 
 Second, it is possible the input parameters are adequate, but the 
 processing power of the network is not. If so, it would need more hidden nodes, which would 
-also mean slower training.
+also mean slower training. This is hinted towards by the inability of the current network to 
+do well at both 64 and 128 MB VRAM and the higher amounts.
 
 Finally, it is possible that the input parameters are not the best possible. It may be that 
 some different input can be easily gathered, and that input provides great correlation to a 
