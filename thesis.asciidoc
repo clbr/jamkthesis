@@ -206,8 +206,8 @@ while MLP is said to perform better. MLP is also covered more in literature. MLP
 here for the literature availability.
 
 There are many ways to train a MLP neural network. The algorithms are usually divided into
-four: supervised, unsupervised, competitive, and reinforcement learning (Siddique & Adeli
-2013).
+four types: supervised, unsupervised, competitive, and reinforcement learning (Siddique & 
+Adeli 2013).
 
 Supervised learning is used when you have clearly labeled test data. For example, if the
 task was to detect if a picture contains a squirrel, you would feed in sets of pictures of
