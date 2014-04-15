@@ -662,7 +662,7 @@ and which humans may never find.
 
 image::pics/score_relation.png[scaledwidth="50%"]
 
-In total, the results fell a bit short of expectations. Given the difference to Catalyst, I 
+All in all, the results fell a bit short of expectations. Given the difference to Catalyst, I
 hoped for an improvement of about 5%.
 
 Future work and conclusion
