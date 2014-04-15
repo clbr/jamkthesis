@@ -326,7 +326,7 @@ so that the cache doesn't give out the old, wrong addresses.
 Under the graphics context, compaction is still doable, but ideally should not be done while 
 running a heavy workload. The delay caused by a VRAM
 memory compaction operation may be measured in milliseconds, which
-may cause the frame to take too long, and would be unacceptable stutter to the user.
+may cause the frame to take too long, and would be seen as unacceptable stutter to the user.
 
 As such, VRAM compaction should be limited to times when it would not be noticeable, for 
 example application start-up and exit.
