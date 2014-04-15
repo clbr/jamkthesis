@@ -339,7 +339,7 @@ replays the collected memory traces while simulating the VRAM placement using th
 LRU strategy. The results will not apply directly to other placing strategies, but they will
 be indicative of general trends regardless of the placing strategy.
 
-The simulator took snapshots of the VRAM state once per every ten memory operations, and
+The simulator took snapshots of the VRAM state once every ten memory operations, and
 counted the amount of holes (fragmentation). It also printed a marker every time an eviction
 was triggered.
 
