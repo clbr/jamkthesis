@@ -658,6 +658,8 @@ _reduction_ in score. As the number of writes increased, the score started to in
 again. It is exactly this kind of new, unexpected connections that neural networks excel at, 
 and which humans may never find.
 
+image::pics/score_relation.png[scaledwidth="50%"]
+
 In total, the results fell a bit short of expectations. Given the difference to Catalyst, I 
 hoped for an improvement of about 5%.
 
