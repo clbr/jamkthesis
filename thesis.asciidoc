@@ -690,8 +690,8 @@ intelligence.
 Acknowledgements
 ----------------
 
-I would like to thank Jerome Glisse for his guidance, Thomas Hellstrom for reviews, and 
-everyone who contributed data.
+I would like to thank Jerome Glisse for his guidance, Thomas Hellstrom for reviews, 
+Michael Larabel for coverage, and everyone who contributed data.
 
 [bibliography]
 Bibliography
