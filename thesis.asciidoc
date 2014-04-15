@@ -557,7 +557,7 @@ was accepted into future Linux kernels.
 
 During the initial training attempts, it became clear that a solution with this amount of
 nodes could 
-not perform well simultaneously at the extreme low end (64 MB and 128 MB VRAM sizes), and at
+not perform well simultaneously at the lowest end (64 MB and 128 MB VRAM sizes), and at
 the more common sizes.
 As the common graphics cards for sale are approaching 2 GB, and the wide
 installed base concentrates around 512 MB, the two lowest VRAM sizes were dropped from 
