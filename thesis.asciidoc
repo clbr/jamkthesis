@@ -425,7 +425,7 @@ the 128 MB, 256 MB, 384 MB, and 512 MB runs the improvement was in single-digit 
 For 1024 MB and 4096 MB, the min-max allocation resulted in about 10% less swapping. For the
 last ones, 1536 and 2048 MB, the highest results were measured: around 20%.
 
-At least for this test data, the optimal threshold for min-max allocation is 512 kb. While
+As far as this test data goes, the optimal threshold for min-max allocation is 512 kb. While
 for some VRAM sizes it did worse than the 1 MB threshold, it also outdid the higher
 threshold in some cases. In no case did the 512 kb threshold lose to the 256 kb threshold,
 however.
