@@ -632,6 +632,15 @@ As the volume of data produced by the fragmentation benchmark was far too great 
 office suite, even after scripted processing, a custom graphing tool was developed. It was 
 made in C++, utilizing the FLTK toolkit for rendering.
 
+It renders a combined graph, with a line graph for the number of holes, and a horizontal bar 
+graph for swapping. It takes approximately a minute to render one such graph, owing to the 
+great amount of data.
+
+In retrospect, the swapping bar graph is not a perfect form for showing swapping 
+differences. Each pixel covers close to half a million memory operations, and if there was 
+swapping during any of those, the pixel is drawn. This makes it hard to see any close 
+differences.
+
 Network trainer
 ~~~~~~~~~~~~~~~
 
