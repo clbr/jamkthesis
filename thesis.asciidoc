@@ -202,8 +202,7 @@ another. This rules that model out.
 
 The choice between MLP and RBF is somewhat arbitrary. Liu and Gader (2000) found that RBF
 ignores outliers better,
-while MLP is said to perform better. MLP is also covered more in literature. MLP was chosen
-here for the literature availability.
+while MLP is said to perform better. MLP is also covered more in literature.
 
 There are many ways to train a MLP neural network. The algorithms are usually divided into
 four types: supervised, unsupervised, competitive, and reinforcement learning (Siddique & 
@@ -231,13 +230,38 @@ Reinforcement learning is used in stateful problems, where each action may not b
 alone, but only the full path of actions may be graded. For example, the Backgammon network
 of Tesauro (1994) used this method.
 
-Alternative methods for tweaking the network instead of training it include genetic and
-evolutionary methods.
+Alternative methods for tweaking the network, instead of training it, include genetic and
+evolutionary methods as well as Monte-Carlo methods.
 
 Choice and rationale
 ~~~~~~~~~~~~~~~~~~~~
 
-In the VRAM strategy case the seemingly only option would be reinforcement learning.
+For the network type, the common multi-layer perceptron architecture was chosen. It is 
+supported by a wide literature base, and its deterministic performance characteristics are 
+necessary for this kind of use.
+
+The number of hidden layers depends on the type of modeling being done. For most problems, a 
+single hidden layer is enough. Each hidden layer forms a hyperplane in pattern space, such 
+that two hidden layers are able to define a region, and three hidden layers are able to 
+define a closed area (Siddique & Adeli 2013, p. 111).
+
+The complexity of this hyperplane depends on the used activation function. The simple step 
+functions create a flat plane, and networks using those would require two or three hidden 
+layers to capture non-linear relationships. S-curve functions are able to create a much more 
+complex plane, such that a single hidden layer with a more advanced activation function is 
+able to approximate non-linear relationships.
+
+With a single hidden layer chosen, the big question is how to choose the amount of hidden 
+nodes. There is no generally accepted answer to this question, and all the literature offers 
+is guesses and rules of thumb. One such widely quoted rule is to use a number between the 
+amount of input nodes and the amount of output nodes.
+
+The number of hidden nodes can be easily pruned later if the network decides some are 
+unnecessary, but they cannot be added without re-training. Given this restriction, the 
+number of hidden nodes was set at the number of input nodes; that is, nine.
+
+For training, in the VRAM strategy case the seemingly only option would be reinforcement 
+learning.
 Supervised learning cannot be used, as a human cannot give any buffer an importance score;
 unsupervised and competitive learning do not apply in modeling problems.
 
@@ -247,8 +271,9 @@ applied to such problems, and the result performs on a par with a network traine
 supervised learning, the training was slow, and there is no guarantee that the network
 will not get stuck in local minima.
 
-It was decided to first attempt a Monte-Carlo method, and should that not produce
-satisfactory results, evolutionary training.
+Given that none of the generally used training methods are applicable, the alternative 
+methods of genetic and Monte-Carlo evolution were chosen. The two methods are covered in 
+more detail in <<training>>.
 
 Data gathering
 --------------
@@ -452,6 +477,7 @@ for some VRAM sizes it did worse than the 1 MB threshold, it also outdid the hig
 threshold in some cases. In no case did the 512 kb threshold lose to the 256 kb threshold,
 however.
 
+[[training]]
 Training the network
 --------------------
 
