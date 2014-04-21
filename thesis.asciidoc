@@ -631,6 +631,13 @@ made in C++, utilizing the FLTK toolkit for rendering.
 Network trainer
 ~~~~~~~~~~~~~~~
 
+The main program in this research, the AI trainer, was initially developed in C, but later 
+moved to C++ for easy access to the *multimap* data structure.
+
+It runs all collected memory traces through the memory simulation code, keeping track of the 
+cost of each memory operation. The total cost of all traces is then used as the score for 
+the tested critter, or in the Monte-Carlo modes, the score of the round.
+
 Results
 -------
 
