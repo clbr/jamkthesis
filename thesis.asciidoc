@@ -678,11 +678,37 @@ Network trainer
 ~~~~~~~~~~~~~~~
 
 The main program in this research, the AI trainer, was initially developed in C, but later 
-moved to C++ for easy access to the *multimap* data structure.
+moved to C++ for easy access to the *multimap* data structure. The trainer is multi-threaded 
+using the OpenMP library, which allows it to scale almost linearly to several dozen cores.
+
+Several runtime modes are supported:
+- benchmark, measure the current AI state vs. LRU
+- three different Monte-Carlo modes
+- genetic mode
 
 It runs all collected memory traces through the memory simulation code, keeping track of the 
 cost of each memory operation. The total cost of all traces is then used as the score for 
-the tested critter, or in the Monte-Carlo modes, the score of the round.
+the tested critter, or in the Monte-Carlo modes, the score of the round. At the end of 
+training (if the network converged in genetic mode, or the user requested exit), the results
+are printed similarly to the benchmark mode.
+
+The current network constants are stored in a header file, magic.h, which can be dropped in 
+to the runtime implementation for easy updates.
+
+Sample output from the benchmark mode:
+----
+   64: Score went from 11373443721800562 to 13835903349739071 - -21.7% worse
+  128: Score went from 8457631614472705 to 8897426058742106 - -5.2% worse
+  256: Score went from 6823682679644306 to 6671306343161154 - 2.23% improvement
+  384: Score went from 6366782903587257 to 6231975162922597 - 2.12% improvement
+  512: Score went from 6103944126818047 to 6062687234429972 - 0.676% improvement
+ 1024: Score went from 5889442175382210 to 5895237176535220 - -0.0984% worse
+ 1536: Score went from 6091687353267279 to 6094802697922121 - -0.0511% worse
+ 2048: Score went from 6788258883170870 to 6763013725034131 - 0.372% improvement
+ 4096: Score went from 6768448221629419 to 6778450801742876 - -0.148% worse
+
+Total: Score went from 64663321679772655 to 67230802550229248 - -3.97% worse
+----
 
 Results
 -------
