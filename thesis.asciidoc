@@ -578,7 +578,7 @@ Activation function benchmark
 
 In order to measure the CPU overhead of the three selected activation functions, this simple 
 benchmark runs each 10^9^ times while measuring the time taken. The timing used the 
-*gettimeofday*() function, which has an accuracy of approximately 70 ns on modern computers.
+*gettimeofday*() function, which has an accuracy of one microsecond.
 
 Text-to-binary format converter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
