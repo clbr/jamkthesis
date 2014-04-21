@@ -696,7 +696,7 @@ are printed similarly to the benchmark mode.
 The current network constants are stored in a header file, *magic.h*, which can be dropped 
 in to the runtime implementation for easy updates.
 
-Sample output from the benchmark mode:
+Sample output from benchmark mode:
 ----
    64: Score went from 11373443721800562 to 13835903349739071 - -21.7% worse
   128: Score went from 8457631614472705 to 8897426058742106 - -5.2% worse
