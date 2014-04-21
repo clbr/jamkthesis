@@ -596,6 +596,16 @@ The common competing compression algorithms, XZ and Bzip2, produce higher compre
 ratios, but at the expense of slower decompression and more memory usage. Compression speed 
 was considered fairly irrelevant for these purposes.
 
+The in-memory binary format takes advantage of delta compression, bit packing, and 
+variable-sized indexing. This is then further compressed by Zlib for disk storage.
+
+With knowledge of the data, the binary format can be much smaller than what any generic 
+compressor would be able to do. For example, there are no created buffers over 2 GB in size, 
+which allows the high-priority bit to be stored in the buffer size field.
+
+.Binary format specification
+image::pics/binformat.png[scaledwidth="50%"]
+
 The binary format filled the goals set quite nicely. It resulted in a compression ratio
 better than that of XZ applied on the text form, by a variable amount (1.5 to 12x).
 The compression ratio compared to uncompressed text varied from 150x to 1300x. It
