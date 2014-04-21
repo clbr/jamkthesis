@@ -293,7 +293,7 @@ As the traces took a considerable amount of space in their uncompressed text for
 binary format was developed. A binary format also allows the traces to be read back much
 faster, an important point for speedy training.
 
-Some helper applications were also developed to make it nicer to work with. Figure 4
+Some helper applications were also developed to make it nicer to work with. The figure
 above is from one such helper: a reader for the format with color highlighting. For more 
 details on the format and on the applications, please see the Software section.
 
