@@ -215,6 +215,9 @@ both squirrels and non-squirrels, each labeled by a human on whether it contains
 Then the network's guesses are compared to the labels, and corrected until the network can
 correctly determine whether a picture contains a small, furry creature or not.
 
+.Example of a labele dataset for supervised learning.
+image::pics/labeled.jpg[scaledwidth="100%"]
+
 In unsupervised learning, the network is not told anything about the data. It's used mainly
 in clustering problems, where the clusters are not defined beforehand. For example, the
 network may be fed customer data, and asked to segment customers into four classes. Studying
