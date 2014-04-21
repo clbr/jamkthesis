@@ -198,7 +198,8 @@ recurrent.
 
 Recurrent networks are generally hard to train, and their runtime performance is not
 deterministic: they may take ten or hundred times longer to make a decision compared to
-another. This rules that model out.
+another. This is due to them spinning until the result has converged to a stable value, 
+instead of only running through once like the other models. This rules that model out.
 
 The choice between MLP and RBF is somewhat arbitrary. Liu and Gader (2000) found that RBF
 ignores outliers better,
