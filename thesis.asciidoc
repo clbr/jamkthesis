@@ -363,7 +363,7 @@ optimum. The simulation took approximately 2.5 hours per run, and each run gener
 suite, a custom graphing tool was developed.
 
 .64 MB VRAM
-image::pics/f64.png[scaledwidth="95%"]
+image::pics/f64.png[scaledwidth="100%"]
 
 Starting off with the 64 MB VRAM run, it can be clearly seen that the workload is too heavy
 for this VRAM size. The heavy variance in the number of fragments, visible as dense vertical 
@@ -377,7 +377,7 @@ Still, it's a good data point to have, in order to see how the strategies
 behave under heavy pressure.
 
 .128 MB VRAM
-image::pics/f128.png[scaledwidth="95%"]
+image::pics/f128.png[scaledwidth="100%"]
 
 With 128 MB, all of the traces could be run through. The trashing is greatly reduced, and 
 about half of the workload now shows smooth progression in the fragmentation lines.
@@ -388,7 +388,7 @@ default LRU run. LRU had swapping in 2.42% of the time, whereas the lowest min-m
 2.36%.
 
 .256 MB VRAM
-image::pics/f256.png[scaledwidth="95%"]
+image::pics/f256.png[scaledwidth="100%"]
 
 The patterns become visible in the 256 MB run. Almost all trashing is now gone.
 Peak fragmentation is surprisingly higher in
@@ -396,13 +396,13 @@ min-max (5560 vs. 5336 holes), but swapping continues to be lower: 0.69% in LRU,
 the lowest min-max run. Average fragmentation was the same between all runs.
 
 .384 MB VRAM
-image::pics/f384.png[scaledwidth="95%"]
+image::pics/f384.png[scaledwidth="100%"]
 
 .512 MB VRAM
-image::pics/f512.png[scaledwidth="95%"]
+image::pics/f512.png[scaledwidth="100%"]
 
 .1024 MB VRAM
-image::pics/f1024.png[scaledwidth="95%"]
+image::pics/f1024.png[scaledwidth="100%"]
 
 Starting with the 1 GB run, the average fragmentation of min-max starts to climb above the
 default's: 785.85 in LRU, 888.10 in the highest min-max run. Swapping continues to be better 
@@ -414,13 +414,13 @@ The swapping difference continues to be significant. LRU had swapping in 0.0788%
 time, whereas the lowest min-max run had 0.0684%.
 
 .1536 MB VRAM
-image::pics/f1536.png[scaledwidth="95%"]
+image::pics/f1536.png[scaledwidth="100%"]
 
 .2048 MB VRAM
-image::pics/f2048.png[scaledwidth="95%"]
+image::pics/f2048.png[scaledwidth="100%"]
 
 .4096 MB VRAM
-image::pics/f4096.png[scaledwidth="95%"]
+image::pics/f4096.png[scaledwidth="100%"]
 
 The above results follow that the min-max strategy turned out to actually increase 
 fragmentation. Despite the
