@@ -290,11 +290,6 @@ As the traces took a considerable amount of space in their uncompressed text for
 binary format was developed. A binary format also allows the traces to be read back much
 faster, an important point for speedy training.
 
-The binary format filled the goals set quite nicely. It resulted in a compression ratio
-better than that of XZ applied on the text form, by a variable amount (1.5 to 12x).
-The compression ratio compared to uncompressed text varied from 150x to 1300x. It
-allows fast reading for the training and fragmentation simulation applications.
-
 Some helper applications were also developed to make it nicer to work with. Figure 4
 above is from one such helper: a reader for the format with color highlighting.
 
@@ -600,12 +595,20 @@ The common competing compression algorithms, XZ and Bzip2, produce higher compre
 ratios, but at the expense of slower decompression and more memory usage. Compression speed 
 was considered fairly irrelevant for these purposes.
 
+The binary format filled the goals set quite nicely. It resulted in a compression ratio
+better than that of XZ applied on the text form, by a variable amount (1.5 to 12x).
+The compression ratio compared to uncompressed text varied from 150x to 1300x. It
+allows fast reading for the training and fragmentation benchmark applications.
+
 Memory trace reader
 ~~~~~~~~~~~~~~~~~~~
 
 To be able to easily study the traces in the binary format, a simple reader was developed. 
 It prints the contents to the screen in a scrollable form, with optional color-coding for 
 faster reading.
+
+.Sample from a memory trace.
+image::pics/trace.png[scaledwidth="50%"]
 
 Fragmentation benchmark
 ~~~~~~~~~~~~~~~~~~~~~~~
