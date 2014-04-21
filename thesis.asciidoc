@@ -234,14 +234,18 @@ of Tesauro (1994) used this method.
 Alternative methods for tweaking the network instead of training it include genetic and
 evolutionary methods.
 
+Choice and rationale
+~~~~~~~~~~~~~~~~~~~~
+
 In the VRAM strategy case the seemingly only option would be reinforcement learning.
 Supervised learning cannot be used, as a human cannot give any buffer an importance score;
-unsupervised and competitive learning do not apply in modeling problems. However,
-reinforcement learning is not a good fit for modeling problems (Wiering, Hasselt, Pietersma,
-& Schomaker 2011). Wiering et al found that while reinforcement learning can be applied to
-such problems, and the result performs on a par with a network trained by supervised learning,
-the training was slow, and there is no guarantee that the network will not get stuck in
-local minima.
+unsupervised and competitive learning do not apply in modeling problems.
+
+However, reinforcement learning is not a good fit for modeling problems (Wiering, Hasselt, 
+Pietersma & Schomaker 2011). Wiering et al found that while reinforcement learning can be 
+applied to such problems, and the result performs on a par with a network trained by
+supervised learning, the training was slow, and there is no guarantee that the network
+will not get stuck in local minima.
 
 It was decided to first attempt a Monte-Carlo method, and should that not produce
 satisfactory results, evolutionary training.
