@@ -567,6 +567,70 @@ The population size was kept constant, with the worse half being replaced with f
 children each generation. Sex was implemented on a random per-gene basis, with each gene
 coming whole from one parent. The mutation probability was set at 0.1% per generation.
 
+Software
+--------
+
+A set of custom software was developed to aid in the research. This section covers each one 
+shortly. Some helper libraries were used, but the logic in each is self-made. The source 
+code can be found at http://github.com/clbr/hotbos, under the AGPLv3 free software license.
+
+All tools were written in C unless otherwise mentioned, and use the Zlib compression library 
+for reading/writing the memory traces in the binary format.
+
+Activation function benchmark
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to measure the CPU overhead of the three selected activation functions, this simple 
+benchmark runs each 10^9^ times while measuring the time taken. The timing used the 
+*gettimeofday*() function, which has an accuracy of approximately 70 ns on modern computers.
+
+Text-to-binary format converter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The data traces recorded by the Mesa patch come in a simple but verbose text format. In 
+order to reduce the disk space demands, and to ease their handling in the network trainer, 
+they were converted into a custom compressed binary format.
+
+The format converter uses the Zlib library for compression. Zlib 
+was chosen because it gives a good balance between decompression speed and compression ratio - 
+these files will need to be repeatedly decompressed in the training phase, as they will not 
+fit into RAM in their decompressed form all at once.
+
+The common competing compression algorithms, XZ and Bzip2, produce higher compression
+ratios, but at the expense of slower decompression and more memory usage. Compression speed 
+was considered fairly irrelevant for these purposes.
+
+Memory trace reader
+~~~~~~~~~~~~~~~~~~~
+
+To be able to easily study the traces in the binary format, a simple reader was developed. 
+It prints the contents to the screen in a scrollable form, with optional color-coding for 
+faster reading.
+
+Fragmentation benchmark
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The fragmentation benchmark program runs all collected memory traces through the memory 
+simulation code, using either LRU or min-max logic, measuring swapping and the number of 
+fragments.
+
+The output is in text form, and was further processed by some shell scripts before handing 
+it to the fragmentation grapher.
+
+Initially the memory simulation code was shared with the trainer, but as the neural network 
+capabilities were being added, they were branched so that each has its own copy. As such, 
+the simulation code used by the benchmark was frozen to the state before the AI addition.
+
+Fragmentation grapher
+~~~~~~~~~~~~~~~~~~~~~
+
+As the volume of data produced by the fragmentation benchmark was far too great for an 
+office suite, even after scripted processing, a custom graphing tool was developed. It was 
+made in C++, utilizing the FLTK toolkit for rendering.
+
+Network trainer
+~~~~~~~~~~~~~~~
+
 Results
 -------
 
