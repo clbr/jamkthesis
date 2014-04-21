@@ -605,7 +605,7 @@ With knowledge of the data, the binary format can be much smaller than what any 
 compressor would be able to do. For example, there are no created buffers over 2 GB in size, 
 which allows the high-priority bit to be stored in the buffer size field.
 
-.Binary format specification
+Binary format specification:
 [source,c]
 ----
 /*
