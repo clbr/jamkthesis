@@ -580,6 +580,8 @@ In order to measure the CPU overhead of the three selected activation functions,
 benchmark runs each 10^9^ times while measuring the time taken. The timing used the 
 *gettimeofday*() function, which has an accuracy of one microsecond.
 
+As the total runtime is on the order of ten seconds, the accuracy is more than enough.
+
 Text-to-binary format converter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
