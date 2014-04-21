@@ -682,6 +682,7 @@ moved to C++ for easy access to the *multimap* data structure. The trainer is mu
 using the OpenMP library, which allows it to scale almost linearly to several dozen cores.
 
 Several runtime modes are supported:
+
 - benchmark, measure the current AI state vs. LRU
 - three different Monte-Carlo modes
 - genetic mode
