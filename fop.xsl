@@ -39,6 +39,9 @@
     <l:context name="title-numbered">
     	<l:template name="article/appendix" text="Appendix %n. %t"/>
     </l:context>
+    <l:context name="xref-number-and-title">
+<l:template name="section" text="section %n, “%t”"/>
+    </l:context>
   </l:l10n>
 </l:i18n>
 
