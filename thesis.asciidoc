@@ -250,9 +250,10 @@ The complexity of this hyperplane depends on the used activation function. The s
 functions create a flat plane, and networks using those would require two or three hidden 
 layers to capture non-linear relationships. S-curve functions are able to create a much more 
 complex plane, such that a single hidden layer with a more advanced activation function is 
-able to approximate non-linear relationships.
+able to approximate non-linear relationships. A single layer was chosen, as S-curve 
+functions will be used.
 
-With a single hidden layer chosen, the big question is how to choose the amount of hidden 
+With a single hidden layer, the big question is how to choose the amount of hidden 
 nodes. There is no generally accepted answer to this question, and all the literature offers 
 is guesses and rules of thumb. One such widely quoted rule is to use a number between the 
 amount of input nodes and the amount of output nodes.
