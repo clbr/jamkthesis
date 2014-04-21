@@ -693,8 +693,8 @@ the tested critter, or in the Monte-Carlo modes, the score of the round. At the 
 training (if the network converged in genetic mode, or the user requested exit), the results
 are printed similarly to the benchmark mode.
 
-The current network constants are stored in a header file, magic.h, which can be dropped in 
-to the runtime implementation for easy updates.
+The current network constants are stored in a header file, *magic.h*, which can be dropped 
+in to the runtime implementation for easy updates.
 
 Sample output from the benchmark mode:
 ----
