@@ -717,6 +717,11 @@ The main program in this research, the AI trainer, was initially developed in C,
 moved to C++ for easy access to the *multimap* data structure. The trainer is multi-threaded 
 using the OpenMP library, which allows it to scale almost linearly to several dozen cores.
 
+Beyond the well-done multi-threading, the data structure in the memory simulator bears 
+mentioning. It combines several doubly-linked lists and a fixed array in such a way, that 
+most operations can be done in O(1) complexity. Introducing this data structure sped up the 
+simulation five-fold compared to simple linked lists.
+
 Several runtime modes are supported:
 
 - benchmark, measure the current AI state vs. LRU
