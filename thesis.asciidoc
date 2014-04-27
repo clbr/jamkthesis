@@ -832,12 +832,13 @@ The tests here only changed Mesa, using the same kernel. Under the baseline targ
 *256mb-master*, the kernel emulated the scoring in such a way that it essentially becomes 
 LRU. No overhead was measured from the emulation compared to real LRU.
 
-.Test scores
-image::pics/pts2.png[scaledwidth="35%"]
-
-Phoronix Test Suite runs each test a minimum of three times, more if there is variance. This 
+The benchmarking software used, Phoronix Test Suite, runs each test a minimum of three 
+times, more if there is variance. This 
 means that even fairly small differences, starting from around 0.5%, are statistically 
 significant.
+
+.Test scores
+image::pics/pts2.png[scaledwidth="35%"]
 
 .Scores arranged visually
 image::pics/pts3.png[scaledwidth="99%"]
