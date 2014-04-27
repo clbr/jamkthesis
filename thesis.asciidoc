@@ -839,6 +839,22 @@ times, more if there is variance. This
 means that even fairly small differences, starting from around 0.5%, are statistically 
 significant.
 
+The tested applications consist of a set of freely available games.
+
+[[appshots]]
+.Screenshots from tested applications.
+image::pics/gameshots.jpg[scaledwidth="100%"]
+
+Nexuiz is a first-person shooter published by Alientrap with fairly good-looking visuals, 
+running on the DarkPlaces engine. 
+OpenArena, World of Padman, Smoking Guns, Tremulous, Urban Terror, and Warsow are shooters 
+of various styles, based on the ioquake3 engine. VDrift is a driving simulator. Xonotic is a 
+fork of Nexuiz with many improvements. Screenshots of Nexuiz, VDrift, and Xonotic in that 
+order can be seen in <<appshots>>.
+
+Xonotic is visually the most heavy application tested. It also allows several different 
+quality presets to be tested, ranging from "Low" to "Ultimate" in four steps.
+
 .Test scores
 image::pics/pts2.png[scaledwidth="35%"]
 
