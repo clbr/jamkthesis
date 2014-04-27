@@ -761,8 +761,20 @@ Results
 -------
 
 The initial research vector, reducing fragmentation by two-ended allocation, was successful. 
-In no case did it do worse, and at best it could reduce eviction by up to 20%. The change 
-was accepted into future Linux kernels, starting with version 3.15.
+In no case did it do worse, and at best it could reduce eviction by up to 20%.
+
+Initially 
+implemented as an opaque decision inside the memory manager, it was suggested to change it 
+to a placement flag instead, so that drivers could request top-down placement for other 
+reasons in addition to the buffer's size.
+
+For example, the page tables are never accessed by the CPU. As the CPU is limited to the 
+first 256 MB of the VRAM (it cannot access more due to PCI-E limitations), the page tables 
+were taking up valuable space. Under the new system, they may be allocated in the higher 
+parts of VRAM, leaving more space for desired CPU-accessible content, such as texture 
+updates.
+
+The change was accepted into future Linux kernels, starting with version 3.15.
 
 For the AI, during the initial training attempts, it became clear that a solution with this 
 amount of nodes could 
