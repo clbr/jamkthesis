@@ -823,9 +823,10 @@ amount of buffers in VRAM at once is fairly low, in the single thousands.
 .Test hardware
 image::pics/pts1.png[scaledwidth="50%"]
 
-Only 256 MB was tested, as the available tests don't require enough VRAM to cause memory 
-pressure under higher VRAM amounts. The Radeon driver allows one to limit VRAM to a value 
-below what the card is actually capable of, which is great for testing such as this.
+The Radeon driver allows one to limit VRAM to a value 
+below what the card is actually capable of, which is great for testing such as this. In this 
+testing, only 256 MB was tested, as the available tests don't require enough VRAM to cause 
+memory pressure under higher VRAM amounts.
 
 The tests here only changed Mesa, using the same kernel. Under the baseline target, named 
 *256mb-master*, the kernel emulated the scoring in such a way that it essentially becomes 
