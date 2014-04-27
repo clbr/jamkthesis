@@ -76,8 +76,12 @@ Vice versa, a smooth FPS of 20 will not stutter, but the throughput is not high 
 an enjoyable experience, as the user will notice individual images instead of the illusion
 of movement.
 
-.Notice the huge frame time spikes on Catalyst: better performance, but worse smoothness. Image (C) Phoronix, printed with permission.
+[[catframetime]]
+.Frame time measurement. Image (C) Phoronix, printed with permission.
 image::pics/frametime.png[scaledwidth="75%"]
+
+For an example, see <<catframetime>>. Notice the huge frame time spikes on Catalyst: better 
+performance, but worse smoothness.
 
 Problem background
 ~~~~~~~~~~~~~~~~~~
