@@ -345,10 +345,12 @@ small overhead, so this issue is not as pressing there.]
 An example of the effects is reported by Larabel (2013b). Big buffer allocations were
 failing due to fragmentation, causing the application to misrender and/or crash.
 
+[[fragmentation]]
 .Fragmentation
 image::pics/fragmentation.png[scaledwidth="75%"]
 
-Fragmentation is an inevitable result of continued use. It can be mitigated by smart
+Fragmentation (<<fragmentation>>) is an inevitable result of continued use. It can be 
+mitigated by smart
 allocation strategies, and it can be repaired after the fact by moving the used buffers
 together (constraints allowing).
 
@@ -382,8 +384,9 @@ Two different allocation strategies were tested. The default allocator allocates
 from the start of VRAM. The proposed min-max allocator allocates buffers from two ends of
 the VRAM space, based on the assumptions that smaller buffers are recycled more often than
 large ones, and that recycling of each type would then only create fragmentation of the same
-type.
+type. The min-max allocator is visualized in <<minmax>>.
 
+[[minmax]]
 .Allocation strategies.
 image::pics/allocations.png[scaledwidth="75%"]
 
