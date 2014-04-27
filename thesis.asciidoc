@@ -319,8 +319,9 @@ the frame number include thresholds determined by common user studies (10 ms, 30
 100 ms...) or non-linear scaling.
 
 To enable those inputs to be replayed, the memory traces listed each operation on a buffer
-along with timing information.
+along with timing information. See <<memtrace>> for an example.
 
+[[memtrace]]
 .Sample from a memory trace.
 image::pics/trace.png[scaledwidth="50%"]
 
