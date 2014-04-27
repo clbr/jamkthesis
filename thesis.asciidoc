@@ -921,9 +921,14 @@ of RAM is estimated as a sweet spot, but alas, one has to make do.
 
 The training took almost three times longer than anticipated (8 weeks, when 3 were planned). 
 Of course given the problem space, 256^118^ combinations, copious computing time was to be 
-expected. Still, in the end, a satisfactory solution was found.
+expected.
 
-It was surprising to see that the solution discarded entirely six of the tried statistics. 
+In exploring unknown areas such as this, it's always a risk that there exists no good 
+solution. As the training took more time, I admit being worried of that possibility, and 
+considering aborting the experiment. Luckily, a satisfactory solution was found eventually.
+
+Examining the discovered solution, it was surprising to see that it discarded 
+entirely six of the tried statistics. 
 It found relevance only in the number of writes, number of cpu operations, and the VRAM 
 size. Pruning the unused nodes cut the network size to 39% of the initial version.
 
