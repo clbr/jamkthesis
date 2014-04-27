@@ -323,7 +323,7 @@ along with timing information. See <<memtrace>> for an example.
 
 [[memtrace]]
 .Sample from a memory trace.
-image::pics/trace.png[scaledwidth="50%"]
+image::pics/trace.png[scaledwidth="70%"]
 
 As the traces took a considerable amount of space in their uncompressed text form, a custom
 binary format was developed. A binary format also allows the traces to be read back much
@@ -694,7 +694,7 @@ It prints the contents to the screen in a scrollable form, with optional color-c
 faster reading. A screenshot from the reader follows.
 
 .Sample from a memory trace.
-image::pics/trace.png[scaledwidth="50%"]
+image::pics/trace.png[scaledwidth="70%"]
 
 Fragmentation benchmark
 ~~~~~~~~~~~~~~~~~~~~~~~
