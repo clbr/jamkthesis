@@ -887,7 +887,7 @@ of RAM is estimated as a sweet spot, but alas, one has to make do.
 
 The training took almost three times longer than anticipated (8 weeks, when 3 were planned). 
 Of course given the problem space, 256^118^ combinations, copious computing time was to be 
-expected. In the end, a satisfactory solution was found.
+expected. Still, in the end, a satisfactory solution was found.
 
 It was surprising to see that the solution discarded entirely six of the tried statistics. 
 It found relevance only in the number of writes, number of cpu operations, and the VRAM 
