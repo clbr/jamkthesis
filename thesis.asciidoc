@@ -543,11 +543,12 @@ charge 5{nbsp}000{nbsp}$ for the latest two-page report), and the DRAM makers do
 information in their financial reports, to get a rough view one had to resort to
 checking the inventory levels of a web shop.
 
+[[ddr3]]
 .DDR3 inventory levels: the number of SKUs per each speed class.
-image::pics/ddr3inventory.png[scaledwidth="50%"]
+image::pics/ddr3inventory.png[scaledwidth="60%"]
 
-From the inventory levels it can be seen that 1600 MHz is the most popular type of DDR3
-memory being sold. The bandwidth of such memory is 12.8 GB/s.
+From the inventory levels in <<ddr3>> it can be seen that 1600 MHz is the most popular type 
+of DDR3 memory being sold. The bandwidth of such memory is 12.8 GB/s.
 
 For the average GDDR5 speed, a mid-high-end card from both Nvidia and AMD's latest
 generations was chosen. Nvidia GTX 770 ships with a memory bandwidth of 224 GB/s, whereas
