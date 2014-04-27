@@ -889,8 +889,9 @@ image::pics/pts4.png[scaledwidth="85%"]
 
 In OpenArena, the average frame time was 0.8 ms lower, and most peaks are lower as well. The 
 highest peak coincides with the baseline, but it seems to be fairly rare - there are only 
-two such peaks. Most peaks are visibly lower when compared to the baseline. For 
-OpenArena, the goal of increasing smoothness was reached.
+two such peaks. Most peaks are visibly lower when compared to the baseline.
+
+For OpenArena, the goal of increasing smoothness was reached.
 
 .Urban Terror frame time
 image::pics/pts5.png[scaledwidth="85%"]
