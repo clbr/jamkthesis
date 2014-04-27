@@ -777,7 +777,8 @@ were taking up valuable space. Under the new system, they may be allocated in th
 parts of VRAM, leaving more space for desired CPU-accessible content, such as texture 
 updates.
 
-The change was accepted into future Linux kernels, starting with version 3.15.
+In the new form, the change was accepted into future Linux kernels, starting with version 
+3.15.
 
 AI
 ~~
