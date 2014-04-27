@@ -813,12 +813,13 @@ Moving to testing with real hardware, it could be seen that the cpu overhead of 
 the score
 was negligible. Passing the score to the kernel initially took 3% of the CPU time, but that 
 could be
-optimized away by embedding the score in an existing call (the cs ioctl). The hardware 
-specifications can be seen in <<testhw>>.
+optimized away by embedding the score in an existing call (the cs ioctl).
 
 Likewise, the use of a priority queue in place of the LRU linked list did not measurably 
 increase cpu overhead. The change turned a few operations from O(1) to O(log n), but the 
 amount of buffers in VRAM at once is fairly low, in the single thousands.
+
+The hardware specifications can be seen in <<testhw>>.
 
 [[testhw]]
 .Test hardware
