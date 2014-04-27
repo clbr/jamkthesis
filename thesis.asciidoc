@@ -876,9 +876,11 @@ expected. In the end, a satisfactory solution was found.
 It is interesting how only three inputs were chosen as useful. Further, the connection of 
 buffer writes deduced by the AI was extremely surprising: a small number of writes meant a 
 _reduction_ in score. As the number of writes increased, the score started to increase 
-again. It is exactly this kind of new, unexpected connections that neural networks excel at, 
-and which humans may never find.
+again (<<relation>>). It is exactly this kind of new, unexpected connections that neural 
+networks excel at, and which humans may never find.
 
+[[relation]]
+.Expected vs. actual relation of writes to the buffer score.
 image::pics/score_relation.png[scaledwidth="50%"]
 
 All in all, the results fell a bit short of expectations. Given the difference to Catalyst, I
