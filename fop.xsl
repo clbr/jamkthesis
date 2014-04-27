@@ -47,7 +47,7 @@
     </l:context>
     <l:context name="xref-number-and-title">
 	<l:template name="section" text="section %n, “%t”"/>
-	<l:template name="figure" text="figure %n"/>
+	<l:template name="figure" text="Figure %n"/>
     </l:context>
   </l:l10n>
 </l:i18n>
