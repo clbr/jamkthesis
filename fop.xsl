@@ -19,6 +19,7 @@
 	<xsl:attribute name="widows">4</xsl:attribute>
 	<xsl:attribute name="orphans">4</xsl:attribute>
 	<xsl:attribute name="line-height">1.5</xsl:attribute>
+	<xsl:attribute name="hyphenate">true</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="formal.title.properties">
