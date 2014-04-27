@@ -80,7 +80,7 @@ of movement.
 .Frame time measurement. Image (C) Phoronix, printed with permission.
 image::pics/frametime.png[scaledwidth="75%"]
 
-For an example, see <<catframetime>>. Notice the huge frame time spikes on Catalyst: better 
+Notice the huge frame time spikes on Catalyst in <<catframetime>>: better 
 performance, but worse smoothness.
 
 Problem background
@@ -319,7 +319,7 @@ the frame number include thresholds determined by common user studies (10 ms, 30
 100 ms...) or non-linear scaling.
 
 To enable those inputs to be replayed, the memory traces listed each operation on a buffer
-along with timing information. See <<memtrace>> for an example.
+along with timing information. (See <<memtrace>>.)
 
 [[memtrace]]
 .Sample from a memory trace.
