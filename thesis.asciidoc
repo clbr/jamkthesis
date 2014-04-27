@@ -843,7 +843,8 @@ image::pics/pts2.png[scaledwidth="35%"]
 .Scores arranged visually
 image::pics/pts3.png[scaledwidth="99%"]
 
-For most tests, improvements of 1-2% can be seen. There were three regressions: Smoking Guns 
+In the results above, for most tests improvements of 1-2% can be seen. There were three 
+regressions: Smoking Guns 
 0.2%, Tremulous 0.3%, and Urban Terror 10.2%. The regression in Urban Terror is interesting, 
 as that test was equal under the simulation. Whether there is a corresponding decrease in 
 smoothness or not needs to be checked from the frame time.
