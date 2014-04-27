@@ -469,8 +469,10 @@ higher absolute amount of holes, they actually decreased swapping in all runs ex
 MB one. It is assumed that this is due to a better quality of fragmentation; that is, the
 holes created are more suitable for new allocations.
 
-Gathering the swapping statistics together, the optimal threshold value can be determined.
+Gathering the swapping statistics together, the optimal threshold value can be determined
+(<<swappingtotal>>).
 
+[[swappingtotal]]
 .Swapping improvement over the default strategy.
 image::pics/swapping.png[scaledwidth="75%"]
 
