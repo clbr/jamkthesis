@@ -690,7 +690,7 @@ Memory trace reader
 
 To be able to easily study the traces in the binary format, a simple reader was developed. 
 It prints the contents to the screen in a scrollable form, with optional color-coding for 
-faster reading.
+faster reading. A screenshot from the reader follows.
 
 .Sample from a memory trace.
 image::pics/trace.png[scaledwidth="50%"]
