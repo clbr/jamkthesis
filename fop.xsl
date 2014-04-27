@@ -10,6 +10,11 @@
 <!-- My title pages -->
 <xsl:import href="mytitlepages.xsl"/>
 
+<xsl:param name="page.margin.inner">4.3cm</xsl:param>
+<xsl:param name="page.margin.outer">2cm</xsl:param>
+<xsl:param name="page.margin.top">2cm</xsl:param>
+<xsl:param name="page.margin.bottom">2cm</xsl:param>
+
 <xsl:attribute-set name="root.properties">
 	<xsl:attribute name="widows">4</xsl:attribute>
 	<xsl:attribute name="orphans">4</xsl:attribute>
