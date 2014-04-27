@@ -783,7 +783,7 @@ AI
 ~~
 
 The main direction of this research, the neural network used to give buffers a score, was 
-successful.
+successful as well.
 
 On average, the found solution gives approximately 1% improvement over LRU, as measured by 
 the simulator. In specific cases improvements of up to 66% were measured. For most cases the 
