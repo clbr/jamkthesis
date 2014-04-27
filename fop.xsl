@@ -46,7 +46,8 @@
     	<l:template name="article/appendix" text="Appendix %n. %t"/>
     </l:context>
     <l:context name="xref-number-and-title">
-<l:template name="section" text="section %n, “%t”"/>
+	<l:template name="section" text="section %n, “%t”"/>
+	<l:template name="figure" text="figure %n"/>
     </l:context>
   </l:l10n>
 </l:i18n>
