@@ -400,10 +400,12 @@ optimum. The simulation took approximately 2.5 hours per run, and each run gener
 16 GB of data. As the amount of data was far too great to process on an ordinary office
 suite, a custom graphing tool was developed.
 
+[[ind64]]
 .64 MB VRAM
 image::pics/f64.png[scaledwidth="100%"]
 
-Starting off with the 64 MB VRAM run, it can be clearly seen that the workload is too heavy
+Starting off with the 64 MB VRAM run (<<ind64>>), it can be clearly seen that the workload 
+is too heavy
 for this VRAM size. The heavy variance in the number of fragments, visible as dense vertical 
 movement on the line graph, points out that there is considerable trashing going on.
 
@@ -414,10 +416,12 @@ swapping bars are very similar, and the exact percentage of swapping events vari
 Still, it's a good data point to have, in order to see how the strategies
 behave under heavy pressure.
 
+[[ind128]]
 .128 MB VRAM
 image::pics/f128.png[scaledwidth="100%"]
 
-With 128 MB, all of the traces could be run through. The trashing is greatly reduced, and 
+With 128 MB (<<ind128>>), all of the traces could be run through. The trashing is greatly 
+reduced, and 
 about half of the workload now shows smooth progression in the fragmentation lines.
 
 Fragmentation is approximately equal in
@@ -425,10 +429,11 @@ all cases, but the swapping (eviction) is lower in all of the min-max runs compa
 default LRU run. LRU had swapping in 2.42% of the time, whereas the lowest min-max run had 
 2.36%.
 
+[[ind256]]
 .256 MB VRAM
 image::pics/f256.png[scaledwidth="100%"]
 
-The patterns become visible in the 256 MB run. Almost all trashing is now gone.
+The patterns become visible in the 256 MB run (<<ind256>>). Almost all trashing is now gone.
 Peak fragmentation is surprisingly higher in
 min-max (5560 vs. 5336 holes), but swapping continues to be lower: 0.69% in LRU, 0.667% in 
 the lowest min-max run. Average fragmentation was the same between all runs.
@@ -440,12 +445,14 @@ image::pics/f384.png[scaledwidth="100%"]
 image::pics/f512.png[scaledwidth="100%"]
 
 The 384 and 512 MB runs continue the same pattern: swapping is lower in the min-max 
-allocator when compared to the default.
+allocator when compared to the default. (Figures 10 and 11)
 
+[[ind1gb]]
 .1024 MB VRAM
 image::pics/f1024.png[scaledwidth="100%"]
 
-Starting with the 1 GB run, the average fragmentation of min-max starts to climb above the
+Starting with the 1 GB run (<<ind1gb>>), the average fragmentation of min-max starts to 
+climb above the
 default's: 785.85 in LRU, 888.10 in the highest min-max run. Swapping continues to be better 
 in min-max, and now it's easily visible in the swapping bars as well. There are present bars 
 in the LRU and 256 KB min-max areas (red and olive) that are absent in the higher-threshold 
@@ -462,6 +469,8 @@ image::pics/f2048.png[scaledwidth="100%"]
 
 .4096 MB VRAM
 image::pics/f4096.png[scaledwidth="100%"]
+
+The higher amounts of VRAM (Figures 13 to 15) continue in the same vein.
 
 The above results follow that the min-max strategy turned out to actually increase 
 fragmentation. Despite the
