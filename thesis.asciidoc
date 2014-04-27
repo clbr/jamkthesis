@@ -787,10 +787,6 @@ the simulator. In specific cases improvements of up to 66% were measured. For mo
 performance is approximately equal to LRU; for 4% of the cases there are improvements; and 
 for about 2% of the cases, the AI does measurably worse.
 
-It was surprising to see that the solution discarded entirely six of the tried statistics. 
-It found relevance only in the number of writes, number of cpu operations, and the VRAM 
-size. Pruning the unused nodes cut the network size to 39% of the initial version.
-
 Taking a look at the simulated results over 2% in either direction, we see that the changes 
 concentrate on the lower VRAM sizes. We can also see that the number of big losses is 
 smaller than the number of big wins.
@@ -884,7 +880,11 @@ The training took almost three times longer than anticipated (8 weeks, when 3 we
 Of course given the problem space, 256^118^ combinations, copious computing time was to be 
 expected. In the end, a satisfactory solution was found.
 
-It is interesting how only three inputs were chosen as useful. Further, the connection of 
+It was surprising to see that the solution discarded entirely six of the tried statistics. 
+It found relevance only in the number of writes, number of cpu operations, and the VRAM 
+size. Pruning the unused nodes cut the network size to 39% of the initial version.
+
+Further, the connection of 
 buffer writes deduced by the AI was extremely surprising: a small number of writes meant a 
 _reduction_ in score. As the number of writes increased, the score started to increase 
 again (<<relation>>). It is exactly this kind of new, unexpected connections that neural 
