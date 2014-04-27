@@ -880,7 +880,7 @@ As the common graphics cards for sale are approaching 2 GB, and the wide
 installed base concentrates around 512 MB, the two lowest VRAM sizes were dropped from 
 consideration.
 
-During the training phase, it also became quite clear that the hardware available was 
+In the training phase, it also became quite clear that the hardware available was 
 inadequate:
 6 cores and 8 GB of RAM were limiting the training speed. A setup with 64 cores and 128 GB
 of RAM is estimated as a sweet spot, but alas, one has to make do.
