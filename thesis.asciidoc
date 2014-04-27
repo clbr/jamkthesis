@@ -760,6 +760,9 @@ image::pics/benchoutput.png[scaledwidth="100%"]
 Results
 -------
 
+Min-max allocator
+~~~~~~~~~~~~~~~~~
+
 The initial research vector, reducing fragmentation by two-ended allocation, was successful. 
 In no case did it do worse, and at best it could reduce eviction by up to 20%.
 
@@ -776,13 +779,8 @@ updates.
 
 The change was accepted into future Linux kernels, starting with version 3.15.
 
-For the AI, during the initial training attempts, it became clear that a solution with this 
-amount of nodes could 
-not perform well simultaneously at the lowest end (64 MB and 128 MB VRAM sizes), and at
-the more common sizes.
-As the common graphics cards for sale are approaching 2 GB, and the wide
-installed base concentrates around 512 MB, the two lowest VRAM sizes were dropped from 
-consideration.
+AI
+~~
 
 On average, the found solution gives approximately 1% improvement over LRU, as measured by 
 the simulator. In specific cases improvements of up to 66% were measured. For most cases the 
@@ -869,7 +867,16 @@ this case can be termed a success.
 Discussion
 ----------
 
-During the training phase it became quite clear that the hardware available was inadequate:
+During the initial training attempts, it became clear that a solution with this 
+amount of nodes could 
+not perform well simultaneously at the lowest end (64 MB and 128 MB VRAM sizes), and at
+the more common sizes.
+As the common graphics cards for sale are approaching 2 GB, and the wide
+installed base concentrates around 512 MB, the two lowest VRAM sizes were dropped from 
+consideration.
+
+During the training phase, it also became quite clear that the hardware available was 
+inadequate:
 6 cores and 8 GB of RAM were limiting the training speed. A setup with 64 cores and 128 GB
 of RAM is estimated as a sweet spot, but alas, one has to make do.
 
