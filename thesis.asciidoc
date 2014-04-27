@@ -849,7 +849,7 @@ regressions: Smoking Guns
 as that test was equal under the simulation. Whether there is a corresponding decrease in 
 smoothness or not needs to be checked from the frame time.
 
-Two of the tests support frame time recording: OpenArena and Urban Terror.
+Of the tests run, two support frame time recording: OpenArena and Urban Terror.
 
 .OpenArena frame time
 image::pics/pts4.png[scaledwidth="70%"]
