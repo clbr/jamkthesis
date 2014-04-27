@@ -854,7 +854,8 @@ The regression in Urban Terror is interesting,
 as that test was equal under the simulation. Whether there is a corresponding decrease in 
 smoothness needs to be checked from the frame time.
 
-Of the tests run, two support frame time recording: OpenArena and Urban Terror.
+Of the tests run, two support frame time recording: OpenArena and Urban Terror. This allows 
+one to gauge the smoothness in addition to raw throughput.
 
 .OpenArena frame time
 image::pics/pts4.png[scaledwidth="85%"]
