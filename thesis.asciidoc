@@ -439,6 +439,9 @@ image::pics/f384.png[scaledwidth="100%"]
 .512 MB VRAM
 image::pics/f512.png[scaledwidth="100%"]
 
+The 384 and 512 MB runs continue the same pattern: swapping is lower in the min-max 
+allocator when compared to the default.
+
 .1024 MB VRAM
 image::pics/f1024.png[scaledwidth="100%"]
 
