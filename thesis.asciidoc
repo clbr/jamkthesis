@@ -953,8 +953,9 @@ The training took almost three times longer than anticipated (8 weeks, when 3 we
 Of course, given the problem space, 256^118^ combinations, copious computing time was to be 
 expected.
 
-In exploring unknown areas such as this, it is always a risk that there exists no good 
-solution. As the training took more time, I admit being worried of that possibility, and 
+In exploring unknown areas such as this, it is always a risk that no good 
+solution exists. As the training took more time, I admit being worried of that possibility, 
+and 
 considering aborting the experiment. Luckily, a satisfactory solution was found eventually.
 
 Examining the discovered solution, it was surprising to see that it discarded 
