@@ -38,6 +38,25 @@
 
 <xsl:param name="generate.toc" select="'book toc,title,figure,table'"/>
 
+<xsl:template name="page.number.format">
+  <xsl:param name="element" select="local-name(.)"/>
+  <xsl:param name="master-reference" select="''"/>
+  <xsl:value-of select="'1'"/>
+</xsl:template>
+
+<!-- This template always continues the page numbering. -->
+<!-- For double-sided output, it also forces chapters
+       to start on odd-numbered pages -->
+<xsl:template name="initial.page.number">
+  <xsl:param name="element" select="local-name(.)"/>
+  <xsl:param name="master-reference" select="''"/>
+  <xsl:choose>
+    <!-- double-sided output -->
+    <xsl:when test="$double.sided != 0">auto-odd</xsl:when>
+    <xsl:otherwise>auto</xsl:otherwise>
+   </xsl:choose>
+</xsl:template>
+
 <xsl:param name="local.l10n.xml" select="document('')"/>
 <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
   <l:l10n language="en">
