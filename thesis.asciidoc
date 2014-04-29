@@ -136,9 +136,9 @@ application will read, it does know the application will read from the buffer. U
 information, it can make a worst-case estimation that the application will read the buffer
 in full.
 
-Such worst-case estimation will directly improve the minimum FPS; in other words, the
-smoothness. This has an indirect benefit to performance, but optimal performance will not be
-reached by these means.
+Such a worst-case estimation will directly improve the minimum FPS; in other words, the
+smoothness. This has an indirect benefit to performance, however optimal performance will
+not be reached by these means.
 
 The target of this work is to improve on the current strategy, particularly in the cases
 that are currently pathological. The improved system may not gain significantly in
