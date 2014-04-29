@@ -367,10 +367,10 @@ In normal system RAM, both strategies are viable. Cleaning up the memory area, a
 compaction (Corbet 2010), can be fairly low-impact to performance. It only involves
 freezing the process, and changing some page table entries, which is a relatively fast
 operation. The downside is that a TLB (translation look-aside buffer) cache flush is needed
-so that the cache doesn't give out the old, wrong addresses.
+so that the cache does not give out the old, wrong addresses.
 
-Under the graphics context, compaction is still doable, but ideally should not be done while 
-running a heavy workload. The delay caused by a VRAM
+Under the graphics context, compaction is still doable, however, ideally it should not be 
+done while running a heavy workload. The delay caused by a VRAM
 memory compaction operation may be measured in milliseconds, which
 may cause the frame to take too long, and would be seen as unacceptable stutter to the user.
 
