@@ -585,7 +585,7 @@ must be taken into account.
 
 First of all, a GPU write to system RAM (cacheable memory) will incur a performance hit of
 about 66%. A buffer move, beyond the overlapping read in one memory type and the write in
-the other, also costs some PCI-E latency. If the buffer is needed immediately after the
+the other also costs some PCI-E latency. If the buffer is needed immediately after the
 move, the GPU engines will stall to wait for it, potentially delaying useful work.
 footnote:[This is a limitation of the current driver. The latest generation of graphics cards supports multiple engines, and they could work on independent pieces should the driver support be there. In that case, only one engine would stall.]
 
