@@ -46,7 +46,7 @@ texture::
 VRAM::
 	Video RAM, fast on-board memory included on graphics cards.
 
-[abstract]
+[preface]
 Acknowledgements
 ----------------
 
