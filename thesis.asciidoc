@@ -629,7 +629,7 @@ individual was selected for mating based on its position when ordered by score, 
 that the fittest individual got to mate more than the second fittest, and so on.
 
 The population size was kept constant, with the worse half being replaced with fresh
-children each generation. Sex was implemented on a random per-gene basis, with each gene
+children in each generation. Sex was implemented on a random per-gene basis, with each gene
 coming whole from one parent. The mutation probability was set at 0.1% per generation.
 
 Software
