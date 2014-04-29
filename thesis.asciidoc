@@ -233,7 +233,7 @@ Supervised learning is used when the test data is clearly labeled. For example, 
 task was to detect if a picture contains a squirrel, sets of pictures of
 both squirrels and non-squirrels would be fed in,
 each labeled by a human on whether it contains a squirrel.
-Then the network's guesses are compared to the labels, and corrected until the network can
+Then the network's guesses are compared to the labels and corrected until the network can
 correctly determine whether a picture contains a small, furry creature or not.
 
 In unsupervised learning, the network is not told anything about the data. It is used mainly
