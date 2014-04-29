@@ -77,6 +77,7 @@
         <l:template name="chapter" text="%n. %t"/>
     </l:context>
     <l:context name="xref-number-and-title">
+	<l:template name="chapter" text="Section %n, %t"/>
 	<l:template name="section" text="section %n, “%t”"/>
 	<l:template name="figure" text="Figure %n"/>
     </l:context>
