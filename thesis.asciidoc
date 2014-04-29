@@ -19,7 +19,7 @@ FPS::
 	Frames per second, a common performance metric.
 
 Frame time::
-	The inverse of FPS, ie. (milli)seconds per frame.
+	The inverse of FPS, i.e. (milli)seconds per frame.
 
 Linux::
 	An open-source operating system.
