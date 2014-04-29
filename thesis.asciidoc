@@ -670,8 +670,8 @@ these files will need to be repeatedly decompressed in the training phase, as th
 fit into RAM in their decompressed form all at once.
 
 The common competing compression algorithms, XZ and Bzip2, produce higher compression
-ratios, but at the expense of slower decompression and more memory usage. Compression speed 
-was considered fairly irrelevant for these purposes.
+ratios, however, at the expense of slower decompression and more memory usage.
+The compression speed was considered fairly irrelevant for these purposes.
 
 The in-memory binary format takes advantage of delta compression, bit packing, and 
 variable-sized indexing. This is then further compressed by Zlib for disk storage.
