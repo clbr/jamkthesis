@@ -1006,8 +1006,8 @@ I would like to thank Jerome Glisse for his guidance, Thomas Hellstrom for revie
 Michael Larabel for coverage, and everyone who contributed data to this thesis.
 
 [bibliography]
-Bibliography
-------------
+References
+----------
 
 Bigus, J. 1996. Data Mining with Neural Networks. 1st ed. Indiana: McGraw-Hill.
 
