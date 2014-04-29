@@ -222,13 +222,14 @@ There are many ways to train a MLP neural network. The algorithms are usually di
 four types: supervised, unsupervised, competitive, and reinforcement learning (Siddique & 
 Adeli 2013).
 
-Supervised learning is used when you have clearly labeled test data. For example, if the
-task was to detect if a picture contains a squirrel, you would feed in sets of pictures of
-both squirrels and non-squirrels, each labeled by a human on whether it contains a squirrel.
+Supervised learning is used when the test data is clearly labeled. For example, if the
+task was to detect if a picture contains a squirrel, sets of pictures of
+both squirrels and non-squirrels would be fed in,
+each labeled by a human on whether it contains a squirrel.
 Then the network's guesses are compared to the labels, and corrected until the network can
 correctly determine whether a picture contains a small, furry creature or not.
 
-In unsupervised learning, the network is not told anything about the data. It's used mainly
+In unsupervised learning, the network is not told anything about the data. It is used mainly
 in clustering problems, where the clusters are not defined beforehand. For example, the
 network may be fed customer data, and asked to segment customers into four classes. Studying
 the decisions it made can be very useful in finding new or undervalued customer segments.
