@@ -346,4 +346,37 @@ procedure before
 	<xsl:attribute name="keep-together.within-column">always</xsl:attribute>
 </xsl:attribute-set>
 
+<xsl:template match="book">
+  <xsl:variable name="id">
+    <xsl:call-template name="object.id"/>
+  </xsl:variable>
+
+  <xsl:variable name="preamble"
+                select="title|subtitle|titleabbrev|bookinfo|info"/>
+
+  <xsl:variable name="content"
+                select="node()[not(self::title or self::subtitle
+                            or self::titleabbrev
+                            or self::info
+                            or self::bookinfo)]"/>
+
+  <xsl:variable name="titlepage-master-reference">
+    <xsl:call-template name="select.pagemaster">
+      <xsl:with-param name="pageclass" select="'titlepage'"/>
+    </xsl:call-template>
+  </xsl:variable>
+
+  <xsl:call-template name="front.cover"/>
+
+  <xsl:apply-templates select="dedication" mode="dedication"/>
+  <xsl:apply-templates select="acknowledgements" mode="acknowledgements"/>
+
+  <xsl:call-template name="make.book.tocs"/>
+
+  <xsl:apply-templates select="$content"/>
+
+  <xsl:call-template name="back.cover"/>
+
+</xsl:template>
+
 </xsl:stylesheet>
