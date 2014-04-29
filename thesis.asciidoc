@@ -615,7 +615,7 @@ close enough to a single solution, the "alpha male" is selected as the final sol
 
 As the most fit individuals will have the most offspring, undesirable elements will die out
 of the population, and each individual will move closer to the global optimum. In this
-sense, these methods resemble the most brutal ideas of eugenics and darwinism.
+sense, these methods resemble the most brutal ideas of eugenics and Darwinism.
 
 Various parameters can be tuned to guide the evolution. The method of sex, the probability
 of mutations, the chosen genetic representation, the size of the population, and so on all
