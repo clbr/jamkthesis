@@ -529,7 +529,7 @@ behave.
 image::pics/scurve.png[scaledwidth="50%"]
 
 Testing a variety of these functions, Karlik and Olgac (2011) found that S-shaped functions
-had superior performance, reaching the highest accuracy off all tested functions.
+had superior performance, reaching the highest accuracy of all tested functions.
 
 So the question here is which type of function would give the best run-time performance; in
 other words, fastest to calculate. Three options were tested: the default S-shaped
