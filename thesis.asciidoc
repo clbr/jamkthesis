@@ -371,7 +371,7 @@ allocation strategies, and it can be repaired after the fact by moving the used 
 together (constraints allowing).
 
 In normal system RAM, both strategies are viable. Cleaning up the memory area, also known as
-compaction (Corbet 2010), can be fairly low-impact to performance. It only involves
+compaction (Corbet 2010) can be fairly low-impact to performance. It only involves
 freezing the process, and changing some page table entries, which is a relatively fast
 operation. The downside is that a TLB (translation look-aside buffer) cache flush is needed
 so that the cache does not give out the old, wrong addresses.
