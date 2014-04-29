@@ -72,16 +72,16 @@ quite subjective. However, many people draw the line at 60 FPS with a minimum FP
 Both throughput and smoothness must be above the user's minimum requirements, one alone will
 not suffice. For example, a game running at a healthy throughput of 60 FPS, but dipping to
 10 FPS once per second will be extremely irritating, perceived as stalling or stuttering.
-Vice versa, a smooth FPS of 20 will not stutter, but the throughput is not high enough for
+Vice versa, a smooth FPS of 20 will not stutter, however, the throughput is not high enough for
 an enjoyable experience, as the user will notice individual images instead of the illusion
 of movement.
+
+Notice the huge frame time spikes on Catalyst in <<catframetime>>: better
+performance, but worse smoothness.
 
 [[catframetime]]
 .Frame time measurement. Image (C) Phoronix, printed with permission.
 image::pics/frametime.png[scaledwidth="75%"]
-
-Notice the huge frame time spikes on Catalyst in <<catframetime>>: better 
-performance, but worse smoothness.
 
 Problem
 -------
