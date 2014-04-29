@@ -83,6 +83,9 @@ image::pics/frametime.png[scaledwidth="75%"]
 Notice the huge frame time spikes on Catalyst in <<catframetime>>: better 
 performance, but worse smoothness.
 
+Problem
+-------
+
 Problem background
 ~~~~~~~~~~~~~~~~~~
 
