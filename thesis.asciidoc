@@ -150,7 +150,7 @@ Problem definition
 Knowing what information the system has available, and with the above goals in mind, the 
 problem could be defined more clearly.
 
-The component that decides which buffer to place where is separate from the component that
+The component that decides how to place buffers is separate from the component that
 has access to accurate statistics. Moving information between these components, the kernel
 and the userspace, is expensive; therefore the information moved must be minimized.
 
