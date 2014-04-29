@@ -753,7 +753,8 @@ differences.
 Network trainer
 ~~~~~~~~~~~~~~~
 
-The main program in this research, the AI trainer, was initially developed in C, but later 
+The main program in this research, the AI trainer, was initially developed in C, however, 
+later 
 moved to C++ for easy access to the *multimap* data structure. The trainer is multi-threaded 
 using the OpenMP library, which allows it to scale almost linearly to several dozen cores.
 
