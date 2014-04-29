@@ -342,6 +342,9 @@ details on the format and on the applications, please see the Software section.
 Fragmentation
 -------------
 
+Introduction
+~~~~~~~~~~~~
+
 Fragmentation is a common problem in all memory management. As buffers get allocated, moved
 around, and deleted, the memory space becomes increasingly fragmented. It limits the maximum
 size of a new allocation, and so buffers bigger than this also cannot be moved to VRAM.
@@ -967,7 +970,7 @@ All in all, the results fell a bit short of expectations. Given the difference t
 hoped for an improvement of about 5%.
 
 Future work and conclusion
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 With the enormous problem space, it cannot be said that the solution reached here is the 
 global optimum. Thus three paths forward can be seen.
