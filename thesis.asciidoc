@@ -729,7 +729,7 @@ fragments.
 The output is in text form, and was further processed by some shell scripts before handing 
 it to the fragmentation grapher.
 
-Initially the memory simulation code was shared with the trainer, but as the neural network 
+Initially the memory simulation code was shared with the trainer, however, as the neural network 
 capabilities were being added, they were branched so that each has its own copy. As such, 
 the simulation code used by the benchmark was frozen to the state before the AI addition.
 
