@@ -960,7 +960,7 @@ Luckily, a satisfactory solution was eventually found.
 
 Examining the discovered solution, it was surprising to see that it discarded 
 entirely six of the tried statistics. 
-It found relevance only in the number of writes, number of cpu operations, and the VRAM 
+It found relevance only in the number of writes, number of CPU operations, and the VRAM 
 size. Pruning the unused nodes cut the network size to 39% of the initial version.
 
 Further, the connection of 
