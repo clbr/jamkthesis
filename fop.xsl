@@ -36,7 +36,7 @@
 <xsl:param name="header.rule">0</xsl:param>
 <xsl:param name="footer.rule">0</xsl:param>
 
-<xsl:param name="generate.toc" select="'article toc,title,figure,table'"/>
+<xsl:param name="generate.toc" select="'book toc,title,figure,table'"/>
 
 <xsl:param name="local.l10n.xml" select="document('')"/>
 <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
