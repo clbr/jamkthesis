@@ -174,8 +174,11 @@ question "How important is this buffer?"
 The mainstream solution to solving non-linear, unknown models like that (also known as
 modeling or regression problems) is to use AI solutions such as neural networks.
 
-AI theory
----------
+Artificial Intelligence
+-----------------------
+
+Theory
+~~~~~~
 
 There are many approaches to artificial intelligence. What is common to all of them 
 though, is the
