@@ -38,6 +38,17 @@
 
 <xsl:param name="generate.toc" select="'book toc,title,figure,table'"/>
 
+<xsl:template match="figure|table|example" mode="label.markup">
+  <xsl:choose>
+    <xsl:when test="@label">
+      <xsl:value-of select="@label"/>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:number format="1" from="book|article" level="any"/>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
 <xsl:template name="page.number.format">
   <xsl:param name="element" select="local-name(.)"/>
   <xsl:param name="master-reference" select="''"/>
