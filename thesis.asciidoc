@@ -57,7 +57,7 @@ Introduction
 ------------
 
 Graphics cards carry some fast, dedicated memory (VRAM). This memory is used to speed up
-tasks such as rendering or parallel computations, by avoiding the latency in having the
+tasks such as rendering or parallel computations by avoiding the latency in having the
 graphics card access the system memory.
 
 VRAM is a limited resource, and as such, all workloads may not fit in a given graphics
