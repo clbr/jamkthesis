@@ -276,7 +276,7 @@ number of hidden nodes was set at the number of input nodes; that is, nine.
 For training, in the VRAM strategy case the seemingly only option would be reinforcement 
 learning.
 Supervised learning cannot be used, as a human cannot give any buffer an importance score;
-unsupervised and competitive learning do not apply in modeling problems.
+unsupervised and competitive learning do not apply to modeling problems.
 
 However, reinforcement learning is not a good fit for modeling problems (Wiering, Hasselt, 
 Pietersma & Schomaker 2011). Wiering et al found that while reinforcement learning can be 
