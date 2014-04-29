@@ -118,7 +118,7 @@ Sadly, either of those is a luxury not available in the real world.
 
 While recording the way the application accesses each buffer is possible in theory, this
 would incur more overhead than could be gained. Thus, the strategy is limited to considering
-worst-case possibilities, and has to make decisions as if the application would use each
+worst-case possibilities, and it has to make decisions as if the application would use each
 buffer fully. In practice, many buffers are not fully read or written, but only parts of
 them are used, for example due to mipmapping.
 
