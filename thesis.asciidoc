@@ -626,7 +626,7 @@ In the training application here, the following setup was chosen. The genome was
 giving it an accuracy of ~0.0078. The best half of the population was allowed to survive
 (the principle of elitism), and was also used as the source for eligible mates. Each
 individual was selected for mating based on its position when ordered by score, such
-that the most fit individual got to mate more than the second fit, and so on.
+that the fittest individual got to mate more than the second fittest, and so on.
 
 The population size was kept constant, with the worse half being replaced with fresh
 children each generation. Sex was implemented on a random per-gene basis, with each gene
