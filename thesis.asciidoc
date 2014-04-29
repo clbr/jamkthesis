@@ -643,7 +643,8 @@ code can be found at http://github.com/clbr/hotbos, under the AGPLv3 free softwa
 All tools were written in C unless otherwise mentioned, and the Zlib compression library is 
 used for reading/writing the memory traces in the binary format.
 
-In the software of this section, there's about four thousand lines of C/C++, and a bit over 
+In the software of this section, there are about four thousand lines of C/C++, and slightly 
+over
 hundred lines in shell scripts. This figure does not include the runtime code in the Linux 
 kernel, Mesa, and associated libraries, which come to about 1.5k lines in total.
 
