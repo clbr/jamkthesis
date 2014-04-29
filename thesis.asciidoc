@@ -973,8 +973,8 @@ networks excel at, and which humans may never find.
 .Expected vs. actual relation of writes to the buffer score.
 image::pics/score_relation.png[scaledwidth="50%"]
 
-All in all, the results fell a bit short of expectations. Given the difference to Catalyst, I
-hoped for an improvement of about 5%.
+All in all, the results fell slightly short of expectations. Given the difference to 
+Catalyst, an improvement of about 5% was hoped for.
 
 Future work and conclusion
 --------------------------
