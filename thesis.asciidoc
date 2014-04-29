@@ -954,9 +954,9 @@ Of course, given the problem space, 256^118^ combinations, copious computing tim
 expected.
 
 In exploring unknown areas such as this, it is always a risk that no good 
-solution exists. As the training took more time, I admit being worried of that possibility, 
-and 
-considering aborting the experiment. Luckily, a satisfactory solution was found eventually.
+solution exists. As the training took more time, that possibility caused worries,
+and aborting the experiment was considered.
+Luckily, a satisfactory solution was eventually found.
 
 Examining the discovered solution, it was surprising to see that it discarded 
 entirely six of the tried statistics. 
