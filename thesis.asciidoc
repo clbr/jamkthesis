@@ -740,7 +740,8 @@ As the volume of data produced by the fragmentation benchmark was far too great 
 office suite, even after scripted processing, a custom graphing tool was developed. It was 
 made in C++, utilizing the FLTK toolkit for rendering.
 
-It renders a combined graph, with a line graph for the number of holes, and a horizontal bar 
+The grapher renders a combined graph, with a line graph for the number of holes, and a 
+horizontal bar 
 graph for swapping. It takes approximately a minute to render one such graph, owing to the 
 great amount of data.
 
