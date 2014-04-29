@@ -926,8 +926,8 @@ For OpenArena, the goal of increasing smoothness was reached.
 .Urban Terror frame time
 image::pics/pts5.png[scaledwidth="85%"]
 
-Urban Terror had regressed 10.2% in FPS, and here the frame time average is larger as well. 
-However, the peaks are greatly lower, and there are less of them. The highest peak was 69 ms 
+Urban Terror had regressed 10.2% in FPS, and here the frame time average is larger as well;
+however, the peaks are greatly lower, and there are less of them. The highest peak was 69 ms 
 vs 90 ms. The smoothness here improved greatly. (See <<urtftime>>.)
 
 Given the improvement in smoothness was far greater than the decrease in throughput, even 
