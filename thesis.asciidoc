@@ -400,7 +400,7 @@ type. The min-max allocator is visualized in <<minmax>>.
 image::pics/allocations.png[scaledwidth="75%"]
 
 Nine common VRAM sizes were tested: 64 MB, 128 MB, 256 MB, 384 MB, 512 MB, 1024 MB, 1536 MB,
-2048 MB, and 4096 MB. In cases where the trace couldn't run on a configuration, that trace
+2048 MB, and 4096 MB. In cases where the trace could not run on a configuration, that trace
 was skipped. For example, Planetary Annihilation allocated a buffer of 78 MB in size; it is
 obviously beyond the capabilities of a 64 MB VRAM graphics card.
 
@@ -537,7 +537,7 @@ smootherstep function, both in floating point, and when converted to use fixed-p
 mathematics.
 
 As can be seen in <<tanhcurve>> above, the hyperbolic tangent is less steep than the
-smootherstep function. This shouldn't cause any issues in the decision-making.
+smootherstep function. This should not cause any issues in the decision-making.
 
 Each function was ran 10^9^ times. Surprisingly, the fixed point implementation was not the
 fastest of all. A single *tanhf()* call took approximately 4.8 ns (+- 0.2%). A single
@@ -847,7 +847,7 @@ image::pics/pts1.png[scaledwidth="50%"]
 
 The Radeon driver allows one to limit VRAM to a value 
 below what the card is actually capable of, which is great for testing such as this. In this 
-test run, only 256 MB was tested, as the available tests don't require enough VRAM to cause 
+test run, only 256 MB was tested, as the available tests do not require enough VRAM to cause 
 memory pressure under higher VRAM amounts.
 
 The tests here only changed Mesa, using the same kernel. Under the baseline target, named 
