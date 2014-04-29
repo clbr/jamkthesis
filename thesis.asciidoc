@@ -594,7 +594,7 @@ Monte-Carlo training
 
 Monte-Carlo methods work based on randomness. They are used in cases where an exhaustive
 search is impossible due to the computation required. Due to their nature, they will often
-find a "good enough" solution, but may also fail to find a solution altogether.
+find a "good enough" solution, however, may also fail to find a solution altogether.
 
 In the simplest form, a Monte-Carlo method means making a random change, and measuring
 whether the results improved. Restricting the change in magnitude and the amount of
