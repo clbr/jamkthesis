@@ -46,6 +46,13 @@ texture::
 VRAM::
 	Video RAM, fast on-board memory included on graphics cards.
 
+[abstract]
+Acknowledgements
+----------------
+
+I would like to thank Jerome Glisse for his guidance, Thomas Hellstrom for reviews,
+Michael Larabel for coverage, and everyone who contributed data to this thesis.
+
 Introduction
 ------------
 
@@ -998,12 +1005,6 @@ It was proved that LRU is not the most optimal solution, and that a neural netwo
 exceed
 it. This opens up chances for other kinds of competition as well, outside that of artificial 
 intelligence.
-
-Acknowledgements
-----------------
-
-I would like to thank Jerome Glisse for his guidance, Thomas Hellstrom for reviews, 
-Michael Larabel for coverage, and everyone who contributed data to this thesis.
 
 [bibliography]
 References
