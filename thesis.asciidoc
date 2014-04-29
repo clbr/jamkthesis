@@ -444,8 +444,9 @@ image::pics/f256.png[scaledwidth="100%"]
 
 The patterns become visible in the 256 MB run (<<ind256>>). Almost all trashing is now gone.
 Peak fragmentation is surprisingly higher in
-min-max (5560 vs. 5336 holes), but swapping continues to be lower: 0.69% in LRU, 0.667% in 
-the lowest min-max run. Average fragmentation was the same between all runs.
+min-max (5560 vs. 5336 holes), however, swapping continues to be lower: 0.69% in LRU, 0.667% 
+in 
+the lowest min-max run. The average fragmentation was the same between all runs.
 
 .384 MB VRAM
 image::pics/f384.png[scaledwidth="100%"]
