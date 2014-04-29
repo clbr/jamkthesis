@@ -140,7 +140,7 @@ Such a worst-case estimation will directly improve the minimum FPS; in other wor
 smoothness. This has an indirect benefit to performance, however optimal performance will
 not be reached by these means.
 
-The target of this work is to improve on the current strategy, particularly in the cases
+The target of this study is to improve on the current strategy, particularly in the cases
 that are currently pathological. The improved system may not gain significantly in
 throughput, but it should gain measurably in smoothness.
 
