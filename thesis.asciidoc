@@ -703,7 +703,7 @@ Binary format specification:
 */
 ----
 
-The binary format filled the goals set quite nicely. It resulted in a compression ratio
+The binary format filled the set goals quite nicely. It resulted in a compression ratio
 better than that of XZ applied on the text form, by a variable amount (1.5 to 12x).
 The compression ratio compared to uncompressed text varied from 150x to 1300x. It
 allows fast reading for the training and fragmentation benchmark applications.
