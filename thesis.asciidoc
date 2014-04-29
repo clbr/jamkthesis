@@ -317,7 +317,7 @@ selected as inputs:
 - number of processor operations
 - time since last processor operation
 - whether the buffer should be considered high priority (MSAA, depth)
-- VRAM size
+- VRAM size.
 
 Timing information was set at millisecond accuracy. A time measurement was chosen instead of
 the frame number, because it ought to allow for a better user experience. Should frames take
@@ -774,7 +774,7 @@ Several runtime modes are supported:
 
 - benchmark, measure the current AI state vs. LRU
 - three different Monte-Carlo modes
-- genetic mode
+- genetic mode.
 
 It runs all collected memory traces through the memory simulation code, keeping track of the 
 cost of each memory operation. The total cost of all traces is then used as the score for 
