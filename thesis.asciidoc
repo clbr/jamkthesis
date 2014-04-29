@@ -950,7 +950,7 @@ inadequate:
 of RAM is estimated as a sweet spot, but alas, one has to make do.
 
 The training took almost three times longer than anticipated (8 weeks, when 3 were planned). 
-Of course given the problem space, 256^118^ combinations, copious computing time was to be 
+Of course, given the problem space, 256^118^ combinations, copious computing time was to be 
 expected.
 
 In exploring unknown areas such as this, it is always a risk that there exists no good 
