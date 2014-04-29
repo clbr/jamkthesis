@@ -834,7 +834,7 @@ image::pics/indres384.png[scaledwidth="55%"]
 .Major results in 512 MB.
 image::pics/indres512.png[scaledwidth="35%"]
 
-Moving to testing with real hardware, it could be seen that the cpu overhead of calculating 
+Moving to testing with real hardware, it could be seen that the CPU overhead of calculating 
 the score
 was negligible. Passing the score to the kernel initially took 3% of the CPU time, but that 
 could be
