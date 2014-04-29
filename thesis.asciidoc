@@ -580,7 +580,7 @@ Other considerations
 ^^^^^^^^^^^^^^^^^^^^
 
 For a buffer in either memory, the cost of a read or write can thus be calculated as the
-buffer size divided by the memory bandwidth. However, a multitude of other considerations
+buffer size divided by the memory bandwidth; however, a multitude of other considerations
 must be taken into account.
 
 First of all, a GPU write to system RAM (cacheable memory) will incur a performance hit of
