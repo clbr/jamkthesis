@@ -661,7 +661,7 @@ Text-to-binary format converter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The data traces recorded by the Mesa patch come in a simple but verbose text format. In 
-order to reduce the disk space demands, and to ease their handling in the network trainer, 
+order to reduce the disk space demands and to ease their handling in the network trainer, 
 they were converted into a custom compressed binary format.
 
 The format converter uses the Zlib library for compression. Zlib 
