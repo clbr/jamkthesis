@@ -1003,7 +1003,7 @@ Acknowledgements
 ----------------
 
 I would like to thank Jerome Glisse for his guidance, Thomas Hellstrom for reviews, 
-Michael Larabel for coverage, and everyone who contributed data.
+Michael Larabel for coverage, and everyone who contributed data to this thesis.
 
 [bibliography]
 Bibliography
