@@ -836,8 +836,8 @@ image::pics/indres512.png[scaledwidth="35%"]
 
 Moving to testing with real hardware, it could be seen that the CPU overhead of calculating 
 the score
-was negligible. Passing the score to the kernel initially took 3% of the CPU time, but that 
-could be
+was negligible. Passing the score to the kernel initially took 3% of the CPU time, however, 
+that could be
 optimized away by embedding the score in an existing call (the cs ioctl).
 
 Likewise, the use of a priority queue in place of the LRU linked list did not measurably 
