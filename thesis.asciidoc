@@ -270,7 +270,7 @@ is guesses and rules of thumb. One such widely quoted rule is to use a number be
 amount of input nodes and the amount of output nodes.
 
 The number of hidden nodes can be easily pruned later if the network decides some are 
-unnecessary, but they cannot be added without re-training. Given this restriction, the 
+unnecessary, however, they cannot be added without re-training. Given this restriction, the 
 number of hidden nodes was set at the number of input nodes; that is, nine.
 
 For training, in the VRAM strategy case the seemingly only option would be reinforcement 
