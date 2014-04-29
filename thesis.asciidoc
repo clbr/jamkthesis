@@ -196,7 +196,7 @@ ability to make decisions the computer was not told explicitly how to make. They
 their areas of usability, theoretic foundations, whether they are based on real biological
 phenomena, and other ways.
 
-One such approach is the neural network. Invented in the 60's, it mimics the
+One such approach is the neural network. Invented in the 60s, it mimics the
 biological brain cells. Such networks are able to generalize, to learn either independently
 or with guidance, and tend to achieve quite decent results. Neural networks have been
 applied to problems such as Backgammon (Tesauro 1994), business data mining (Bigus 1996),
