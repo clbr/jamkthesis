@@ -236,11 +236,11 @@ the decisions it made can be very useful in finding new or undervalued customer 
 
 Competitive learning is used in classification problems mainly. Only the neuron that "wins"
 the round, in other words whose guess was closest to correct, gets to be tweaked. This
-results in each neuron specializing to a specific type of input.
+results in each neuron specializing in a specific type of input.
 
 Reinforcement learning is used in stateful problems, where each action may not be graded
-alone, but only the full path of actions may be graded. For example, the Backgammon network
-of Tesauro (1994) used this method.
+alone, and only the full path of actions may be graded. For example, the Backgammon
+network of Tesauro (1994) used this method.
 
 Alternative methods for tweaking the network, instead of training it, include genetic and
 evolutionary methods as well as Monte-Carlo methods.
