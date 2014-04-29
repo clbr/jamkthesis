@@ -994,7 +994,8 @@ Finally, it is possible that the input parameters are not the best possible. It 
 some different input can be easily gathered, and that input provides great correlation to a 
 buffer's importance.
 
-It was proved that LRU is not the most optimal solution, and that a neural network can beat 
+It was proved that LRU is not the most optimal solution, and that a neural network can 
+exceed
 it. This opens up chances for other kinds of competition as well, outside that of artificial 
 intelligence.
 
