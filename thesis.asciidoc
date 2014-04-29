@@ -980,7 +980,7 @@ Future work and conclusion
 --------------------------
 
 With the enormous problem space, it cannot be said that the solution reached here is the 
-global optimum; thus three paths forward can be seen.
+global optimum; thus, three paths forward can be seen.
 
 First, the parameters can be adequate, and merely more computing time is needed to find a 
 better solution.
