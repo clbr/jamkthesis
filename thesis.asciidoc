@@ -635,8 +635,9 @@ coming whole from one parent. The mutation probability was set at 0.1% per gener
 Software
 --------
 
-A set of custom software was developed to aid in the research. This section covers each one 
-shortly. Some helper libraries were used, but the logic in each is self-made. The source 
+A set of custom software was developed to aid in the research. This section covers each
+application
+shortly. Some helper libraries were used, however, the logic in each is self-made. The source
 code can be found at http://github.com/clbr/hotbos, under the AGPLv3 free software license.
 
 All tools were written in C unless otherwise mentioned, and use the Zlib compression library 
