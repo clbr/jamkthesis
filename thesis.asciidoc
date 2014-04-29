@@ -640,8 +640,8 @@ application
 shortly. Some helper libraries were used, however, the logic in each is self-made. The source
 code can be found at http://github.com/clbr/hotbos, under the AGPLv3 free software license.
 
-All tools were written in C unless otherwise mentioned, and use the Zlib compression library 
-for reading/writing the memory traces in the binary format.
+All tools were written in C unless otherwise mentioned, and the Zlib compression library is 
+used for reading/writing the memory traces in the binary format.
 
 In the software of this section, there's about four thousand lines of C/C++, and a bit over 
 hundred lines in shell scripts. This figure does not include the runtime code in the Linux 
