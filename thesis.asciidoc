@@ -134,7 +134,7 @@ it can lead to quite a bad user experience in non-trivial cases that exceed the 
 buffer that is needed next could have been swapped out to system RAM, dropping performance.
 In the worst case, this creates a ping-pong effect where buffers are constantly moved back
 and forth, dropping performance to single digits FPS. (Larabel 2012; Very low FPS when
-video memory is full (GART & ram pass:[&lt;-&gt;] vram swapping) 2013)
+video memory is full 2013)
 
 Given that the absolute knowledge is not available, the system will have to make do with
 what is there. For example, the system can keep accurate statistics on the times the
