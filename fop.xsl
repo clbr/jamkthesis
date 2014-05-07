@@ -164,7 +164,7 @@ procedure before
         </xsl:if>
     <fo:inline keep-with-next.within-line="always">
       <fo:basic-link internal-destination="{$id}">
-        <xsl:if test="self::appendix">
+        <xsl:if test="self::appendix or self::figure">
         	<xsl:call-template name="gentext">
       			<xsl:with-param name="key" select="local-name()"/>
           	</xsl:call-template>
